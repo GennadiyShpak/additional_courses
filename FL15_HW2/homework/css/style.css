@@ -1,0 +1,42 @@
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .print-width {
+    max-width: 640px;
+  }
+
+  .hiden-item {
+    display: none;
+  }
+
+  .what-we-do {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .mexiko-team__img {
+    width: 30%;
+    height: auto;
+  }
+
+  .mexiko-team__description {
+    width: 50%;
+  }
+  .tm-section-description::first-letter,
+  .text-xs-center::first-letter {
+    color: #87cefa;
+    font-size: 30px;
+    padding-left: 30px;
+  }
+  h2.title-print {
+    color: blue;
+  }
+  .baner__print {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
