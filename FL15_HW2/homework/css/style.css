@@ -11,13 +11,6 @@
     display: none;
   }
 
-  .what-we-do {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
   .mexiko-team__img {
     width: 30%;
     height: auto;
@@ -30,6 +23,10 @@
   .baner__print {
     max-width: 90%;
     margin: 0 auto;
+  }
+
+  div .what-we-do {
+    flex-direction: row;
   }
 
   h2.title-print {
@@ -59,8 +56,23 @@ p::first-letter {
   font-size: 30px;
 }
 
+ol li a:hover {
+  color: black;
+  cursor: pointer;
+}
+
 p.line-height {
   line-height: 2;
+}
+.first-letter-color::first-letter {
+  color: black;
+}
+
+.what-we-do {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .tm-section-description,
@@ -97,15 +109,49 @@ p.line-height {
   z-index: 999;
 }
 
-ol li a:hover {
+.heading a {
   color: black;
-  cursor: pointer;
+  border-bottom: 1px solid;
+  border-bottom-color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
-ol li a:link {
-  outline-color: rgb(255, 255, 255);
+.heading a:visited {
+  border-bottom-color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: #87cefa;
 }
-
-ol li a:visited {
-  outline-color: rgb(0, 0, 0);
+.box-work {
+  padding: 5px;
+}
+.box-work:nth-child(even) {
+  background: #f5f5f5;
+}
+.box-work__container {
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+.submit-btn {
+  background-color: #fff;
+  color: #87cefa;
+  border: #87cefa 1px solid;
+  border-radius: 0;
+  float: right;
+}
+.submit-btn:hover {
+  background-color: #87cefa;
+}
+.padding-medium {
+  position: relative;
+}
+.mandatory-field::after {
+  content: '*';
+  position: absolute;
+  top: 0;
+  right: 6px;
+  color: red;
+  font-weight: 700;
+}
+.tm-nav-item:hover {
+  background-color: #f5f5f5;
 }
