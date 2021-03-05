@@ -1,0 +1,35 @@
+$main-font: 'Source Sans Pro', sans-serif;
+$light-theme-font: 'Hind', sans-serif;
+$third-font: 'Fresca', sans-serif;
+
+$main-color: #fff;
+$secondary-color: #000;
+$button-color: #699900;
+$decor-color: #0099cc;
+
+@mixin link-style($fs) {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: $fs;
+}
+
+@mixin button {
+  border: none;
+  background-color: $button-color;
+  width: 126px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $main-color;
+  font-family: $main-font;
+}
+
+@mixin after($width) {
+  position: absolute;
+  content: '';
+  display: block;
+  background-color: $decor-color;
+  width: $width;
+  height: 44px;
+  z-index: -1;
+}
