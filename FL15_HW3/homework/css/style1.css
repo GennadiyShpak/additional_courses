@@ -178,7 +178,7 @@ body {
     font-size: 14px;
     margin-bottom: 20px;
     font-weight: 400;
-    color: #fff; }
+    color: #dbd9d9; }
   .section_banner_button, .header-wrap .header_button {
     border: none;
     background-color: #699900;
@@ -204,4 +204,7 @@ body {
     z-index: -10; }
   .footer_text {
     width: 334px;
-    font-weight: 400; }
+    font-weight: 400;
+    color: #dbd9d9; }
+  .footer-cr {
+    color: #dbd9d9; }
