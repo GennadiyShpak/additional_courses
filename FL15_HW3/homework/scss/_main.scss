@@ -93,7 +93,7 @@ body {
     margin-right: 120px;
   }
   .login {
-    @include link-style(18px);
+    @include link-style(18px, $span-decorate);
   }
 }
 .section {
@@ -146,8 +146,7 @@ body {
   }
   
   .section_link {
-    @include link-style(14px);
-    color: #a3a3a3;
+    @include link-style(10px, $link-decor);
     }
     
   &_img{

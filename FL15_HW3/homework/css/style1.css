@@ -132,10 +132,9 @@ body {
     margin-bottom: 10px;
     font-weight: 400; }
   .section_card .section_link {
-    color: #fff;
+    color: #a3a3a3;
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 14px;
-    color: #a3a3a3; }
+    font-size: 10px; }
   .section_card_img {
     text-align: left;
     padding-right: 96px; }

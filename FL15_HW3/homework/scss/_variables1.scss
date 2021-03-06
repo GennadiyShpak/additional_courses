@@ -10,13 +10,14 @@ $card-decor-color:#000;
 $text-decor-color:#dbd9d9;
 $body-color: #fff;
 $span-decorate: #fff;
+$link-decor: #a3a3a3;
 
 $gradient: linear-gradient(-90deg, #2b59dc, #689805);
 
 $header-bg: url(../img/m-h-day.jpg);
 
-@mixin link-style($fs) {
-  color: $main-color;
+@mixin link-style($fs,$col) {
+  color: $col;
   font-family: $main-font;
   font-size: $fs;
 }
