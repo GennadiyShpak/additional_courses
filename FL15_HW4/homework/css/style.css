@@ -291,3 +291,10 @@ body {
 .footer-bar__list {
     width: 300px;
 }
+
+.footer-bar__item--link {
+    color: var(--color-black);
+}
+.footer_description {
+    color: var(--base-collor);
+}
