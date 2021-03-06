@@ -6,6 +6,13 @@ $main-color: #fff;
 $secondary-color: #000;
 $button-color: #699900;
 $decor-color: #0099cc;
+$card-decor-color:#000;
+$text-decor-color:#dbd9d9;
+$body-color: #fff;
+
+$gradient: linear-gradient(-90deg, #2b59dc, #689805);
+
+$header-bg: url(../img/m-h-day.jpg);
 
 @mixin link-style($fs) {
   color: $main-color;
@@ -32,4 +39,11 @@ $decor-color: #0099cc;
   width: $width;
   height: 44px;
   z-index: -1;
-}
+};
+
+$header-bg: url(../img/m-h-day.jpg);
+
+$fw: (
+  "heading": 700,
+  "text": 400,
+)
