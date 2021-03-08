@@ -153,6 +153,7 @@ body {
 }
 .lorem__big-size--item {
     font-size: 24px;
+    font-weight: normal;
 }
 .lorem__small-size {
     font-size: 14px;
