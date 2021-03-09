@@ -58,7 +58,6 @@ a {
 .container {
   padding: 0 10px;
   margin: 0 auto;
-  display: flex;
 }
 
 .nav {
@@ -109,7 +108,9 @@ a {
   position: relative;
 }
 
-.home__wrapper {
+.home__wrapper,
+.about__list,
+.services__item {
   display: flex;
   flex-direction: column;
 }
@@ -156,13 +157,11 @@ a {
   background-repeat: no-repeat;
 }
 
-.about__wrapper {
+.about__wrapper,
+.services__list {
   display: flex;
 }
-.about__list {
-  display: flex;
-  flex-direction: column;
-}
+
 .about__item--arrow {
   color: var(--primary);
 }
@@ -178,7 +177,8 @@ a {
   margin-bottom: 10px;
 }
 
-.about__item:not(:last-child) {
+.about__item:not(:last-child),
+.services__item--title {
   margin-bottom: 20px;
 }
 .about__item--arrow {
@@ -190,6 +190,59 @@ a {
 
 .header__item--link:hover {
   color: var(--primary);
+}
+.services {
+  background-image: url(../img/services_bg.jpg);
+  background-size: cover;
+}
+
+.services__title--wrapper,
+.stages__list,
+.pricing__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__title--wrapper,
+.about__list {
+  text-align: center;
+}
+
+.services__item--description {
+  text-align-last: left;
+}
+.services__item {
+  margin: 0 auto;
+  width: 300px;
+  align-items: flex-start;
+  background-color: var(--light);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  padding-top: 110px;
+}
+.ophthalmology {
+  background-image: url(../img/icons/oftalmology.jpg);
+}
+
+.dentistry {
+  background-image: url(../img/icons/dentistry.jpg);
+}
+
+.cardiology {
+  background-image: url(../img/icons/cardiolofy.jpg);
+}
+
+.pediatrics {
+  background-image: url(../img/icons/pediatrics.jpg);
+}
+
+.laboratory {
+  background-image: url(../img/icons/laboratory.jpg);
+}
+
+.radiology {
+  background-image: url(../img/icons/radiology.jpg);
 }
 
 @media (max-width: 767px) {
@@ -231,13 +284,14 @@ a {
     align-items: center;
     padding-bottom: 30px;
   }
-  .about__title--wrapper {
-    text-align: center;
-  }
-  .about__list {
-    text-align: center;
-  }
+
   .about {
     padding-top: 210px;
+  }
+  .services__list {
+    flex-direction: column;
+  }
+  .services__item {
+    margin-bottom: 20px;
   }
 }
