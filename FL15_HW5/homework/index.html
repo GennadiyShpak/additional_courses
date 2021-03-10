@@ -124,7 +124,9 @@
           <div class="about__wrapper">
             <div class="about__title--wrapper">
               <h2 class="about__title">About Clinic</h2>
-              <span class="about__title--description">PROFFESIONAL CARE</span>
+              <span class="about__title--description description"
+                >PROFFESIONAL CARE</span
+              >
             </div>
             <ul class="about__list">
               <li class="about__item">
@@ -164,7 +166,7 @@
         <div class="container">
           <div class="services__title--wrapper">
             <h2 class="services__title">How We Can Help You</h2>
-            <span class="services__title--descrtption"
+            <span class="services__title--descrtption description"
               >READ MORE ABOUT SERVICES</span
             >
           </div>
@@ -218,15 +220,15 @@
         <div class="container">
           <div class="pricing__title--wrapper">
             <h2 class="pricing__title">Our Special Offers</h2>
-            <span class="pricing__title--description"
+            <span class="pricing__title--description description"
               >START TO BE HEALTHY TODAY</span
             >
           </div>
           <ul class="pricing__list">
             <li class="pricing__item">
-              <h3 class="service__name"></h3>
-              <p class="service__price"></p>
-              <p class="number__treatment"></p>
+              <h3 class="service__name">Allergy Check</h3>
+              <p class="service__price">&#36; 255</p>
+              <p class="number__treatment">10 treatments</p>
               <ul class="stages__list">
                 <li class="stages__item">Allergy Test</li>
                 <li class="stages__item">Consultation</li>
@@ -235,12 +237,12 @@
                 <li class="stages__item">&#10006;</li>
                 <li class="stages__item">Tests Results</li>
               </ul>
-              <button class="get-now__btn">Get Now</button>
+              <button class="get-now__btn btn">Get Now</button>
             </li>
             <li class="pricing__item">
-              <h3 class="service__name"></h3>
-              <p class="service__price"></p>
-              <p class="number__treatment"></p>
+              <h3 class="service__name">Eye Checkup</h3>
+              <p class="service__price">&#36; 108</p>
+              <p class="number__treatment">3 treatments</p>
               <ul class="stages__list">
                 <li class="stages__item">Allergy Test</li>
                 <li class="stages__item">Consultation</li>
@@ -249,12 +251,12 @@
                 <li class="stages__item">&#10006;</li>
                 <li class="stages__item">Tests Results</li>
               </ul>
-              <button class="get-now__btn">Get Now</button>
+              <button class="get-now__btn btn">Get Now</button>
             </li>
             <li class="pricing__item">
-              <h3 class="service__name"></h3>
-              <p class="service__price"></p>
-              <p class="number__treatment"></p>
+              <h3 class="service__name">Dental Care</h3>
+              <p class="service__price">&#36; 320</p>
+              <p class="number__treatment">6 treatments</p>
               <ul class="stages__list">
                 <li class="stages__item">Allergy Test</li>
                 <li class="stages__item">Consultation</li>
@@ -263,12 +265,53 @@
                 <li class="stages__item">&#10006;</li>
                 <li class="stages__item">Tests Results</li>
               </ul>
-              <button class="get-now__btn">Get Now</button>
+              <button class="get-now__btn btn">Get Now</button>
             </li>
           </ul>
         </div>
       </section>
-      <section id="contact" class="contact"></section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact__title--wrapper">
+            <h2 class="contact__title">Make An Appointment</h2>
+            <span class="contact__title--description"
+              >AND WE WILL CONTACT WITH YOU</span
+            >
+          </div>
+          <form class="contact__form">
+            <input class="input" type="text" placeholder="Full Name" />
+            <input class="input" type="email" placeholder="Email" />
+            <input class="input" type="phone" placeholder="Phone" />
+            <input class="input" type="date" />
+            <div class="datalist__wrapper">
+              <input
+                placeholder="Subject"
+                class="datalist-input input"
+                list="services-flavors"
+                id="services-choice"
+                name="services-choice"
+              />
+
+              <datalist id="services-flavors">
+                <option value="Ophthalmology"></option>
+                <option value="Dentistry"></option>
+                <option value="Cardiology"></option>
+                <option value="Pediatrics"></option>
+                <option value="Laboratory"></option>
+                <option value="Radiology"></option>
+              </datalist>
+            </div>
+            <div class="button__wrapper">
+              <button class="btn submit__btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__description">Copyright &copy; 2021 EPAM</p>
+      </div>
+    </footer>
   </body>
 </html>
