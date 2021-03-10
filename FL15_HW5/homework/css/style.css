@@ -74,7 +74,6 @@ a {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  width: 100%;
 }
 .fixed-btn {
   position: fixed;
@@ -347,6 +346,7 @@ a {
 @media (max-width: 767px) {
   .header__list {
     padding: 0 20px;
+    width: 100%;
   }
   .nav {
     flex-direction: column;
@@ -429,19 +429,30 @@ a {
   }
 }
 @media (min-width: 767px) {
-  .fixed-btn {
-    right: 20px;
-    bottom: 20px;
+  .nav {
+    padding: 10px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .home__title {
     margin-bottom: 30px;
+    font-size: 32px;
   }
   .home__description {
     margin-bottom: 20px;
   }
+  .about {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
   .about__wrapper {
     align-items: flex-start;
+  }
+  .about__wrapper {
+    padding-left: 50%;
   }
   .services__list {
     flex-flow: row wrap;
@@ -454,20 +465,20 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .pricing__item:nth-child(2) {
-    height: 480px;
-  }
-  .contact {
-    padding-left: 50%;
+
+  .pricing {
+    background-image: url(../img/pricing_bg.jpg);
+    background-size: cover;
   }
 }
 
 @media (min-width: 767px) and (max-width: 1279px) {
+  .fixed-btn {
+    right: 20px;
+    bottom: 20px;
+  }
   .nav {
     padding: 10px 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .header__list {
     width: 350px;
@@ -475,9 +486,6 @@ a {
   }
   .home__wrapper {
     padding-top: 110px;
-  }
-  .home__title {
-    font-size: 32px;
   }
   .home__wrapper {
     padding-bottom: 88px;
@@ -488,9 +496,6 @@ a {
   }
   .about {
     padding: 70px 0;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position-y: center;
   }
   .services {
     padding: 50px 0;
@@ -507,11 +512,79 @@ a {
   .pricing__item {
     width: 240px;
   }
+  .pricing__item:nth-child(2) {
+    height: 480px;
+  }
   .contact__form {
     width: 300px;
     padding-left: 30px;
   }
   .contact__title--wrapper {
     padding-left: 30px;
+  }
+  .contact {
+    padding-left: 50%;
+  }
+  .button__wrapper {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1280px) {
+  .fixed-btn {
+    right: 250px;
+    bottom: 80px;
+  }
+  body {
+    max-width: 1440px;
+  }
+  .nav {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10px 100px;
+  }
+  .container {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .header__list {
+    width: 400px;
+    font-size: 14px;
+  }
+  .home__wrapper {
+    padding-top: 200px;
+    width: 510px;
+    font-size: 36px;
+  }
+  .home__description {
+    font-size: 20px;
+  }
+  .home__list {
+    margin-bottom: 114px;
+  }
+  .about {
+    padding: 120px 0;
+  }
+  .services__item {
+    width: 300px;
+  }
+  .services {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+  .pricing__item {
+    width: 350px;
+    padding: 100px 0;
+  }
+  .pricing__item:nth-child(2) {
+    height: 640px;
+  }
+  .form__container {
+    width: 600px;
+  }
+  .contact {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-size: contain;
+    padding-left: 25%;
   }
 }
