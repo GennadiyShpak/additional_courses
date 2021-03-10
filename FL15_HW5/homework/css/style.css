@@ -406,4 +406,7 @@ a {
   .button__wrapper {
     text-align: center;
   }
+  .contact {
+    padding-bottom: 30px;
+  }
 }
