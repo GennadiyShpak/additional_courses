@@ -1,0 +1,18 @@
+:root {
+  --Black: #111;
+  --Grey: #525252;
+  --white: white;
+  --coral: coral;
+  --lightcoral: lightcoral;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.header__title {
+  font-size: 0, 75em;
+}
+.header__title--btn {
+  background-color: var(--coral);
+  border: 1px solid var(--coral);
+}
