@@ -5,6 +5,11 @@
   --coral: coral;
   --lightcoral: lightcoral;
 }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -12,7 +17,23 @@ body {
 .header__title {
   font-size: 0, 75em;
 }
-.header__title--btn {
+.header__title--btn,
+.footer__btn {
   background-color: var(--coral);
   border: 1px solid var(--coral);
+}
+.game-section,
+footer {
+  background-color: var(--Black);
+  color: var(--white);
+}
+.game-section__description {
+  font-size: 8px;
+}
+.game-section--light {
+  background-color: #f8f9fa;
+}
+
+.footer__description {
+  font-size: 12px;
 }
