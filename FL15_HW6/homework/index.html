@@ -21,51 +21,24 @@
   <body>
     <header>
       <div class="container-xl nav__wrapper">
-        <nav class="navbar navbar-light header__nav mb-sm-7">
-          <h2 class="nav__title">Games</h2>
-          <ul class="nav justify-content-center d-none d-lg-flex">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
-          <button
-            type="button"
-            class="btn btn-primary btn-lg d-none d-lg-flex btn-dark"
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#"
+            ><h2 class="header__title">Games</h2></a
           >
-            Push to Start
-          </button>
           <button
-            class="navbar-toggler d-lg-none"
+            class="navbar-toggler"
             type="button"
             data-toggle="collapse"
-            data-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Переключатель навигации"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-light p-4 flex-column">
-            <ul
-              class="nav justify-content-center flex-column align-items-center"
-            >
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ml-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="#">Home</a>
               </li>
@@ -84,17 +57,12 @@
                   >Disabled</a
                 >
               </li>
-              <li class="nav-item">
-                <button
-                  type="button"
-                  class="btn btn-primary btn-lg d-lg-flex btn-dark"
-                >
-                  Push to Start
-                </button>
-              </li>
             </ul>
+            <button type="button" class="btn btn-primary rounded-0 btn-dark">
+              Push to Start
+            </button>
           </div>
-        </div>
+        </nav>
         <div
           class="row flex-row-reverse align-items-md-end align-items-lg-center"
         >
@@ -114,13 +82,14 @@
                 mus.
               </p>
               <button type="button" class="btn btn-primary header__title--btn">
-                Push to Start
+                Find Out More
               </button>
             </div>
           </div>
         </div>
       </div>
     </header>
+
     <main>
       <section class="game-section"></section>
     </main>
@@ -136,27 +105,3 @@
     ></script>
   </body>
 </html>
-
-<!-- <div class="fixed-top">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h5 class="text-white h4">Свернутый контент</h5>
-      <span class="text-muted"
-        >Переключаемый через бренд навигационной панели.</span
-      >
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarToggleExternalContent"
-      aria-controls="navbarToggleExternalContent"
-      aria-expanded="false"
-      aria-label="Переключатель навигации"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-</div> -->
