@@ -21,8 +21,7 @@ const possibleRewards = () => {
     }
     return
   }
-const startGame = confirm('Do you want to play a game?');
-     
+
 function messageGenerator () {
  const message = parseInt(prompt(`Choose a roulette pocket number from ${minValue} to ${maxValue}
     Attempts left: ${numberOfTryes}
@@ -55,10 +54,12 @@ const casino = (num) => {
     
     if (num !== currentNumber) {
     numberOfTryes -= 1;
-    if (numberOfTryes === 0) {
-        alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
-        return;
-    }
+
+        if (numberOfTryes === 0) {
+            alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
+            runGame();
+            return;
+        }
         possibleRewards()
         casino(messageGenerator())
     }
@@ -77,10 +78,15 @@ const casino = (num) => {
     }
 }
 const runGame = () => {
+const startGame = confirm('Do you want to play a game?');
     if (!startGame) {
         alert('You did not become a billionaire, but can.')
         return;
     } 
+    numberOfTryes = three;
+    totalPrize = 0;
     casino(messageGenerator())
 }
 runGame()
+
+
