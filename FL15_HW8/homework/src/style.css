@@ -1,0 +1,29 @@
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 36px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px 36px;
+}
+
+.form__input--description {
+    display: block;
+    margin-bottom: 10px;
+}
+.form__input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.btn {
+padding: 5px 10px;
+}
+
+.invisible {
+    display: none;
+}
