@@ -17,9 +17,9 @@ const negativeCount = function (arr) {
 }
 
 const letterCount = function (str1, str2) {
-const transfomStr = str1.split('')
-const filtredArr = transfomStr.filter(item => item === str2)
-return filtredArr.length
+    const transfomStr = str1.split('')
+    const filtredArr = transfomStr.filter(item => item.toLowerCase() === str2.toLowerCase())
+    return filtredArr.length
 }
 
 const countPoints = function (arr) {
