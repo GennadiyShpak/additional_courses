@@ -5,12 +5,7 @@ const THOUSAND = 1000,
   week = 7,
   MSPERDAY = THOUSAND * SECONDSINMINUTE * SECONDSINMINUTE * HOURSPERDAY;
 
-// const capitalize = value =>
-//   value
-//     .split(' ')
-//     .map(val => val.charAt(0).toUpperCase() + val.slice(1))
-//     .join(' ');
-
+  
 const getMonth = date => {
   const march = 2,
     april = 3,
@@ -144,8 +139,13 @@ const isValidPassword = str => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/.te
 const addThousandsSeparators = value => String(value).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
 
 const getAllUrlsFromText = str => {
-  const regExp = /([^\s.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
-  const arr = [];
-  arr.push(str.match(regExp));
-  return arr;
+  if(!str) {
+    return '(error)'
+  } else {
+    const regExp = /([^\s.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi;
+    const arr = [];
+    arr.push(str.match(regExp));
+    return arr;
+  }
+ 
 };
