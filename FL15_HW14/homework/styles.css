@@ -94,3 +94,6 @@ ul {
   align-items: center;
   cursor: pointer;
 }
+.tableBody:hover {
+  background-color: rgb(187, 187, 187);
+}

@@ -10,12 +10,12 @@ const getLanguages = externalService.getLanguagesList();
 
 const tableHeaderMarckup = `<ul class="tableHeader">
 <li class="item tableHeader__item listener"><span>Country name</span>
-<span class='sortNameBtn sortBtn sortUp'>&#8595;</span></li>
+<span class='sortNameBtn sortBtn sortUp'>&#8597;</span></li>
 <li class="item tableHeader__item">Capital</li>
 <li class="item tableHeader__item">World region</li>
 <li class="item tableHeader__item">Languages</li>
 <li class="item tableHeader__item listener"><span>Area</span>
-<span class='sortAreaBtn sortBtn sortUp'>&#8595;</span></li>
+<span class='sortAreaBtn sortBtn sortUp'>&#8597;</span></li>
 <li class="item tableHeader__item">Flag</li>
 </ul>`;
 
@@ -163,9 +163,11 @@ function selecttHandler(e) {
     );
     const areaList = document.querySelectorAll('.tableBody');
     areaSortBtn.addEventListener('click', () => {
+      nameSortBtn.innerHTML = `<span class='sortNameBtn sortBtn sortUp'>&#8597;</span>`;
       sortArea(areaList, tableWrapper, areaSortBtn);
     });
     nameSortBtn.addEventListener('click', () => {
+      areaSortBtn.innerHTML = `<span class='sortNameBtn sortBtn sortUp'>&#8597;</span>`;
       sortName(areaList, tableWrapper, nameSortBtn);
     });
   } else {
@@ -175,9 +177,11 @@ function selecttHandler(e) {
     );
     const areaList = document.querySelectorAll('.tableBody');
     areaSortBtn.addEventListener('click', () => {
+      nameSortBtn.innerHTML = `<span class='sortNameBtn sortBtn sortUp'>&#8597;</span>`;
       sortArea(areaList, tableWrapper, areaSortBtn);
     });
     nameSortBtn.addEventListener('click', () => {
+      areaSortBtn.innerHTML = `<span class='sortNameBtn sortBtn sortUp'>&#8597;</span>`;
       sortName(areaList, tableWrapper, nameSortBtn);
     });
   }
