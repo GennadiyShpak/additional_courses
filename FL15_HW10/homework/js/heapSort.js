@@ -44,12 +44,15 @@ function swap(arr, i, j){
     let temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
+    console.log('temp', JSON.stringify(temp));
+    console.log('arr[i]', JSON.stringify(arr[i]));
+console.log('arr[j]', JSON.stringify(arr[j]));
 }
 
 
-console.log(heapSort([7,5,2,4,3,9])); //[2, 3, 4, 5, 7, 9]
-console.log(heapSort([9,7,5,4,3,1])); //[1, 3, 4, 5, 7, 9]
-console.log(heapSort([1,2,3,4,5,6])); //[1, 2, 3, 4, 5, 6]
+console.log(heapSort([7,5,2,4,3,9,12,9,65,1])); //[2, 3, 4, 5, 7, 9]
+// console.log(heapSort([9,7,5,4,3,1])); //[1, 3, 4, 5, 7, 9]
+// console.log(heapSort([1,2,3,4,5,6])); //[1, 2, 3, 4, 5, 6]
 
 // function heapSort(inputArray) {
 //     //     if (inputArray.length < 2) {
