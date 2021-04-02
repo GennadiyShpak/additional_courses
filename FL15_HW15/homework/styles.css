@@ -1,0 +1,32 @@
+body {
+  width: 1240px;
+  margin: 0 auto;
+}
+/* START: Task 1 Styles */
+.table-cell {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  border: 1px solid black;
+}
+table {
+  margin: 0 auto;
+}
+.first-click {
+  background-color: yellow;
+}
+.blue-bg {
+  background-color: blue;
+}
+.green-bg {
+  background-color: green;
+}
+/* END: Task 1 Styles */
+
+/* START: Task 2 Styles */
+
+/* END: Task 2 Styles */
+
+/* START: Task 3 Styles */
+
+/* END: Task 3 Styles */
