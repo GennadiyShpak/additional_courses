@@ -68,5 +68,42 @@ table {
 /* END: Task 2 Styles */
 
 /* START: Task 3 Styles */
-
+/* .cort_wrapper {
+} */
+.basketball-cort {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 330px;
+  background-image: url(./assets/court.png);
+  background-size: cover;
+}
+.ball__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -45%);
+}
+.basket {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 158px;
+}
+.left_basket {
+  left: 36px;
+}
+.right_basket {
+  right: 22px;
+}
+.score__wrapper {
+  margin: 0 auto;
+  width: 590px;
+  display: flex;
+  justify-content: space-between;
+}
+.display {
+  width: 100px;
+  height: 20px;
+}
 /* END: Task 3 Styles */

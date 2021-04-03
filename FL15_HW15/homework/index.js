@@ -3,14 +3,14 @@ const tableRefs = {
   table: document.getElementById('table'),
   special: document.getElementById('special'),
   row: document.querySelectorAll('.first-cell'),
-  cell: document.querySelectorAll('td'),
+  cell: document.querySelectorAll('td')
 };
+
+const { table, special, row, cell } = tableRefs;
+
 const changeCellColor = e => {
   const { target } = e;
-  if (
-    target.classList.contains('first-cell') ||
-    target.classList.contains('special')
-  ) {
+  if (target.classList.contains('first-cell')) {
     return;
   }
   if (target.classList.contains('blue-bg')) {
@@ -41,7 +41,7 @@ const changeRowColor = e => {
 };
 
 const specialSellHandler = () => {
-  tableRefs.cell.forEach(item => {
+  cell.forEach(item => {
     if (
       item.classList.contains('first-click') ||
       item.classList.contains('blue-bg')
@@ -52,16 +52,16 @@ const specialSellHandler = () => {
   });
 };
 
-tableRefs.table.addEventListener('click', changeCellColor);
-tableRefs.row.forEach(item => item.addEventListener('click', changeRowColor));
-tableRefs.special.addEventListener('click', specialSellHandler);
+table.addEventListener('click', changeCellColor);
+row.forEach(item => item.addEventListener('click', changeRowColor));
+special.addEventListener('click', specialSellHandler);
 /* END TASK 1 */
 
 /* START TASK 2: Your code goes here */
 const formRefs = {
   screen: document.getElementById('screen'),
   phoneInput: document.getElementById('phone-input'),
-  submitBtn: document.getElementById('submitBtn'),
+  submitBtn: document.getElementById('submitBtn')
 };
 
 formRefs.phoneInput.value = '+380';
@@ -104,5 +104,67 @@ formRefs.submitBtn.addEventListener('click', submitBtnHandler);
 /* END TASK 2 */
 
 /* START TASK 3: Your code goes here */
+const basketRefs = {
+  cort: document.querySelector('.basketball-cort'),
+  ball: document.querySelector('.ball__wrapper'),
+  scoreA: document.querySelector('.score-a'),
+  scoreB: document.querySelector('.score-b'),
+  display: document.querySelector('.display')
+};
+const { cort, ball, scoreA, scoreB, display } = basketRefs;
+const threeSeconds = 3000;
+
+let counterA = 0;
+let counterB = 0;
+
+const ballMoveHandler = e => {
+  const { target } = e;
+  const { style } = ball;
+  if (target.classList.contains('left_basket')) {
+    counterA += 1;
+    scoreA.textContent = counterA;
+    scoreHandler('Team A', 'red');
+    style.left = '300px';
+    style.top = '165px';
+    return;
+  }
+  if (target.classList.contains('right_basket')) {
+    counterB += 1;
+    scoreB.textContent = counterB;
+    scoreHandler('Team B', 'blue');
+    style.left = '300px';
+    style.top = '165px';
+    return;
+  } else {
+    style.left = `${e.offsetX}px`;
+    style.top = `${e.offsetY}px`;
+    console.log('x', e.offsetX);
+    console.log('y', e.offsetY);
+  }
+};
+
+function removeScore() {
+  display.style.color = 'white';
+}
+
+function scoreHandler(t, c) {
+  const event = new CustomEvent('changeScore', {
+    detail: { team: t, color: c }
+  });
+  display.dispatchEvent(event);
+}
+
+cort.addEventListener('mouseenter', () => {
+  cort.addEventListener('click', ballMoveHandler);
+});
+cort.addEventListener('mouseleave', () => {
+  cort.removeEventListener('click', ballMoveHandler);
+});
+display.addEventListener('changeScore', function (e) {
+  const { team, color } = e.detail;
+  display.textContent = `${team} score`;
+  display.style.color = `${color}`;
+  setTimeout(removeScore, threeSeconds);
+});
 
 /* END TASK 3 */
