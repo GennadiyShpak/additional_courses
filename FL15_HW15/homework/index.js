@@ -1,5 +1,5 @@
 /* START TASK 1: Your code goes here */
-const refs = {
+const tableRefs = {
   table: document.getElementById('table'),
   special: document.getElementById('special'),
   row: document.querySelectorAll('.first-cell'),
@@ -7,7 +7,10 @@ const refs = {
 };
 const changeCellColor = e => {
   const { target } = e;
-  if (target.classList.contains('first-cell')) {
+  if (
+    target.classList.contains('first-cell') ||
+    target.classList.contains('special')
+  ) {
     return;
   }
   if (target.classList.contains('blue-bg')) {
@@ -38,7 +41,7 @@ const changeRowColor = e => {
 };
 
 const specialSellHandler = () => {
-  refs.cell.forEach(item => {
+  tableRefs.cell.forEach(item => {
     if (
       item.classList.contains('first-click') ||
       item.classList.contains('blue-bg')
@@ -49,12 +52,54 @@ const specialSellHandler = () => {
   });
 };
 
-refs.table.addEventListener('click', changeCellColor);
-refs.row.forEach(item => item.addEventListener('click', changeRowColor));
-refs.special.addEventListener('click', specialSellHandler);
+tableRefs.table.addEventListener('click', changeCellColor);
+tableRefs.row.forEach(item => item.addEventListener('click', changeRowColor));
+tableRefs.special.addEventListener('click', specialSellHandler);
 /* END TASK 1 */
 
 /* START TASK 2: Your code goes here */
+const formRefs = {
+  screen: document.getElementById('screen'),
+  phoneInput: document.getElementById('phone-input'),
+  submitBtn: document.getElementById('submitBtn'),
+};
+
+formRefs.phoneInput.value = '+380';
+
+const getInvalidHandler = () => {
+  formRefs.submitBtn.disabled = true;
+  formRefs.screen.classList.add('invalid');
+  formRefs.screen.textContent =
+    'Type number does not follow format +380*********';
+};
+
+const onInputChangeHandler = e => {
+  const { target } = e;
+  const regExp = /^[+380]\d{12}$/;
+  if (regExp.test(target.value)) {
+    formRefs.submitBtn.disabled = false;
+    formRefs.screen.classList.remove('invalid');
+    formRefs.screen.classList.add('agree');
+    formRefs.screen.textContent = '';
+    return;
+  }
+  if (formRefs.screen.classList.contains('agree')) {
+    formRefs.screen.classList.remove('agree');
+    getInvalidHandler();
+    return;
+  } else {
+    getInvalidHandler();
+    return;
+  }
+};
+
+const submitBtnHandler = () => {
+  formRefs.screen.classList.remove('agree');
+  formRefs.screen.classList.add('valid');
+  formRefs.screen.textContent = 'Data was succsessfully sent';
+};
+formRefs.phoneInput.addEventListener('input', onInputChangeHandler);
+formRefs.submitBtn.addEventListener('click', submitBtnHandler);
 
 /* END TASK 2 */
 

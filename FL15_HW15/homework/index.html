@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <div id="task1">
+    <div id="task1" class="task__wrapper">
       <table>
         <tbody id="table">
           <tr>
@@ -23,14 +23,27 @@
           <tr>
             <td class="table-cell first-cell">Cell</td>
             <td class="table-cell">Cell</td>
-            <td id="special" class="table-cell">Special Cell</td>
+            <td id="special" class="table-cell special">Special Cell</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div id="task2">
-      <!-- TEMPLATE FOR TASK 2 GOES HERE -->
+    <div id="task2" class="task__wrapper">
+      <div id="screen" class="screen">
+        Type phone number in format +380*********
+      </div>
+      <form class="tel-form">
+        <input
+          id="phone-input"
+          type="tel"
+          class="phone-input"
+          placeholder="Type phone number in format +380*********"
+        />
+        <button id="submitBtn" class="tel-btn" type="button" disabled>
+          Submit
+        </button>
+      </form>
     </div>
 
     <div id="task3">
