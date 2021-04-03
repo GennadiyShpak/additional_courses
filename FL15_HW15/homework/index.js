@@ -138,8 +138,6 @@ const ballMoveHandler = e => {
   } else {
     style.left = `${e.offsetX}px`;
     style.top = `${e.offsetY}px`;
-    console.log('x', e.offsetX);
-    console.log('y', e.offsetY);
   }
 };
 
