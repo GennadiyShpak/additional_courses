@@ -35,3 +35,14 @@ body {
 .btn {
   padding: 5px 10px;
 }
+.twitArea {
+  width: 300px;
+  height: 150px;
+}
+.tweet__wrapper:hover {
+  cursor: pointer;
+  background-color: rgb(223, 223, 223);
+}
+.tweet__wrapper {
+  padding: 5px;
+}
