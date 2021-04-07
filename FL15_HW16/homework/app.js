@@ -1,7 +1,7 @@
 const root = document.getElementById('root');
 
 const maxTweetLength = 140,
-  timeOutTime = 3000,
+  timeOutTime = 2000,
   editHashString = 7;
 
 const refs = {
@@ -12,7 +12,8 @@ const refs = {
   saveChangesInInput: document.getElementById('saveModifiedItem'),
   tweettsList: document.getElementById('list'),
   alertMessage: document.getElementById('alertMessage'),
-  alertMessageText: document.getElementById('alertMessageText')
+  alertMessageText: document.getElementById('alertMessageText'),
+  title: document.getElementById('modifyItemHeader')
 };
 
 const {
@@ -23,7 +24,8 @@ const {
   saveChangesInInput,
   tweettsList,
   alertMessage,
-  alertMessageText
+  alertMessageText,
+  title
 } = refs;
 
 class Twetter {
@@ -147,6 +149,7 @@ function marckup(obj) {
 const renameLikeButton = btn => {
   myTwitter.changeLikeBtn(btn.dataset.id);
   if (myTwitter.haveLike(btn.dataset.id)) {
+    notValidTweettError(`Hooray! You liked tweet with id ${btn.dataset.id}!`);
     btn.textContent = 'dislike';
     return;
   }
