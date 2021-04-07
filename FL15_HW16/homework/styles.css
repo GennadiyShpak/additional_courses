@@ -46,3 +46,6 @@ body {
 .tweet__wrapper {
   padding: 5px;
 }
+.textContent {
+  width: 80%;
+}

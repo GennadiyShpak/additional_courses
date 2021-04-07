@@ -106,7 +106,7 @@ twitArea.classList.add('twitArea');
 tweettsList.classList.add('tweettList');
 const myTwitter = new Twetter();
 const lSHandler = JSON.parse(localStorage.getItem('myTwetter'));
-if (lSHandler.length > 0) {
+if (lSHandler && lSHandler.length > 0) {
   myTwitter.messages = lSHandler;
   marckupHandler(lSHandler);
   addBtnEventListener();
