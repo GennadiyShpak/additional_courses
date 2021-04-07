@@ -2,7 +2,9 @@ const root = document.getElementById('root');
 
 const maxTweetLength = 140,
   timeOutTime = 2000,
-  editHashString = 7;
+  editHashString = 7,
+  idGeneratorMaxValue = 1679615,
+  radix = 36;
 
 const refs = {
   addMenu: document.getElementById('modifyItem'),
@@ -31,16 +33,19 @@ const {
 class Twetter {
   constructor() {
     this.allMessage = [];
-    this.counter = 0;
   }
   createTweet(text) {
     this.counter += 1;
     const tweet = {
       text,
-      id: this.counter,
+      id: this.getRandomID(0, idGeneratorMaxValue),
       like: false
     };
     this.allMessage.push(tweet);
+  }
+  getRandomID(min, max) {
+    let int = Math.floor(Math.random() * (max - min + 1)) + min;
+    return int.toString(radix);
   }
 
   get messages() {
@@ -51,7 +56,7 @@ class Twetter {
   }
   changeLikeBtn(id) {
     this.allMessage.forEach(tweet => {
-      if (tweet.id === Number(id)) {
+      if (tweet.id.toString() === id) {
         tweet.like = !tweet.like;
       }
       return;
@@ -70,7 +75,7 @@ class Twetter {
   haveLike(id) {
     let result;
     this.allMessage.forEach(tweet => {
-      if (tweet.id === Number(id)) {
+      if (tweet.id.toString() === id) {
         result = tweet.like;
       }
     });
@@ -78,7 +83,7 @@ class Twetter {
   }
   removeTweet(id) {
     const newMessageArr = this.allMessage.filter(tweet => {
-      return tweet.id !== Number(id);
+      return tweet.id.toString() !== id;
     });
     this.allMessage = [...newMessageArr];
     return;
@@ -87,7 +92,7 @@ class Twetter {
   getTweet(id) {
     let handleTweet;
     this.allMessage.forEach(tweet => {
-      if (tweet.id === Number(id)) {
+      if (tweet.id.toString() === id) {
         handleTweet = tweet;
       }
     });
@@ -95,7 +100,7 @@ class Twetter {
   }
   editTweet(id, text) {
     this.allMessage.forEach(item => {
-      if (Number(id) === item.id) {
+      if (id === item.id.toString()) {
         item.text = text;
       }
     });
@@ -109,7 +114,6 @@ const lSHandler = JSON.parse(localStorage.getItem('myTwetter'));
 if (lSHandler && lSHandler.length > 0) {
   myTwitter.messages = lSHandler;
   marckupHandler(lSHandler);
-  addBtnEventListener();
 }
 
 const notValidTweettError = text => {
@@ -121,7 +125,7 @@ const notValidTweettError = text => {
 };
 
 const addBtnHandler = () => {
-  // mainPaige.classList.add('hidden');
+  mainPaige.classList.add('hidden');
   addMenu.classList.remove('hidden');
   addMenu.classList.add('addMenuStyle');
   location.hash = '#/add';
@@ -161,28 +165,17 @@ const editTweet = (e, el) => {
     location.hash = `#/edit/${el.id}`;
     const editingTweet = myTwitter.getTweet(el.id);
     twitArea.value = editingTweet.text;
+    mainPaige.classList.add('hidden');
+    addMenu.classList.remove('hidden');
+    title.textContent = 'Edit tweet';
   }
 };
 
 const deleteBtn = btn => {
   myTwitter.removeTweet(btn.dataset.id);
   tweettsList.innerHTML = '';
-  myTwitter.allMessage.forEach(tweet => {
-    tweettsList.insertAdjacentHTML('beforeend', marckup(tweet));
-  });
+  marckupHandler(myTwitter.allMessage);
   localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
-  const likeBtns = document.querySelectorAll('.likeBtn');
-  const removeBtns = document.querySelectorAll('.removeBtn');
-  [...likeBtns].forEach(btn =>
-    btn.addEventListener('click', () => {
-      renameLikeButton(btn);
-    })
-  );
-  [...removeBtns].forEach(btn => {
-    btn.addEventListener('click', () => {
-      deleteBtn(btn);
-    });
-  });
 };
 
 const createTweetHandler = text => {
@@ -229,28 +222,9 @@ function marckupHandler(arr) {
   arr.forEach(tweet => {
     tweettsList.insertAdjacentHTML('beforeend', marckup(tweet));
   });
-}
-
-const saveChangesHandler = () => {
-  const createHash = /^[#/add]+$/;
-  if (createHash.test(location.hash)) {
-    createTweetHandler(twitArea.value);
-    return;
-  }
-  const editHash = location.hash.slice(editHashString);
-  myTwitter.editTweet(editHash, twitArea.value);
-  marckupHandler(myTwitter.allMessage);
-  addBtnEventListener();
-  localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
-};
-
-addBtn.addEventListener('click', addBtnHandler);
-saveChangesInInput.addEventListener('click', saveChangesHandler);
-
-function addBtnEventListener() {
   const likeBtns = document.querySelectorAll('.likeBtn');
   const removeBtns = document.querySelectorAll('.removeBtn');
-  const tweetItem = document.querySelectorAll('.textContent');
+  const tweetItem = document.querySelectorAll('.tweet__wrapper');
   [...likeBtns].forEach(btn =>
     btn.addEventListener('click', () => {
       renameLikeButton(btn);
@@ -263,8 +237,49 @@ function addBtnEventListener() {
   });
   [...tweetItem].forEach(tweet =>
     tweet.addEventListener('click', e => {
-      addBtnHandler(e);
       editTweet(e, tweet);
     })
   );
+  twitArea.value = '';
 }
+
+const saveChangesHandler = () => {
+  const createHash = /^[#/add]+$/;
+  mainPaige.classList.remove('hidden');
+  addMenu.classList.add('hidden');
+  localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
+  if (createHash.test(location.hash)) {
+    createTweetHandler(twitArea.value);
+    return;
+  } else {
+    const editHash = location.hash.slice(editHashString);
+    myTwitter.editTweet(editHash, twitArea.value);
+    marckupHandler(myTwitter.allMessage);
+    return;
+  }
+};
+
+addBtn.addEventListener('click', addBtnHandler);
+saveChangesInInput.addEventListener('click', saveChangesHandler);
+
+// function addBtnEventListener() {
+//   const likeBtns = document.querySelectorAll('.likeBtn');
+//   const removeBtns = document.querySelectorAll('.removeBtn');
+//   const tweetItem = document.querySelectorAll('.textContent');
+//   [...likeBtns].forEach(btn =>
+//     btn.addEventListener('click', () => {
+//       renameLikeButton(btn);
+//     })
+//   );
+//   [...removeBtns].forEach(btn => {
+//     btn.addEventListener('click', () => {
+//       deleteBtn(btn);
+//     });
+//   });
+//   [...tweetItem].forEach(tweet =>
+//     tweet.addEventListener('click', e => {
+//       addBtnHandler(e);
+//       editTweet(e, tweet);
+//     })
+//   );
+// }
