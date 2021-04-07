@@ -44,7 +44,9 @@ class Twetter {
   get messages() {
     return this.allMessage;
   }
-
+  set messages(newMessages) {
+    this.allMessage = newMessages;
+  }
   changeLikeBtn(id) {
     this.allMessage.forEach(tweet => {
       if (tweet.id === Number(id)) {
@@ -89,14 +91,6 @@ class Twetter {
     });
     return handleTweet;
   }
-
-  // editTweet(tweet) {
-  //   this.allMessage.forEach(item => {
-  //     if (tweet.id === item.id) {
-  //       item.text = tweet.text;
-  //     }
-  //   });
-  // }
   editTweet(id, text) {
     this.allMessage.forEach(item => {
       if (Number(id) === item.id) {
@@ -109,6 +103,12 @@ class Twetter {
 twitArea.classList.add('twitArea');
 tweettsList.classList.add('tweettList');
 const myTwitter = new Twetter();
+const lSHandler = JSON.parse(localStorage.getItem('myTwetter'));
+if (lSHandler.length > 0) {
+  myTwitter.messages = lSHandler;
+  marckupHandler(lSHandler);
+  addBtnEventListener();
+}
 
 const notValidTweettError = text => {
   alertMessage.classList.remove('hidden');
@@ -125,7 +125,7 @@ const addBtnHandler = () => {
   location.hash = '#/add';
 };
 
-const marckup = obj => {
+function marckup(obj) {
   const { text, like, id } = obj;
   if (like) {
     return `<li class="tweet__wrapper" id="${id}"><p>${text}</p>
@@ -142,7 +142,7 @@ const marckup = obj => {
     </div>
     `;
   }
-};
+}
 
 const renameLikeButton = btn => {
   myTwitter.changeLikeBtn(btn.dataset.id);
@@ -167,6 +167,7 @@ const deleteBtn = btn => {
   myTwitter.allMessage.forEach(tweet => {
     tweettsList.insertAdjacentHTML('beforeend', marckup(tweet));
   });
+  localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
   const likeBtns = document.querySelectorAll('.likeBtn');
   const removeBtns = document.querySelectorAll('.removeBtn');
   [...likeBtns].forEach(btn =>
@@ -220,12 +221,12 @@ const createTweetHandler = text => {
   }
 };
 
-const marckupHandler = arr => {
+function marckupHandler(arr) {
   tweettsList.innerHTML = '';
   arr.forEach(tweet => {
     tweettsList.insertAdjacentHTML('beforeend', marckup(tweet));
   });
-};
+}
 
 const saveChangesHandler = () => {
   const createHash = /^[#/add]+$/;
@@ -236,7 +237,31 @@ const saveChangesHandler = () => {
   const editHash = location.hash.slice(editHashString);
   myTwitter.editTweet(editHash, twitArea.value);
   marckupHandler(myTwitter.allMessage);
+  addBtnEventListener();
+  localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
 };
 
 addBtn.addEventListener('click', addBtnHandler);
 saveChangesInInput.addEventListener('click', saveChangesHandler);
+
+function addBtnEventListener() {
+  const likeBtns = document.querySelectorAll('.likeBtn');
+  const removeBtns = document.querySelectorAll('.removeBtn');
+  const tweetItem = document.querySelectorAll('.textContent');
+  [...likeBtns].forEach(btn =>
+    btn.addEventListener('click', () => {
+      renameLikeButton(btn);
+    })
+  );
+  [...removeBtns].forEach(btn => {
+    btn.addEventListener('click', () => {
+      deleteBtn(btn);
+    });
+  });
+  [...tweetItem].forEach(tweet =>
+    tweet.addEventListener('click', e => {
+      addBtnHandler(e);
+      editTweet(e, tweet);
+    })
+  );
+}
