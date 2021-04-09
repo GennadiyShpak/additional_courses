@@ -15,7 +15,8 @@ const refs = {
   tweettsList: document.getElementById('list'),
   alertMessage: document.getElementById('alertMessage'),
   alertMessageText: document.getElementById('alertMessageText'),
-  title: document.getElementById('modifyItemHeader')
+  title: document.getElementById('modifyItemHeader'),
+  cancelBnt: document.getElementById('cancelModification')
 };
 
 const {
@@ -27,7 +28,8 @@ const {
   tweettsList,
   alertMessage,
   alertMessageText,
-  title
+  title,
+  cancelBnt
 } = refs;
 
 class Twetter {
@@ -110,12 +112,18 @@ class Twetter {
 twitArea.classList.add('twitArea');
 tweettsList.classList.add('tweettList');
 addMenu.classList.add('addMenuStyle');
+alertMessageText.classList.add('alert-message');
 const myTwitter = new Twetter();
 const lSHandler = JSON.parse(localStorage.getItem('myTwetter'));
 if (lSHandler && lSHandler.length > 0) {
   myTwitter.messages = lSHandler;
   lSHandler.forEach(tweet => marckup(tweet));
 }
+const onCancelCkick = () => {
+  twitArea.value = '';
+  mainPaige.classList.remove('hidden');
+  addMenu.classList.add('hidden');
+};
 
 const notValidTweettError = text => {
   alertMessage.classList.remove('hidden');
@@ -172,6 +180,7 @@ function marckup(obj) {
 const renameLikeButton = btn => {
   myTwitter.changeLikeBtn(btn.dataset.id);
   if (myTwitter.haveLike(btn.dataset.id)) {
+    alertMessageText.classList.add('likeAlert');
     notValidTweettError(`Hooray! You liked tweet with id ${btn.dataset.id}!`);
     btn.textContent = 'dislike';
     return;
@@ -202,10 +211,12 @@ const createTweetHandler = text => {
     return;
   }
   if (myTwitter.isUnique(text)) {
+    alertMessageText.classList.add('warning');
     notValidTweettError("Error! You can't tweet about that");
     return;
   }
   if (twitArea.value.length > maxTweetLength) {
+    alertMessageText.classList.add('warning');
     notValidTweettError('to long tweet');
     return;
   } else {
@@ -236,3 +247,4 @@ const saveChangesHandler = () => {
 
 addBtn.addEventListener('click', addBtnHandler);
 saveChangesInInput.addEventListener('click', saveChangesHandler);
+cancelBnt.addEventListener('click', onCancelCkick);
