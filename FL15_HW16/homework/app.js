@@ -16,7 +16,8 @@ const refs = {
   alertMessage: document.getElementById('alertMessage'),
   alertMessageText: document.getElementById('alertMessageText'),
   title: document.getElementById('modifyItemHeader'),
-  cancelBnt: document.getElementById('cancelModification')
+  cancelBnt: document.getElementById('cancelModification'),
+  mainBtnWrapper: document.getElementById('navigationButtons')
 };
 
 const {
@@ -29,7 +30,8 @@ const {
   alertMessage,
   alertMessageText,
   title,
-  cancelBnt
+  cancelBnt,
+  mainBtnWrapper
 } = refs;
 
 class Twetter {
@@ -48,6 +50,11 @@ class Twetter {
   getRandomID(min, max) {
     let int = Math.floor(Math.random() * (max - min + 1)) + min;
     return int.toString(radix);
+  }
+
+  showLikedTweets() {
+    const likedTweets = this.allMessage.filter(tweet => tweet.like === true);
+    return likedTweets;
   }
 
   get messages() {
@@ -72,6 +79,14 @@ class Twetter {
         result = true;
       }
     });
+    return result;
+  }
+  isliked() {
+    let result = false;
+    const isLiekd = this.allMessage.find(tweet => tweet.like === true);
+    if (isLiekd) {
+      result = true;
+    }
     return result;
   }
   haveLike(id) {
@@ -113,18 +128,24 @@ twitArea.classList.add('twitArea');
 tweettsList.classList.add('tweettList');
 addMenu.classList.add('addMenuStyle');
 alertMessageText.classList.add('alert-message');
+const LikedTweetsBtn = document.createElement('button');
+LikedTweetsBtn.classList.add('hidden');
+LikedTweetsBtn.textContent = 'Show liked tweets';
+mainBtnWrapper.append(LikedTweetsBtn);
 const myTwitter = new Twetter();
 const lSHandler = JSON.parse(localStorage.getItem('myTwetter'));
 if (lSHandler && lSHandler.length > 0) {
   myTwitter.messages = lSHandler;
   lSHandler.forEach(tweet => marckup(tweet));
 }
+if (myTwitter.isliked()) {
+  LikedTweetsBtn.classList.remove('hidden');
+}
 const onCancelCkick = () => {
   twitArea.value = '';
   mainPaige.classList.remove('hidden');
   addMenu.classList.add('hidden');
 };
-
 const notValidTweettError = text => {
   alertMessage.classList.remove('hidden');
   alertMessageText.textContent = `${text}`;
@@ -183,8 +204,12 @@ const renameLikeButton = btn => {
     alertMessageText.classList.add('likeAlert');
     notValidTweettError(`Hooray! You liked tweet with id ${btn.dataset.id}!`);
     btn.textContent = 'dislike';
+    LikedTweetsBtn.classList.remove('hidden');
+    localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
     return;
   }
+  LikedTweetsBtn.classList.add('hidden');
+  localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
   btn.textContent = 'like';
 };
 const editTweet = (e, el) => {
@@ -244,7 +269,12 @@ const saveChangesHandler = () => {
   }
   location.hash = '';
 };
+const onLikedTweetsBtnHandler = () => {
+  const likedTwetsList = myTwitter.showLikedTweets();
+  likedTwetsList.forEach(tweet => marckup(tweet));
+};
 
 addBtn.addEventListener('click', addBtnHandler);
 saveChangesInInput.addEventListener('click', saveChangesHandler);
 cancelBnt.addEventListener('click', onCancelCkick);
+LikedTweetsBtn.addEventListener('click', onLikedTweetsBtnHandler);
