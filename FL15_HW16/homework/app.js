@@ -144,8 +144,8 @@ function marckup(obj) {
   const { text, like, id } = obj;
   const tweetWrapper = document.createElement('li');
   tweetWrapper.classList.add('tweet__wrapper');
-  tweettsList.id = id;
-  tweettsList.addEventListener('click', e => {
+  tweetWrapper.id = id;
+  tweetWrapper.addEventListener('click', e => {
     editTweet(e, obj);
   });
   const tweetValue = document.createElement('span');
