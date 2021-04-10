@@ -212,6 +212,13 @@ const renameLikeButton = btn => {
     localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
     return;
   }
+  if (backBtn.classList.contains('active')) {
+    tweettsList.innerHTML = '';
+    const likedTwetsList = myTwitter.showLikedTweets();
+    likedTwetsList.forEach(tweet => marckup(tweet));
+    localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
+    return;
+  }
   localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
   btn.textContent = 'like';
   if (!myTwitter.isliked()) {
@@ -280,17 +287,21 @@ const onLikedTweetsBtnHandler = () => {
   const likedTwetsList = myTwitter.showLikedTweets();
   likedTwetsList.forEach(tweet => marckup(tweet));
   backBtn.classList.remove('hidden');
+  backBtn.classList.add('active');
   LikedTweetsBtn.classList.add('hidden');
   addBtn.classList.add('hidden');
+  location.hash = '#/liked';
 };
 const onBackBtnHandler = () => {
   tweettsList.innerHTML = '';
   myTwitter.allMessage.forEach(tweet => marckup(tweet));
   backBtn.classList.add('hidden');
   addBtn.classList.remove('hidden');
+  backBtn.classList.remove('active');
   if (myTwitter.isliked()) {
     LikedTweetsBtn.classList.remove('hidden');
   }
+  location.hash = '';
 };
 addBtn.addEventListener('click', addBtnHandler);
 saveChangesInInput.addEventListener('click', saveChangesHandler);
