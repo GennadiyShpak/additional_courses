@@ -279,6 +279,7 @@ const saveChangesHandler = () => {
     twitArea.value = '';
     tweettsList.innerHTML = '';
     myTwitter.allMessage.forEach(tweet => marckup(tweet));
+    localStorage.setItem('myTwetter', JSON.stringify(myTwitter.allMessage));
   }
   location.hash = '';
 };
