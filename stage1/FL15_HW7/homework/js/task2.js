@@ -1,5 +1,7 @@
 const two = 2,
-      three = 3;
+      three = 3,
+      enlargementRatio = 4,
+      startValue = 8;
 
 let maxValue = 8,
     minValue = 0,
@@ -42,16 +44,18 @@ const resumeGameHandler = () => {
     secondPrize *= two;
     thirdPrize *= two;
     numberOfTryes = three;
+    maxValue += enlargementRatio;
     currentNumber = randomNumber(minValue, maxValue);
     casino(messageGenerator())
 }
 
 const casino = (num) => {
-    if (isNaN(num) || num === '') {
-        alert('You entered wrong value, and all your money is taken by the casino');
+    if (isNaN(num)) {
+        alert(`You entered wrong value(only numbers), you win ${totalPrize}`);
+        runGame()
         return;
     }
-    
+
     if (num !== currentNumber) {
     numberOfTryes -= 1;
 
@@ -85,8 +89,7 @@ const startGame = confirm('Do you want to play a game?');
     } 
     numberOfTryes = three;
     totalPrize = 0;
+    maxValue = startValue;
     casino(messageGenerator())
 }
 runGame()
-
-

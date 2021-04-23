@@ -1,5 +1,6 @@
 let deposit =Number(prompt('Enter initial deposit value (initial amount can’t be less than 1000)', 0));
-let durationOfDeposit = Number(prompt('Enter term of deposit number of years can’t be less than 1', 0));
+let durationOfDeposit =Math.round(
+    Number(prompt('Enter term of deposit number of years can’t be less than 1, can be only integers.', 0)));
 let percent = Number(prompt('Enter percent value', 0));
 
 
@@ -29,7 +30,7 @@ const amountCalculator = (deposit, duration,percent) => {
             const roundDepositIncome = Number(depositIncome.toFixed(numberOfDigitsToRound))
             totalProfit = totalProfit + roundDepositIncome;
             balance += roundDepositIncome;
-            result =Number(balance.toFixed(numberOfDigitsToRound))
+            result = Number(balance.toFixed(numberOfDigitsToRound))
          }
         alert(`Initial amount: ${deposit}
     Number of years: ${duration}
