@@ -60,28 +60,52 @@
         </div>
         <div class="row">
           <div class="col-4 header__btn-wrapper">
-            <button class="btn">Explore</button>
+            <button class="btn btn-primary">Explore</button>
             <button class="btn">Learn more</button>
           </div>
         </div>
       </div>
     </header>
     <main>
-      <section class="wrapper">
-        <div class="row section__title-wrapper">
-          <h2 class="section__title about">About us</h2>
+      <section class="wrapper section-about">
+        <div class="row about__title-wrapper justify-content-center">
+          <h2 class="about__title title">About us</h2>
         </div>
-        <div class="row section__description-wrapper">
-          <p class="section__description">
+        <div class="row justify-content-center">
+          <div class="pseudo about__pseudo"></div>
+        </div>
+        <div class="row about__description-wrapper justify-content-center">
+          <p class="about__description">
             This is who we are - or at least who we strive to be…
           </p>
         </div>
         <div class="row">
           <div class="col-3">
-            <div class="row flex-column justify-content-end">
-              <div class="side-folder side-folder__typography"></div>
-              <div class="side-folder side-folder__icon-set"></div>
-              <div class="side-folder side-folder__accurate"></div>
+            <div class="row">
+              <div
+                class="side-folder side-folder__typography d-flex flex-column align-items-center"
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-typography"></use>
+                </svg>
+                <p class="side-folder__description">Typography</p>
+              </div>
+              <div
+                class="side-folder side-folder__icon-set d-flex flex-column align-items-center"
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-iconset"></use>
+                </svg>
+                <p class="side-folder__description">Icon set</p>
+              </div>
+              <div
+                class="side-folder side-folder__accurate d-flex flex-column align-items-center"
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-accurate"></use>
+                </svg>
+                <p class="side-folder__description">Accurate</p>
+              </div>
             </div>
           </div>
           <div class="col-9 video-player__wrapper">

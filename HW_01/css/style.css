@@ -41,7 +41,8 @@ img {
   padding: 0; }
 
 :root {
-  --base-collor: #4d4949; }
+  --base-collor: #4d4949;
+  --secondary-collor: #fff; }
 
 ul {
   list-style: none; }
@@ -107,6 +108,15 @@ body {
   letter-spacing: 0;
   line-height: 25px; }
 
+.btn-primary {
+  background-color: var(--base-collor);
+  color: var(--secondary-collor); }
+
+.btn:hover {
+  border-color: #393737;
+  background-color: #393737;
+  color: var(--secondary-collor); }
+
 .video-player {
   border-radius: 5px; }
   .video-player__wrapper {
@@ -129,12 +139,62 @@ body {
   height: 184px; }
   .side-folder__typography {
     background-color: #bed490;
-    background: linear-gradient(108.56deg, rgba(230, 246, 65, 0.5) 0%, rgba(41, 252, 154, 0.5) 100%); }
+    background: linear-gradient(90deg, rgba(183, 214, 114, 0.5) 0%, rgba(190, 212, 144, 0.5) 100%); }
   .side-folder__icon-set {
     background-color: #b0d1ff;
-    background: linear-gradient(236.77deg, rgba(247, 247, 247, 0.5) 0%, rgba(35, 86, 255, 0.5) 100%); }
+    background: linear-gradient(90deg, rgba(247, 247, 247, 0.5) 0%, rgba(35, 86, 255, 0.5) 100%); }
   .side-folder__accurate {
     background-color: #ffb0b0;
-    background: linear-gradient(236.42deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 9, 9, 0.5) 100%); }
+    background: linear-gradient(240deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 9, 9, 0.5) 100%); }
+
+.side-folder {
+  padding-top: 45px;
+  border-radius: 5px; }
+  .side-folder:not(:last-child) {
+    margin-bottom: 20px; }
+  .side-folder__svg {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 20px; }
+  .side-folder__description {
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 28px; }
+
+.pseudo {
+  height: 8px;
+  border-bottom: 1px solid var(--base-collor);
+  border-right: 1px solid var(--base-collor);
+  border-left: 1px solid var(--base-collor);
+  position: relative;
+  margin-bottom: 22px; }
+
+.about__pseudo {
+  width: 98px; }
+
+.pseudo::after,
+.pseudo::before {
+  content: '';
+  width: 3px;
+  position: absolute;
+  border-top: 1px solid var(--base-collor); }
+
+.pseudo::before {
+  left: -3px; }
+
+.pseudo::after {
+  right: -3px; }
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 39px; }
+
+.section-about {
+  padding-top: 80px; }
+
+.about__description-wrapper {
+  margin-bottom: 62px; }
 
 /*# sourceMappingURL=style.css.map */
