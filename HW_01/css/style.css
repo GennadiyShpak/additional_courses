@@ -166,11 +166,12 @@ body {
   border-bottom: 1px solid var(--base-collor);
   border-right: 1px solid var(--base-collor);
   border-left: 1px solid var(--base-collor);
-  position: relative;
-  margin-bottom: 22px; }
+  position: absolute;
+  margin-bottom: 22px;
+  bottom: -25px; }
 
 .about__pseudo {
-  width: 98px; }
+  width: 94px; }
 
 .pseudo::after,
 .pseudo::before {
@@ -194,7 +195,15 @@ body {
 .section-about {
   padding-top: 80px; }
 
-.about__description-wrapper {
-  margin-bottom: 62px; }
+.about__description {
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: 26px; }
+  .about__description-wrapper {
+    margin-bottom: 44px; }
+
+.about__title-wrapper {
+  position: relative;
+  margin-bottom: 18px; }
 
 /*# sourceMappingURL=style.css.map */
