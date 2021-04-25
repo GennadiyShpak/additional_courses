@@ -277,7 +277,8 @@ body {
 .about__title-wrapper,
 .posts__title-wrapper,
 .portfolio__title-wrapper,
-.testimonials__title-wrapper {
+.testimonials__title-wrapper,
+.contact__title-wrapper {
   position: relative;
   margin-bottom: 18px; }
 
@@ -489,5 +490,30 @@ body {
     line-height: 25px; }
   .testimonials__title-wrapper {
     margin-bottom: 58px; }
+
+.contact {
+  padding-top: 78px;
+  background: linear-gradient(180deg, var(--secondary-collor) 35%, #f8f8f8 35%); }
+  .contact__pseudo {
+    width: 108px; }
+  .contact__description {
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 0; }
+    .contact__description-wrapper {
+      margin-bottom: 82px; }
+
+.social-icons__item {
+  width: 23px;
+  height: 23px; }
+.social-icons__svg {
+  width: auto;
+  height: 23px; }
+.social-icons__item:first-child {
+  margin-right: 19px; }
+.social-icons__item:nth-child(2) {
+  margin-right: 25px; }
 
 /*# sourceMappingURL=style.css.map */
