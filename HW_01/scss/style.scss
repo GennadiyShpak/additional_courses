@@ -348,7 +348,8 @@ body {
 
 .about__title-wrapper,
 .posts__title-wrapper,
-.portfolio__title-wrapper {
+.portfolio__title-wrapper,
+.testimonials__title-wrapper {
   position: relative;
   margin-bottom: 18px;
 }
@@ -431,9 +432,7 @@ body {
 }
 .portfolio {
   padding-top: 33px;
-  &__row {
-    margin-bottom: 40px;
-  }
+  padding-bottom: 59px;
   &__list {
     margin-bottom: 38px;
   }
@@ -525,6 +524,9 @@ body {
 .slider-btn {
   width: 45px;
   height: 45px;
+  &__row {
+    margin-bottom: 40px;
+  }
   &:hover {
     box-shadow: 0 3px 10px 0 #6d6d6d;
   }
@@ -533,5 +535,71 @@ body {
   }
   &__right {
     transform: rotate(270deg);
+  }
+}
+.testimonials {
+  padding-top: 80px;
+  position: relative;
+  background-image: url(../img/Bg-testimonial.png);
+  color: var(--secondary-collor);
+  padding-bottom: 78px;
+  &__pseudo {
+    width: 128px;
+  }
+  &__slider-btn {
+    position: absolute;
+    top: 108px;
+  }
+  &__title {
+    color: var(--base-collor);
+  }
+  &__left-btn {
+    left: -58px;
+  }
+  &__right-btn {
+    right: -58px;
+  }
+  &__quotes {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 22px;
+    position: absolute;
+    top: 41px;
+    left: 35px;
+  }
+  &__img {
+    border-radius: 0 5px 5px 0;
+    box-shadow: 5px -5px 10px 0 rgba(34, 60, 80, 0.2);
+  }
+  &__slogan-container {
+    width: 280px;
+    padding: 0 50px;
+    padding-top: 53px;
+    position: relative;
+    background-color: #494a4d;
+    border-radius: 5px 0 0 5px;
+  }
+  &__name {
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 25px;
+    margin: 0;
+  }
+  &__slogan {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 26px;
+    margin-bottom: 36px;
+  }
+  &__position {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 25px;
+  }
+  &__title-wrapper {
+    margin-bottom: 58px;
   }
 }
