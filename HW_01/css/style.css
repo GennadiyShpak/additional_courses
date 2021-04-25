@@ -232,11 +232,11 @@ body {
   border-right: 1px solid var(--base-collor);
   border-left: 1px solid var(--base-collor);
   position: absolute;
-  margin-bottom: 22px; }
+  margin-bottom: 22px;
+  bottom: -25px; }
 
 .about__pseudo {
-  width: 94px;
-  bottom: -25px; }
+  width: 94px; }
 
 .pseudo::after,
 .pseudo::before {
@@ -263,17 +263,20 @@ body {
   padding-bottom: 20px; }
 
 .about__description,
-.posts__description {
+.posts__description,
+.portfolio__description {
   font-size: 17px;
   letter-spacing: 0;
   line-height: 26px;
   text-align: center; }
   .about__description-wrapper,
-  .posts__description-wrapper {
+  .posts__description-wrapper,
+  .portfolio__description-wrapper {
     margin-bottom: 44px; }
 
 .about__title-wrapper,
-.posts__title-wrapper {
+.posts__title-wrapper,
+.portfolio__title-wrapper {
   position: relative;
   margin-bottom: 18px; }
 
@@ -281,8 +284,7 @@ body {
   margin-left: 0px; }
 
 .posts__pseudo {
-  width: 124px;
-  bottom: -25px; }
+  width: 124px; }
 
 .posts {
   padding-top: 53px;
@@ -341,5 +343,63 @@ body {
 
 .comment-post2::before {
   right: 164px; }
+
+.portfolio {
+  padding-top: 33px; }
+  .portfolio__pseudo {
+    width: 156px; }
+  .portfolio__hover-menu {
+    position: absolute;
+    display: flex;
+    bottom: 1px;
+    right: 1px;
+    opacity: 0;
+    visibility: hidden; }
+  .portfolio__hover-btn {
+    width: 50px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none; }
+  .portfolio__item {
+    width: 360px;
+    position: relative;
+    background-color: transparent; }
+    .portfolio__item-img:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transform: scale(1.01, 1.01); }
+    .portfolio__item:hover .portfolio__hover-menu {
+      opacity: 1;
+      visibility: visible; }
+    .portfolio__item-title {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 26px;
+      text-align: center;
+      margin: 0; }
+    .portfolio__item-description-wrapper {
+      color: var(--secondary-collor);
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .portfolio__item-description {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 25px;
+      text-align: center; }
+
+.slider-btn__svg {
+  width: 17px;
+  height: 17px; }
+
+.icon-attach {
+  border-radius: 5px 0 0 5px; }
+
+.icon-search {
+  border-radius: 0 5px 5px 0; }
 
 /*# sourceMappingURL=style.css.map */
