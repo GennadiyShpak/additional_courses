@@ -81,6 +81,7 @@ img {
   --base-collor: #4d4949;
   --secondary-collor: #fff;
   --additional-color: #818181;
+  --bg-color: #f8f8f8;
 }
 ul {
   list-style: none;
@@ -605,8 +606,13 @@ body {
   }
 }
 .contact {
+  position: relative;
   padding-top: 78px;
-  background: linear-gradient(180deg, var(--secondary-collor) 35%, #f8f8f8 35%);
+  background: linear-gradient(
+    180deg,
+    var(--secondary-collor) 35%,
+    var(--bg-color) 35%
+  );
   &__pseudo {
     width: 108px;
   }
@@ -701,5 +707,79 @@ body {
     letter-spacing: 0;
     line-height: 26px;
     padding-left: 12px;
+  }
+}
+.map__wrapper {
+  position: relative;
+}
+.form {
+  width: 100%;
+  padding: 33px 30px 0;
+  &__description {
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  &__btn {
+    margin-bottom: 38px;
+    &-link {
+      font-weight: bold;
+      color: var(--base-collor);
+    }
+  }
+  &__wrapper {
+    width: 760px;
+    position: absolute;
+    top: -169px;
+    right: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.5);
+  }
+  &-map__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input {
+    width: 320px;
+    height: 45px;
+    &-label {
+      display: block;
+      font-size: 17px;
+      letter-spacing: 0;
+      line-height: 28px;
+      margin-bottom: 5px;
+    }
+    &-wrapper {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.write-us {
+  &__content {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 21px;
+  }
+  &__svg {
+    width: 45px;
+    height: 45px;
+    margin-right: 19px;
+  }
+  &__wrapper {
+    display: flex;
+    background-color: var(--bg-color);
+    padding-left: 20px;
+    padding-top: 9px;
+  }
+  &__description {
+    letter-spacing: 0.5px;
+    line-height: 21px;
+    padding-right: 68px;
+    padding-top: 3px;
+    margin-bottom: 8px;
   }
 }
