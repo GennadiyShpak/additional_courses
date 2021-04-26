@@ -66,7 +66,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="content">
       <section class="wrapper section-about" id="about">
         <div class="row about__title-wrapper justify-content-center">
           <h2 class="about__title title">About us</h2>
@@ -476,15 +476,27 @@
                     <label for="mail" class="form__input-label">Email</label>
                     <input type="email" id="mail" class="form__input" />
                   </div>
-                  <div class="form__input-wrapper">
+                  <div class="form__input-wrapper form__input-pass">
+                    <button class="form__btn-showpass" type="button">
+                      <svg class="form__btn-svg">
+                        <use
+                          href="./img/svg/sprite.svg#icon-a-icon-showpass"
+                        ></use>
+                        <span>show</span>
+                      </svg>
+                    </button>
                     <label for="pass" class="form__input-label">Password</label>
                     <input type="password" id="pass" class="form__input" />
                   </div>
-                  <button class="btn form__btn">Send message</button>
-                  <p class="form__description">
+                  <button class="btn form__btn btn-primary">
+                    Send message
+                  </button>
+                  <p class="form__btn-description">
                     If you need to have a DNA first, just contact us at
                     <span
-                      ><a href="mailto:email@gmail.com" class="form__btn-link"
+                      ><a
+                        href="mailto:email@gmail.com"
+                        class="form__btn-description-link"
                         >email@gmail.com</a
                       ></span
                     >
@@ -497,5 +509,50 @@
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <div class="wrapper row footer__content-wrapper">
+        <div class="footer-icons__wrapper d-flex align-items-center">
+          <ul class="footer-icons__list d-flex footer__icon">
+            <li class="footer-icons__item">
+              <a
+                href="https://www.facebook.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-facebook"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.instagram.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-instagram"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.dribbble.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-dribbble"
+                  ></use></svg
+              ></a>
+            </li>
+          </ul>
+          <p class="footer__link-wrapper">
+            <a href="#" class="footer__link">BlogWorld</a>
+          </p>
+          <p class="footer__copyright">&copy; 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
