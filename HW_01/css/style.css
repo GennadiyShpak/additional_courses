@@ -660,7 +660,8 @@ body {
 .footer {
   padding-top: 19px;
   border-top: 1px solid #ddd;
-  background-color: var(--bg-color); }
+  background-color: var(--bg-color);
+  margin-top: auto; }
   .footer-icons__svg {
     width: 23px;
     height: 23px; }
