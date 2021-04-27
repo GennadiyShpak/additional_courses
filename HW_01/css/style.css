@@ -567,7 +567,7 @@ body {
   font-weight: 600;
   letter-spacing: 0;
   line-height: 39px;
-  margin-bottom: 42px; }
+  margin-bottom: 40px; }
 .next-step__list {
   padding-left: 40px;
   position: relative;
@@ -659,7 +659,7 @@ body {
   margin-bottom: 8px; }
 
 .footer {
-  padding-top: 19px;
+  padding-top: 21px;
   border-top: 1px solid #ddd;
   background-color: var(--bg-color);
   margin-top: auto; }
