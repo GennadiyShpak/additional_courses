@@ -5,6 +5,7 @@
   position: relative;
   &__item {
     border-radius: 5px;
+    margin-bottom: 43px;
   }
   &-header {
     padding-top: 27px;
@@ -151,6 +152,11 @@
       fill: #deee23;
       width: 15px;
       height: 15px;
+    }
+  }
+  &__image {
+    &-wrapper {
+      width: 560px;
     }
   }
 }
