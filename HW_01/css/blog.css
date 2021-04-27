@@ -1,12 +1,14 @@
-.blog-footer {
-  padding-top: 21px;
-  background-color: var(--bg-color);
-  margin-top: auto; }
+:root {
+  --blog-bg-color: #fcf6f6; }
 
 .blog {
   position: relative; }
   .blog-header {
-    padding-top: 26px; }
+    padding-top: 27px; }
+  .blog-footer {
+    padding-top: 21px;
+    background-color: var(--bg-color);
+    margin-top: auto; }
   .blog__nav-menu {
     margin-bottom: 55px; }
   .blog__nav-list {
@@ -15,7 +17,7 @@
     position: relative;
     margin-bottom: 58px; }
   .blog__pseudo {
-    width: 47px; }
+    width: 46px; }
   .blog__input {
     width: 320px;
     padding: 10px 10px;
@@ -23,7 +25,8 @@
     border: 1px solid var(--base-collor); }
     .blog__input-wrapper {
       position: relative;
-      padding-right: 15px; }
+      padding-right: 15px;
+      margin-bottom: 31px; }
     .blog__input::placeholder {
       font-size: 15px;
       letter-spacing: 0;
@@ -42,5 +45,57 @@
         width: 23px;
         height: 23px;
         fill: var(--base-collor); }
+  .blog__content-wrapper {
+    background-color: var(--blog-bg-color);
+    padding: 24px 38px; }
+  .blog__name {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin: 0; }
+    .blog__name-wrapper {
+      position: relative; }
+  .blog__photo {
+    margin-right: 14px; }
+  .blog__article {
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 26px;
+    padding-right: 55px;
+    margin-bottom: 29px; }
+    .blog__article-title {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 26px;
+      margin-bottom: 16px; }
+  .blog__author-wrapper {
+    margin-bottom: 38px; }
+  .blog-data::after {
+    top: 11px;
+    left: 80px; }
+  .blog-time::after {
+    top: 11px;
+    right: 42px; }
+  .blog-comment::before {
+    top: 6px;
+    right: 18px; }
+  .blog__rating-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px; }
+    .blog__rating-btn-list {
+      position: absolute;
+      top: 29px;
+      right: -95px; }
+    .blog__rating-btn-item {
+      margin-right: 2px; }
+  .blog__rating-svg {
+    fill: #deee23;
+    width: 15px;
+    height: 15px; }
 
 /*# sourceMappingURL=blog.css.map */
