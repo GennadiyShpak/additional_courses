@@ -499,7 +499,7 @@ body {
   position: relative;
   padding-top: 78px;
   padding-bottom: 34px;
-  background: linear-gradient(180deg, var(--secondary-collor) 35%, var(--bg-color) 35%); }
+  background: linear-gradient(180deg, var(--secondary-collor) 33%, var(--bg-color) 35%); }
   .contact__pseudo {
     width: 108px; }
   .contact__description {
@@ -583,7 +583,8 @@ body {
 
 .form {
   width: 100%;
-  padding: 33px 30px 0; }
+  padding: 33px 30px 0;
+  background-color: var(--secondary-collor); }
   .form__btn {
     margin-bottom: 38px; }
     .form__btn-svg {
