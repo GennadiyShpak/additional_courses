@@ -1,0 +1,57 @@
+.blog-footer {
+  padding-top: 21px;
+  background-color: var(--bg-color);
+  margin-top: auto;
+}
+.blog {
+  position: relative;
+  &-header {
+    padding-top: 26px;
+  }
+  &__nav-menu {
+    margin-bottom: 55px;
+  }
+  &__nav-list {
+    padding-left: 2px;
+  }
+  &__title {
+    &-wrapper {
+      position: relative;
+      margin-bottom: 58px;
+    }
+  }
+  &__pseudo {
+    width: 47px;
+  }
+  &__input {
+    width: 320px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--base-collor);
+    &-wrapper {
+      position: relative;
+      padding-right: 15px;
+    }
+    &::placeholder {
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 25px;
+      color: var(--base-collor);
+    }
+    &-search-btn {
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 12px;
+      right: 28px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      &-svg {
+        width: 23px;
+        height: 23px;
+        fill: var(--base-collor);
+      }
+    }
+  }
+}

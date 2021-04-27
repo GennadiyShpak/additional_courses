@@ -5,6 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/blog.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="blog-header">
+      <div class="wrapper">
+        <nav
+          class="row justify-content-between blog__nav-menu nav-menu align-items-baseline"
+        >
+          <p class="logo col-2"><a href="#" class="logo__link">BlogWorld</a></p>
+          <div class="col-5">
+            <ul
+              class="nav-menu__list row justify-content-around blog__nav-list"
+            >
+              <li class="nav-menu__item">
+                <a href="index.html" class="nav-menu__link">Home</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#portfolio" class="nav-menu__link">Portfolio</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="blog.html" class="nav-menu__link">Blog</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#" class="nav-menu__link">Pages</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#about" class="nav-menu__link">About</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#contact" class="nav-menu__link">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="blog">
+        <div class="wrapper blog__wrapper">
+          <div class="row blog__title-wrapper justify-content-center">
+            <h2 class="blog__title title">Blog</h2>
+            <div class="pseudo blog__pseudo"></div>
+          </div>
+
+          <div class="row blog__input-wrapper justify-content-end">
+            <input
+              type="text"
+              placeholder="Search by author"
+              class="blog__input"
+            />
+            <button class="blog__input-search-btn">
+              <svg class="blog__input-search-btn-svg">
+                <use href="./img/svg/sprite.svg#icon-a-icon-search-1"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="blog-footer">
+      <div class="wrapper row footer__content-wrapper">
+        <div class="footer-icons__wrapper d-flex align-items-center">
+          <ul class="footer-icons__list d-flex footer__icon">
+            <li class="footer-icons__item">
+              <a
+                href="https://www.facebook.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-facebook"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.instagram.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-instagram"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.dribbble.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-dribbble"
+                  ></use></svg
+              ></a>
+            </li>
+          </ul>
+          <p class="footer__link-wrapper">
+            <a href="#" class="footer__link">BlogWorld</a>
+          </p>
+          <p class="footer__copyright">&copy; 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

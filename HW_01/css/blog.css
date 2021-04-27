@@ -1,0 +1,46 @@
+.blog-footer {
+  padding-top: 21px;
+  background-color: var(--bg-color);
+  margin-top: auto; }
+
+.blog {
+  position: relative; }
+  .blog-header {
+    padding-top: 26px; }
+  .blog__nav-menu {
+    margin-bottom: 55px; }
+  .blog__nav-list {
+    padding-left: 2px; }
+  .blog__title-wrapper {
+    position: relative;
+    margin-bottom: 58px; }
+  .blog__pseudo {
+    width: 47px; }
+  .blog__input {
+    width: 320px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--base-collor); }
+    .blog__input-wrapper {
+      position: relative;
+      padding-right: 15px; }
+    .blog__input::placeholder {
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 25px;
+      color: var(--base-collor); }
+    .blog__input-search-btn {
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 12px;
+      right: 28px;
+      background-color: transparent;
+      border: none;
+      outline: none; }
+      .blog__input-search-btn-svg {
+        width: 23px;
+        height: 23px;
+        fill: var(--base-collor); }
+
+/*# sourceMappingURL=blog.css.map */
