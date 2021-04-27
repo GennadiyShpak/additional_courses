@@ -3,6 +3,8 @@
 
 .blog {
   position: relative; }
+  .blog__item {
+    border-radius: 5px; }
   .blog-header {
     padding-top: 27px; }
   .blog-footer {
@@ -47,7 +49,20 @@
         fill: var(--base-collor); }
   .blog__content-wrapper {
     background-color: var(--blog-bg-color);
-    padding: 24px 38px; }
+    padding: 24px 38px;
+    position: relative; }
+    .blog__content-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -3px;
+      width: 83px;
+      height: 72px;
+      background-image: url(../img/svg/a-icon-playmini.svg);
+      background-repeat: no-repeat;
+      border: 4px solid var(--secondary-collor);
+      border-radius: 5px;
+      background-position: 19px 12px; }
   .blog__name {
     font-size: 17px;
     font-weight: 500;
