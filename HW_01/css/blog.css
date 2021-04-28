@@ -6,6 +6,9 @@
   position: relative;
   padding-top: 39px;
   padding-bottom: 156px; }
+  .blog__active-link {
+    font-weight: bold;
+    border-bottom: 1px solid black; }
   .blog__list {
     padding-bottom: 6px; }
   .blog__video-wrapper {

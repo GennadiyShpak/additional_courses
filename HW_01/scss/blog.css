@@ -3,7 +3,11 @@
   --blog-decor-color: #818181; }
 
 .blog {
-  position: relative; }
+  position: relative;
+  padding-top: 39px;
+  padding-bottom: 156px; }
+  .blog__active-link {
+    font-weight: bold; }
   .blog__list {
     padding-bottom: 6px; }
   .blog__video-wrapper {
@@ -25,13 +29,13 @@
       height: 13px;
       background-image: url(../img/svg/a-icon-comment.svg);
       top: 7px; }
-    .blog__info-comment-sarah::before {
+    .blog__info-comment-melody::before {
       right: 11px; }
     .blog__info-comment-playmini::before {
       right: 17px; }
-    .blog__info-comment-grace::before {
+    .blog__info-comment-picture::before {
       right: 26px; }
-    .blog__info-comment-alex::before {
+    .blog__info-comment-text::before {
       right: 20px; }
     .blog__info:not(:last-child)::after {
       position: absolute;
@@ -41,13 +45,13 @@
       border-radius: 50%;
       top: 12px;
       background-color: var(--additional-color); }
-    .blog__info-time-sarah {
+    .blog__info-time-melody {
       margin-right: 37px; }
-      .blog__info-time-sarah::after {
+      .blog__info-time-melody::after {
         left: 83px; }
-    .blog__info-data-sarah {
+    .blog__info-data-melody {
       margin-right: 20px; }
-      .blog__info-data-sarah::after {
+      .blog__info-data-melody::after {
         left: 85px; }
     .blog__info-time-playmini {
       margin-right: 39px; }
@@ -57,21 +61,21 @@
       margin-right: 20px; }
       .blog__info-data-playmini::after {
         left: 79px; }
-    .blog__info-data-grace {
+    .blog__info-data-picture {
       margin-right: 20px; }
-      .blog__info-data-grace::after {
+      .blog__info-data-picture::after {
         left: 85px; }
-    .blog__info-time-grace {
+    .blog__info-time-picture {
       margin-right: 39px; }
-      .blog__info-time-grace::after {
+      .blog__info-time-picture::after {
         left: 81px; }
-    .blog__info-data-alex {
+    .blog__info-data-text {
       margin-right: 20px; }
-      .blog__info-data-alex::after {
+      .blog__info-data-text::after {
         left: 85px; }
-    .blog__info-time-alex {
+    .blog__info-time-text {
       margin-right: 39px; }
-      .blog__info-time-alex::after {
+      .blog__info-time-text::after {
         left: 81px; }
   .blog__item {
     border-radius: 5px;
@@ -124,7 +128,7 @@
     background-color: var(--blog-bg-color);
     position: relative;
     width: 598px; }
-    .blog__content-wrapper-alex {
+    .blog__content-wrapper-text {
       width: 100%; }
     .blog__content-wrapper-playmini {
       height: 379px;
@@ -133,21 +137,21 @@
         background-image: url(../img/svg/a-icon-playmini.svg);
         top: -3px;
         right: -2px; }
-    .blog__content-wrapper-sarah {
+    .blog__content-wrapper-melody {
       padding: 25px 40px; }
-      .blog__content-wrapper-sarah::before {
+      .blog__content-wrapper-melody::before {
         background-image: url(../img/svg/a-icon-melody.svg);
         top: -3px;
         right: -2px; }
-    .blog__content-wrapper-grace {
+    .blog__content-wrapper-picture {
       padding: 25px 41px; }
-      .blog__content-wrapper-grace::before {
+      .blog__content-wrapper-picture::before {
         background-image: url(../img/svg/a-icon-picture.svg);
         top: -3px;
         right: -4px; }
-    .blog__content-wrapper-alex {
+    .blog__content-wrapper-text {
       padding: 27px 29px; }
-      .blog__content-wrapper-alex::before {
+      .blog__content-wrapper-text::before {
         background-image: url(../img/svg/a-icon-text.svg);
         top: 0px;
         right: -1px; }
@@ -170,7 +174,7 @@
       position: relative; }
   .blog__photo {
     margin-right: 14px; }
-    .blog__photo-alex {
+    .blog__photo-text {
       margin-right: 12px; }
   .blog__article {
     font-size: 17px;
@@ -183,9 +187,9 @@
       font-weight: 500;
       letter-spacing: 0;
       line-height: 26px; }
-      .blog__article-title-playmini, .blog__article-title-grace {
+      .blog__article-title-playmini, .blog__article-title-picture {
         margin-bottom: 16px; }
-      .blog__article-title-sarah {
+      .blog__article-title-melody {
         margin-bottom: 19px; }
   .blog__author-wrapper {
     margin-bottom: 38px; }

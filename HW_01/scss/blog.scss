@@ -6,6 +6,10 @@
   position: relative;
   padding-top: 39px;
   padding-bottom: 156px;
+  &__active-link {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+  }
   &__list {
     padding-bottom: 6px;
   }
