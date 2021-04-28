@@ -4,6 +4,9 @@
 }
 .blog {
   position: relative;
+  &__list {
+    padding-bottom: 6px;
+  }
   &__video {
     &-wrapper {
       height: 379px;
@@ -39,6 +42,9 @@
       }
       &-grace::before {
         right: 26px;
+      }
+      &-alex::before {
+        right: 20px;
       }
     }
     &:not(:last-child)::after {
@@ -81,6 +87,18 @@
       }
     }
     &-time-grace {
+      margin-right: 39px;
+      &::after {
+        left: 81px;
+      }
+    }
+    &-data-alex {
+      margin-right: 20px;
+      &::after {
+        left: 85px;
+      }
+    }
+    &-time-alex {
       margin-right: 39px;
       &::after {
         left: 81px;
@@ -154,6 +172,9 @@
       background-color: var(--blog-bg-color);
       position: relative;
       width: 598px;
+      &-alex {
+        width: 100%;
+      }
       &-neil {
         height: 379px;
         padding: 24px 38px;
@@ -177,6 +198,14 @@
           background-image: url(../img/svg/a-icon-picture.svg);
           top: -3px;
           right: -4px;
+        }
+      }
+      &-alex {
+        padding: 27px 29px;
+        &::before {
+          background-image: url(../img/svg/a-icon-text.svg);
+          top: 0px;
+          right: -1px;
         }
       }
       &::before {
@@ -203,6 +232,9 @@
   }
   &__photo {
     margin-right: 14px;
+    &-alex {
+      margin-right: 12px;
+    }
   }
   &__article {
     font-size: 17px;

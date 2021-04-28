@@ -148,6 +148,9 @@ body {
     font-size: 15px;
     letter-spacing: 0.1px;
     line-height: 25px;
+    &:hover .nav-menu__link {
+      color: red !important;
+    }
   }
 }
 .btn {
