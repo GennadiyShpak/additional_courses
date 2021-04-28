@@ -598,8 +598,7 @@ body {
       top: 2px;
       right: -3px; }
       .form__btn-showpass span {
-        color: var(--base-collor);
-        margin-left: 4px; }
+        color: var(--base-collor); }
     .form__btn-description {
       font-size: 17px;
       letter-spacing: 0;
