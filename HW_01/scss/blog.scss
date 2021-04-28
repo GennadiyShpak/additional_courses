@@ -4,6 +4,18 @@
 }
 .blog {
   position: relative;
+  &__video {
+    &-wrapper {
+      height: 379px;
+    }
+  }
+  &__audio {
+    &-player {
+      width: 202px;
+      height: 42px;
+      border-radius: 20px;
+    }
+  }
   &__info {
     position: relative;
     font-size: 15px;
@@ -63,7 +75,10 @@
   }
   &__item {
     border-radius: 5px;
-    margin-bottom: 43px;
+    margin-bottom: 50px;
+    &:hover {
+      box-shadow: 0 75px 30px -80px gray;
+    }
   }
   &-header {
     padding-top: 27px;
@@ -123,10 +138,10 @@
   &__content {
     &-wrapper {
       background-color: var(--blog-bg-color);
-      padding: 24px 38px;
       position: relative;
       width: 598px;
       &-neil {
+        height: 379px;
         padding: 24px 38px;
         &::before {
           background-image: url(../img/svg/a-icon-playmini.svg);
@@ -176,7 +191,12 @@
       font-weight: 500;
       letter-spacing: 0;
       line-height: 26px;
-      margin-bottom: 16px;
+      &-neil {
+        margin-bottom: 16px;
+      }
+      &-sarah {
+        margin-bottom: 19px;
+      }
     }
   }
   &__author {
@@ -230,6 +250,3 @@
     }
   }
 }
-// &:hover {
-//   box-shadow: 0 75px 30px -80px gray;
-// }

@@ -4,6 +4,12 @@
 
 .blog {
   position: relative; }
+  .blog__video-wrapper {
+    height: 379px; }
+  .blog__audio-player {
+    width: 202px;
+    height: 42px;
+    border-radius: 20px; }
   .blog__info {
     position: relative;
     font-size: 15px;
@@ -47,7 +53,9 @@
       background-color: var(--additional-color); }
   .blog__item {
     border-radius: 5px;
-    margin-bottom: 43px; }
+    margin-bottom: 50px; }
+    .blog__item:hover {
+      box-shadow: 0 75px 30px -80px gray; }
   .blog-header {
     padding-top: 27px; }
   .blog-footer {
@@ -92,10 +100,10 @@
         fill: var(--base-collor); }
   .blog__content-wrapper {
     background-color: var(--blog-bg-color);
-    padding: 24px 38px;
     position: relative;
     width: 598px; }
     .blog__content-wrapper-neil {
+      height: 379px;
       padding: 24px 38px; }
       .blog__content-wrapper-neil::before {
         background-image: url(../img/svg/a-icon-playmini.svg); }
@@ -134,8 +142,11 @@
       font-size: 20px;
       font-weight: 500;
       letter-spacing: 0;
-      line-height: 26px;
-      margin-bottom: 16px; }
+      line-height: 26px; }
+      .blog__article-title-neil {
+        margin-bottom: 16px; }
+      .blog__article-title-sarah {
+        margin-bottom: 19px; }
   .blog__author-wrapper {
     margin-bottom: 38px; }
   .blog-data::after {
