@@ -34,16 +34,16 @@
         background-image: url(../img/svg/a-icon-comment.svg);
         top: 7px;
       }
-      &-sarah::before {
+      &-melody::before {
         right: 11px;
       }
-      &-neil::before {
+      &-playmini::before {
         right: 17px;
       }
-      &-grace::before {
+      &-picture::before {
         right: 26px;
       }
-      &-alex::before {
+      &-text::before {
         right: 20px;
       }
     }
@@ -56,49 +56,49 @@
       top: 12px;
       background-color: var(--additional-color);
     }
-    &-time-sarah {
+    &-time-melody {
       margin-right: 37px;
       &::after {
         left: 83px;
       }
     }
-    &-data-sarah {
+    &-data-melody {
       margin-right: 20px;
       &::after {
         left: 85px;
       }
     }
-    &-time-neil {
+    &-time-playmini {
       margin-right: 39px;
       &::after {
         left: 77px;
       }
     }
-    &-data-neil {
+    &-data-playmini {
       margin-right: 20px;
       &::after {
         left: 79px;
       }
     }
-    &-data-grace {
+    &-data-picture {
       margin-right: 20px;
       &::after {
         left: 85px;
       }
     }
-    &-time-grace {
+    &-time-picture {
       margin-right: 39px;
       &::after {
         left: 81px;
       }
     }
-    &-data-alex {
+    &-data-text {
       margin-right: 20px;
       &::after {
         left: 85px;
       }
     }
-    &-time-alex {
+    &-time-text {
       margin-right: 39px;
       &::after {
         left: 81px;
@@ -172,10 +172,10 @@
       background-color: var(--blog-bg-color);
       position: relative;
       width: 598px;
-      &-alex {
+      &-text {
         width: 100%;
       }
-      &-neil {
+      &-playmini {
         height: 379px;
         padding: 24px 38px;
         &::before {
@@ -184,7 +184,7 @@
           right: -2px;
         }
       }
-      &-sarah {
+      &-melody {
         padding: 25px 40px;
         &::before {
           background-image: url(../img/svg/a-icon-melody.svg);
@@ -192,7 +192,7 @@
           right: -2px;
         }
       }
-      &-grace {
+      &-picture {
         padding: 25px 41px;
         &::before {
           background-image: url(../img/svg/a-icon-picture.svg);
@@ -200,7 +200,7 @@
           right: -4px;
         }
       }
-      &-alex {
+      &-text {
         padding: 27px 29px;
         &::before {
           background-image: url(../img/svg/a-icon-text.svg);
@@ -232,7 +232,7 @@
   }
   &__photo {
     margin-right: 14px;
-    &-alex {
+    &-text {
       margin-right: 12px;
     }
   }
@@ -247,11 +247,11 @@
       font-weight: 500;
       letter-spacing: 0;
       line-height: 26px;
-      &-neil,
-      &-grace {
+      &-playmini,
+      &-picture {
         margin-bottom: 16px;
       }
-      &-sarah {
+      &-melody {
         margin-bottom: 19px;
       }
     }

@@ -19,7 +19,7 @@
         <nav class="row justify-content-between nav-menu align-items-baseline">
           <p class="logo col-2"><a href="#" class="logo__link">BlogWorld</a></p>
           <div class="col-5">
-            <ul class="nav-menu__list row justify-content-around">
+            <ul class="nav-menu__list row d-flex justify-content-around">
               <li class="nav-menu__item">
                 <a href="#home  " class="nav-menu__link">Home</a>
               </li>
@@ -68,6 +68,7 @@
     </header>
     <main class="content">
       <section class="wrapper section-about" id="about">
+        <div class="sticky"></div>
         <div class="row about__title-wrapper justify-content-center">
           <h2 class="about__title title">About us</h2>
           <div class="pseudo about__pseudo"></div>
@@ -127,6 +128,7 @@
         </div>
       </section>
       <section class="posts wrapper">
+        <div class="sticky"></div>
         <div class="row posts__title-wrapper justify-content-center">
           <h2 class="posts__title title">Latest posts</h2>
           <div class="pseudo posts__pseudo"></div>
@@ -212,6 +214,7 @@
         </ul>
       </section>
       <section class="portfolio wrapper" id="portfolio">
+        <div class="sticky"></div>
         <div class="row portfolio__title-wrapper justify-content-center">
           <h2 class="portfolio__title title">Latest portfolio</h2>
           <div class="pseudo portfolio__pseudo"></div>
@@ -328,49 +331,53 @@
         </div>
       </section>
       <section class="testimonials">
-        <div class="wrapper">
-          <div class="row testimonials__title-wrapper justify-content-center">
-            <h2 class="testimonials__title title">Testimonials</h2>
-            <div class="pseudo testimonials__pseudo"></div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="testimonials__wrapper col-6 d-flex">
-              <div class="testimonials__slogan-container">
-                <p class="testimonials__quotes">“</p>
-                <p class="testimonials__slogan">
-                  We move at a fast pace. I’m always working on something. I am
-                  excited about it!
-                </p>
-                <p class="testimonials__name">Martin Oda</p>
-                <p class="testimonials__position">Product desgner</p>
+        <div class="sticky"></div>
+        <div class="testimonials__container">
+          <div class="wrapper">
+            <div class="row testimonials__title-wrapper justify-content-center">
+              <h2 class="testimonials__title title">Testimonials</h2>
+              <div class="pseudo testimonials__pseudo"></div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="testimonials__wrapper col-6 d-flex">
+                <div class="testimonials__slogan-container">
+                  <p class="testimonials__quotes">“</p>
+                  <p class="testimonials__slogan">
+                    We move at a fast pace. I’m always working on something. I
+                    am excited about it!
+                  </p>
+                  <p class="testimonials__name">Martin Oda</p>
+                  <p class="testimonials__position">Product desgner</p>
+                </div>
+                <div class="testimonials__img">
+                  <img
+                    src="./img/User-img.png"
+                    alt="user-photo"
+                    width="280"
+                    height="265"
+                  />
+                </div>
+                <button
+                  class="slider-btn testimonials__slider-btn testimonials__left-btn"
+                >
+                  <svg class="slider-btn__svg slider-btn__left">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+                  </svg>
+                </button>
+                <button
+                  class="slider-btn testimonials__slider-btn testimonials__right-btn"
+                >
+                  <svg class="slider-btn__svg slider-btn__right">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+                  </svg>
+                </button>
               </div>
-              <div class="testimonials__img">
-                <img
-                  src="./img/User-img.png"
-                  alt="user-photo"
-                  width="280"
-                  height="265"
-                />
-              </div>
-              <button
-                class="slider-btn testimonials__slider-btn testimonials__left-btn"
-              >
-                <svg class="slider-btn__svg slider-btn__left">
-                  <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
-                </svg>
-              </button>
-              <button
-                class="slider-btn testimonials__slider-btn testimonials__right-btn"
-              >
-                <svg class="slider-btn__svg slider-btn__right">
-                  <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
       </section>
       <section id="contact" class="contact">
+        <div class="sticky"></div>
         <div class="wrapper">
           <div class="row contact__title-wrapper justify-content-center">
             <h2 class="contact__title title">Contact us</h2>

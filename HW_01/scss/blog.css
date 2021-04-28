@@ -4,6 +4,8 @@
 
 .blog {
   position: relative; }
+  .blog__list {
+    padding-bottom: 6px; }
   .blog__video-wrapper {
     height: 379px; }
   .blog__audio-player {
@@ -25,10 +27,12 @@
       top: 7px; }
     .blog__info-comment-sarah::before {
       right: 11px; }
-    .blog__info-comment-neil::before {
+    .blog__info-comment-playmini::before {
       right: 17px; }
     .blog__info-comment-grace::before {
       right: 26px; }
+    .blog__info-comment-alex::before {
+      right: 20px; }
     .blog__info:not(:last-child)::after {
       position: absolute;
       content: '';
@@ -45,13 +49,13 @@
       margin-right: 20px; }
       .blog__info-data-sarah::after {
         left: 85px; }
-    .blog__info-time-neil {
+    .blog__info-time-playmini {
       margin-right: 39px; }
-      .blog__info-time-neil::after {
+      .blog__info-time-playmini::after {
         left: 77px; }
-    .blog__info-data-neil {
+    .blog__info-data-playmini {
       margin-right: 20px; }
-      .blog__info-data-neil::after {
+      .blog__info-data-playmini::after {
         left: 79px; }
     .blog__info-data-grace {
       margin-right: 20px; }
@@ -60,6 +64,14 @@
     .blog__info-time-grace {
       margin-right: 39px; }
       .blog__info-time-grace::after {
+        left: 81px; }
+    .blog__info-data-alex {
+      margin-right: 20px; }
+      .blog__info-data-alex::after {
+        left: 85px; }
+    .blog__info-time-alex {
+      margin-right: 39px; }
+      .blog__info-time-alex::after {
         left: 81px; }
   .blog__item {
     border-radius: 5px;
@@ -114,10 +126,10 @@
     width: 598px; }
     .blog__content-wrapper-alex {
       width: 100%; }
-    .blog__content-wrapper-neil {
+    .blog__content-wrapper-playmini {
       height: 379px;
       padding: 24px 38px; }
-      .blog__content-wrapper-neil::before {
+      .blog__content-wrapper-playmini::before {
         background-image: url(../img/svg/a-icon-playmini.svg);
         top: -3px;
         right: -2px; }
@@ -133,6 +145,12 @@
         background-image: url(../img/svg/a-icon-picture.svg);
         top: -3px;
         right: -4px; }
+    .blog__content-wrapper-alex {
+      padding: 27px 29px; }
+      .blog__content-wrapper-alex::before {
+        background-image: url(../img/svg/a-icon-text.svg);
+        top: 0px;
+        right: -1px; }
     .blog__content-wrapper::before {
       content: '';
       position: absolute;
@@ -152,6 +170,8 @@
       position: relative; }
   .blog__photo {
     margin-right: 14px; }
+    .blog__photo-alex {
+      margin-right: 12px; }
   .blog__article {
     font-size: 17px;
     letter-spacing: 0;
@@ -163,7 +183,7 @@
       font-weight: 500;
       letter-spacing: 0;
       line-height: 26px; }
-      .blog__article-title-neil, .blog__article-title-grace {
+      .blog__article-title-playmini, .blog__article-title-grace {
         margin-bottom: 16px; }
       .blog__article-title-sarah {
         margin-bottom: 19px; }
