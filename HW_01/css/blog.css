@@ -3,7 +3,9 @@
   --blog-decor-color: #818181; }
 
 .blog {
-  position: relative; }
+  position: relative;
+  padding-top: 39px;
+  padding-bottom: 156px; }
   .blog__list {
     padding-bottom: 6px; }
   .blog__video-wrapper {
