@@ -603,6 +603,7 @@ body {
     position: relative;
     background-color: #494a4d;
     border-radius: 5px 0 0 5px;
+    height: 265px;
   }
   &__name {
     font-size: 15px;
@@ -959,6 +960,7 @@ body {
       margin-bottom: 20px;
       &-container {
         padding: 25px 12px 8px;
+        height: auto;
       }
     }
   }

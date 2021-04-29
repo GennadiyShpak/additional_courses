@@ -491,7 +491,8 @@ body {
     padding-top: 53px;
     position: relative;
     background-color: #494a4d;
-    border-radius: 5px 0 0 5px; }
+    border-radius: 5px 0 0 5px;
+    height: 265px; }
   .testimonials__name {
     font-size: 15px;
     letter-spacing: 0;
@@ -781,7 +782,8 @@ body {
   .testimonials__slogan {
     margin-bottom: 20px; }
     .testimonials__slogan-container {
-      padding: 25px 12px 8px; }
+      padding: 25px 12px 8px;
+      height: auto; }
 
   .contact__description-wrapper {
     margin-bottom: 30px; }
