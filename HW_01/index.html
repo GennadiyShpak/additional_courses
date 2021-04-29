@@ -16,9 +16,13 @@
   <body>
     <header class="header" id="home">
       <div class="wrapper">
-        <nav class="row justify-content-between nav-menu align-items-baseline">
-          <p class="logo col-2"><a href="#" class="logo__link">BlogWorld</a></p>
-          <div class="col-5">
+        <nav
+          class="row justify-content-center nav-menu align-items-baseline justify-content-md-between"
+        >
+          <p class="logo col-2 text-md-left text-center">
+            <a href="#" class="logo__link">BlogWorld</a>
+          </p>
+          <div class="col-5 d-none d-md-block">
             <ul class="nav-menu__list row d-flex justify-content-around">
               <li class="nav-menu__item">
                 <a href="#home  " class="nav-menu__link">Home</a>
@@ -30,7 +34,7 @@
                 <a href="./blog.html" class="nav-menu__link">Blog</a>
               </li>
               <li class="nav-menu__item">
-                <a href="#" class="nav-menu__link">Pages</a>
+                <a href="#posts" class="nav-menu__link">Pages</a>
               </li>
               <li class="nav-menu__item">
                 <a href="#about" class="nav-menu__link">About</a>
@@ -41,16 +45,16 @@
             </ul>
           </div>
         </nav>
-        <div class="row">
-          <div class="col-5 header__title-wrapper">
-            <h1 class="header__title">
+        <div class="row justify-content-lg-start justify-content-center">
+          <div class="header__title-wrapper col-5 d-flex">
+            <h1 class="header__title text-center text-lg-left">
               Ideas and perspectives you won’t find anywhere else.
             </h1>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-lg-start justify-content-center">
           <div class="col-7 header__description-wrapper">
-            <p class="header__description">
+            <p class="header__description text-center text-lg-left">
               BlogWorld taps into the brains of the world’s most insightful
               writers, thinkers, and storytellers to bring you the smartest
               takes on topics that matter. So whatever your interest, you can
@@ -58,8 +62,10 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-4 header__btn-wrapper">
+        <div class="row justify-content-lg-start justify-content-center">
+          <div
+            class="col-4 header__btn-wrapper d-flex justify-content-lg-start justify-content-center"
+          >
             <button class="btn btn-primary">Explore</button>
             <button class="btn">Learn more</button>
           </div>
@@ -78,8 +84,8 @@
             This is who we are - or at least who we strive to be…
           </p>
         </div>
-        <div class="row">
-          <div class="col-3">
+        <div class="row justify-content-center justify-content-md-between">
+          <div class="col-3 d-none d-md-block">
             <div class="row about__sidebar">
               <div
                 class="side-folder side-folder__typography d-flex flex-column align-items-center"
@@ -117,6 +123,8 @@
             <video
               class="video-player"
               src="#"
+              width="100%"
+              height="100%"
               poster="./img/About-picture.png"
             ></video>
             <button class="play-btn">
@@ -127,7 +135,7 @@
           </div>
         </div>
       </section>
-      <section class="posts wrapper">
+      <section class="posts wrapper" id="posts">
         <div class="sticky"></div>
         <div class="row posts__title-wrapper justify-content-center">
           <h2 class="posts__title title">Latest posts</h2>
@@ -139,21 +147,23 @@
             processed and available to the right people
           </p>
         </div>
-        <ul class="posts__list d-flex flex-row justify-content-between">
+        <ul
+          class="posts__list d-flex flex-row justify-content-lg-between justify-content-around"
+        >
           <li class="posts__item">
             <img
               class="posts__item-image"
               src="./img/Img-post1.png"
               alt="post 1"
-              width="360"
-              height="244"
+              width="100%"
+              height="100%"
             />
             <h3 class="posts__item-title">
               <a class="posts__item-title-link" href="#"
                 >In the Future We Will All Live in Star Wars</a
               >
             </h3>
-            <p class="posts__item-description">
+            <p class="posts__item-description text-center text-lg-left">
               The thing you’re doing now, reading prose on a screen, is going
               out of fashion. The defining narrative of our online moment
               concerns the decline of text, and the exploding reach and power of
@@ -170,13 +180,13 @@
               class="posts__item-image"
               src="./img/Img-post2.png"
               alt="post 2"
-              width="360"
-              height="244"
+              width="100%"
+              height="100%"
             />
             <h3 class="posts__item-title">
               Rubik’s Cube? No, Robotics and AI are…
             </h3>
-            <p class="posts__item-description">
+            <p class="posts__item-description text-lg-left text-center">
               In other words, I will try to de-hype the crowd about the recent
               development in robotics. Concretely, OpenAI has claimed some
               pretty amazing results with learning to solve the Rubik’s cube
@@ -188,13 +198,13 @@
               <span class="posts__item-comment comment-post2">19</span>
             </div>
           </li>
-          <li class="posts__item">
+          <li class="posts__item d-none d-lg-block">
             <img
               class="posts__item-image"
               src="./img/Img-post3.png"
               alt="post 3"
-              width="360"
-              height="244"
+              width="100%"
+              height="100%"
             />
             <h3 class="posts__item-title">
               How the Internet of Things will Transfo…
@@ -225,7 +235,9 @@
             along then
           </p>
         </div>
-        <ul class="portfolio__list d-flex justify-content-between">
+        <ul
+          class="portfolio__list d-flex justify-content-lg-between justify-content-around"
+        >
           <li class="portfolio__item">
             <img
               src="./img/bg-img1.png"
@@ -282,7 +294,7 @@
               </div>
             </div>
           </li>
-          <li class="portfolio__item">
+          <li class="portfolio__item d-none d-lg-block">
             <img
               src="./img/bg-img3.png"
               alt="portfolio3"
@@ -389,7 +401,9 @@
               along then
             </p>
           </div>
-          <div class="row social-icons__wrapper">
+          <div
+            class="row social-icons__wrapper justify-content-lg-start justify-content-center"
+          >
             <ul class="social-icons__list d-flex">
               <li class="social-icons__item">
                 <a
@@ -429,41 +443,45 @@
 
           <div class="map__wrapper row">
             <div class="next-step__wrapper">
-              <h3 class="next-step__title col-5">What will be next step?</h3>
-              <ul class="next-step__list col-6">
+              <h3
+                class="next-step__title col-lg-5 col-12 text-center text-lg-left"
+              >
+                What will be next step?
+              </h3>
+              <ul class="next-step__list col-lg-6 d-flex d-lg-block">
                 <li class="next-step__item">
-                  <h4 class="next-step__item-title">
-                    <span class="next-step__item-title-number">1.</span> We’ll
-                    prepare a proposal
+                  <h4 class="next-step__item-title text-lg-left text-center">
+                    <span class="next-step__item-title-number">1.</span>
+                    We’ll prepare a proposal
                   </h4>
-                  <p class="next-step__description">
+                  <p class="next-step__description text-lg-left text-center">
                     Required scope, timeline and apr. price will be included if
                     you provide us with detail information about a project.
                   </p>
                 </li>
                 <li class="next-step__item">
-                  <h4 class="next-step__item-title">
+                  <h4 class="next-step__item-title text-lg-left text-center">
                     <span class="next-step__item-title-number">2.</span>
                     Together we discuss it
                   </h4>
-                  <p class="next-step__description">
+                  <p class="next-step__description text-lg-left text-center">
                     Let’s get acquainted and discuss all the possible variant
                     and options. Google Hangouts or Skype usually wirks great.
                   </p>
                 </li>
                 <li class="next-step__item">
-                  <h4 class="next-step__item-title">
+                  <h4 class="next-step__item-title text-lg-left text-center">
                     <span class="next-step__item-title-number">3.</span> Let’s
                     start building
                   </h4>
-                  <p class="next-step__description">
+                  <p class="next-step__description text-lg-left text-center">
                     When the contract is signed and all goals are set we can
                     start the first sprint.
                   </p>
                 </li>
               </ul>
             </div>
-            <div class="form__wrapper col-8">
+            <div class="form__wrapper col-8 d-none d-lg-block">
               <div class="write-us__wrapper">
                 <svg class="write-us__svg">
                   <use href="./img/svg/sprite.svg#icon-a-icon-mail"></use>
@@ -514,6 +532,7 @@
                 <img src="./img/map.png" alt="map" width="380" height="558" />
               </div>
             </div>
+            <button class="btn d-block d-lg-none m-auto">Show form</button>
           </div>
         </div>
       </section>
