@@ -134,7 +134,6 @@
     .blog__content-wrapper-text {
       width: 100%; }
     .blog__content-wrapper-playmini {
-      height: 379px;
       padding: 24px 38px; }
       .blog__content-wrapper-playmini::before {
         background-image: url(../img/svg/a-icon-playmini.svg);
@@ -228,6 +227,7 @@
   .blog__input-search-btn {
     right: 370px; }
   .blog__content-wrapper-text {
-    width: 598px; } }
+    width: 598px;
+    height: auto; } }
 
 /*# sourceMappingURL=blog.css.map */

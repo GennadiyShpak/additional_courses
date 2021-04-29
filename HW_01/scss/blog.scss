@@ -184,7 +184,6 @@
         width: 100%;
       }
       &-playmini {
-        height: 379px;
         padding: 24px 38px;
         &::before {
           background-image: url(../img/svg/a-icon-playmini.svg);
@@ -322,6 +321,7 @@
     }
     &__content-wrapper-text {
       width: 598px;
+      height: auto;
     }
   }
 }
