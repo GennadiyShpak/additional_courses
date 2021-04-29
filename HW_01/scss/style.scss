@@ -632,11 +632,7 @@ body {
   position: relative;
   padding-top: 17px;
   padding-bottom: 111px;
-  background: linear-gradient(
-    180deg,
-    var(--secondary-collor) 32%,
-    var(--bg-color) 0%
-  );
+  background: linear-gradient(180deg, #fff 32%, #f8f8f8 0%);
   &__pseudo {
     width: 108px;
   }
