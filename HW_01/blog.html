@@ -17,11 +17,9 @@
   <body>
     <header class="blog-header">
       <div class="wrapper">
-        <nav
-          class="row justify-content-between blog__nav-menu nav-menu align-items-baseline"
-        >
+        <nav class="row nav-menu align-items-baseline justify-content-between">
           <p class="logo col-2"><a href="#" class="logo__link">BlogWorld</a></p>
-          <div class="col-5">
+          <div class="col-5 d-none d-md-block">
             <ul
               class="nav-menu__list row justify-content-around blog__nav-list"
             >
@@ -51,6 +49,7 @@
               </li>
             </ul>
           </div>
+          <button class="btn d-md-none">Show menu</button>
         </nav>
       </div>
     </header>
@@ -63,7 +62,9 @@
             <div class="pseudo blog__pseudo"></div>
           </div>
 
-          <div class="row blog__input-wrapper justify-content-end">
+          <div
+            class="row blog__input-wrapper justify-content-lg-end justify-content-center"
+          >
             <input
               type="text"
               placeholder="Search by author"
@@ -76,10 +77,13 @@
             </button>
           </div>
           <ul class="d-flex flex-column row blog__list">
-            <li class="d-flex blog__item col-12">
+            <li
+              class="d-flex blog__item col-12 flex-column-reverse flex-lg-row align-items-center"
+            >
               <div class="video-player__wrapper blog__video-wrapper">
                 <video
                   class="video-player"
+                  width="560"
                   src="#"
                   poster="./img/blog/Image-post-1.png"
                 ></video>
@@ -160,10 +164,16 @@
                   moment concerns the decline of text, and the exploding reach
                   and power of audio and video …
                 </p>
-                <button class="btn">Read more</button>
+                <div
+                  class="blog__btn-wrapper d-flex justify-content-center justify-content-lg-start"
+                >
+                  <button class="btn">Read more</button>
+                </div>
               </div>
             </li>
-            <li class="d-flex blog__item col-12">
+            <li
+              class="d-flex blog__item col-12 flex-column-reverse flex-lg-row align-items-center"
+            >
               <div class="blog__image-wrapper">
                 <img
                   src="./img/blog/Image-post-2.png"
@@ -242,10 +252,16 @@
                   Fog down the river, where it rolls deified among the tiers of
                   shipping and the waterside pollutions of a great (and dirty) …
                 </p>
-                <button class="btn">Read more</button>
+                <div
+                  class="blog__btn-wrapper d-flex justify-content-center justify-content-lg-start"
+                >
+                  <button class="btn">Read more</button>
+                </div>
               </div>
             </li>
-            <li class="d-flex blog__item col-12">
+            <li
+              class="d-flex blog__item col-12 d-flex blog__item col-12 flex-column-reverse flex-lg-row align-items-center"
+            >
               <div class="blog__image-wrapper">
                 <img
                   src="./img/blog/Image-post-3.png"
@@ -325,10 +341,16 @@
                   Duden flows by their place and supplies it with the necessary
                   regelialia. It is a paradisematic country, in which roasted …
                 </p>
-                <button class="btn">Read more</button>
+                <div
+                  class="blog__btn-wrapper d-flex justify-content-center justify-content-lg-start"
+                >
+                  <button class="btn">Read more</button>
+                </div>
               </div>
             </li>
-            <li class="d-flex blog__item col-12">
+            <li
+              class="d-flex blog__item col-12 blog__item flex-column-reverse flex-lg-row align-items-center blog__item col-12 blog__item-text"
+            >
               <div class="blog__content-wrapper blog__content-wrapper-text">
                 <div class="blog__author-wrapper d-flex">
                   <img
@@ -405,7 +427,11 @@
                   around songs wish met true any me ought mr The offices set Not
                   Felicity above out We in an post begin again.
                 </p>
-                <button class="btn">Read more</button>
+                <div
+                  class="blog__btn-wrapper d-flex justify-content-center justify-content-lg-start"
+                >
+                  <button class="btn">Read more</button>
+                </div>
               </div>
             </li>
           </ul>

@@ -11,7 +11,8 @@
     border-bottom: 1px solid black;
   }
   &__list {
-    padding-bottom: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
   }
   &__video {
     &-wrapper {
@@ -178,6 +179,7 @@
       background-color: var(--blog-bg-color);
       position: relative;
       width: 598px;
+      height: 379px;
       &-text {
         width: 100%;
       }
@@ -310,6 +312,16 @@
   &__image {
     &-wrapper {
       width: 560px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .blog {
+    &__input-search-btn {
+      right: 370px;
+    }
+    &__content-wrapper-text {
+      width: 598px;
     }
   }
 }
