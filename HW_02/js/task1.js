@@ -1,3 +1,4 @@
+console.log('TASK 1');
 const complexFunction = function (arg1, arg2) {
   return arg1 + arg2;
 };
@@ -16,8 +17,3 @@ const cache = function (foo) {
 };
 
 const cachedFunction = cache(complexFunction);
-
-cachedFunction(3, 2);
-cachedFunction(3, 2);
-cachedFunction('foo', 'baz');
-cachedFunction('foo', 'baz');

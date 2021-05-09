@@ -1,3 +1,4 @@
+console.log('TASK 2');
 const ladder = {
   step: 0,
   showStep: function () {
@@ -13,4 +14,3 @@ const ladder = {
     return this;
   },
 };
-ladder.up().up().down().up().showStep();
