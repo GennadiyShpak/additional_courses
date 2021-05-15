@@ -1,0 +1,327 @@
+:root {
+  --blog-bg-color: #fcf6f6;
+  --blog-decor-color: #818181;
+}
+.blog {
+  position: relative;
+  padding-top: 39px;
+  padding-bottom: 156px;
+  &__active-link {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+  }
+  &__list {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+  &__video {
+    &-wrapper {
+      height: 379px;
+    }
+  }
+  &__audio {
+    &-player {
+      width: 202px;
+      height: 42px;
+      border-radius: 20px;
+    }
+  }
+  &__info {
+    position: relative;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 25px;
+    color: var(--blog-decor-color);
+    &-comment {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 13px;
+        background-image: url(../img/svg/a-icon-comment.svg);
+        top: 7px;
+      }
+      &-melody::before {
+        right: 11px;
+      }
+      &-playmini::before {
+        right: 17px;
+      }
+      &-picture::before {
+        right: 26px;
+      }
+      &-text::before {
+        right: 20px;
+      }
+    }
+    &:not(:last-child)::after {
+      position: absolute;
+      content: '';
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      top: 12px;
+      background-color: var(--additional-color);
+    }
+    &-time-melody {
+      margin-right: 37px;
+      &::after {
+        left: 83px;
+      }
+    }
+    &-data-melody {
+      margin-right: 20px;
+      &::after {
+        left: 85px;
+      }
+    }
+    &-time-playmini {
+      margin-right: 39px;
+      &::after {
+        left: 77px;
+      }
+    }
+    &-data-playmini {
+      margin-right: 20px;
+      &::after {
+        left: 79px;
+      }
+    }
+    &-data-picture {
+      margin-right: 20px;
+      &::after {
+        left: 85px;
+      }
+    }
+    &-time-picture {
+      margin-right: 39px;
+      &::after {
+        left: 81px;
+      }
+    }
+    &-data-text {
+      margin-right: 20px;
+      &::after {
+        left: 85px;
+      }
+    }
+    &-time-text {
+      margin-right: 39px;
+      &::after {
+        left: 81px;
+      }
+    }
+  }
+  &__item {
+    border-radius: 5px;
+    margin-bottom: 50px;
+    &:hover {
+      box-shadow: 0 75px 30px -80px gray;
+    }
+  }
+  &-header {
+    padding-top: 27px;
+  }
+  &-footer {
+    padding-top: 21px;
+    background-color: var(--bg-color);
+    margin-top: auto;
+  }
+  &__nav-menu {
+    margin-bottom: 55px;
+  }
+  &__nav-list {
+    padding-left: 2px;
+  }
+  &__title {
+    &-wrapper {
+      position: relative;
+      margin-bottom: 58px;
+    }
+  }
+  &__pseudo {
+    width: 46px;
+  }
+  &__input {
+    width: 320px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--base-collor);
+    &-wrapper {
+      position: relative;
+      padding-right: 15px;
+      margin-bottom: 31px;
+    }
+    &::placeholder {
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 25px;
+      color: var(--base-collor);
+    }
+    &-search-btn {
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 12px;
+      right: 28px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      &-svg {
+        width: 23px;
+        height: 23px;
+        fill: var(--base-collor);
+      }
+    }
+  }
+  &__content {
+    &-wrapper {
+      background-color: var(--blog-bg-color);
+      position: relative;
+      width: 598px;
+      height: 379px;
+      &-text {
+        width: 100%;
+      }
+      &-playmini {
+        padding: 24px 38px;
+        &::before {
+          background-image: url(../img/svg/a-icon-playmini.svg);
+          top: -3px;
+          right: -2px;
+        }
+      }
+      &-melody {
+        padding: 25px 40px;
+        &::before {
+          background-image: url(../img/svg/a-icon-melody.svg);
+          top: -3px;
+          right: -2px;
+        }
+      }
+      &-picture {
+        padding: 25px 41px;
+        &::before {
+          background-image: url(../img/svg/a-icon-picture.svg);
+          top: -3px;
+          right: -4px;
+        }
+      }
+      &-text {
+        padding: 27px 29px;
+        &::before {
+          background-image: url(../img/svg/a-icon-text.svg);
+          top: 0px;
+          right: -1px;
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 83px;
+        height: 72px;
+        background-repeat: no-repeat;
+        border: 4px solid var(--secondary-collor);
+        border-radius: 5px;
+        background-position: 19px 12px;
+      }
+    }
+  }
+  &__name {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin: 0;
+    &-wrapper {
+      position: relative;
+    }
+  }
+  &__photo {
+    margin-right: 14px;
+    &-text {
+      margin-right: 12px;
+    }
+  }
+  &__article {
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 26px;
+    padding-right: 55px;
+    margin-bottom: 29px;
+    &-title {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 26px;
+      &-playmini,
+      &-picture {
+        margin-bottom: 16px;
+      }
+      &-melody {
+        margin-bottom: 19px;
+      }
+    }
+  }
+  &__author {
+    &-wrapper {
+      margin-bottom: 38px;
+    }
+  }
+  &-data {
+    &::after {
+      top: 11px;
+      left: 80px;
+    }
+  }
+  &-time {
+    &::after {
+      top: 11px;
+      right: 42px;
+    }
+  }
+  &-comment {
+    &::before {
+      top: 6px;
+      right: 18px;
+    }
+  }
+  &__rating {
+    &-btn {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      width: 15px;
+      height: 15px;
+      &-list {
+        position: absolute;
+        top: 29px;
+        right: -95px;
+      }
+      &-item {
+        margin-right: 2px;
+      }
+    }
+    &-svg {
+      fill: #deee23;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &__image {
+    &-wrapper {
+      width: 560px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .blog {
+    &__input-search-btn {
+      right: 370px;
+    }
+    &__content-wrapper-text {
+      width: 598px;
+      height: auto;
+    }
+  }
+}
