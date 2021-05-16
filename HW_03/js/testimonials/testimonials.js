@@ -6,9 +6,9 @@ const testimonialsSlider = new Slider();
 
 let startTouchPosition = null;
 
-// let timerId = setInterval(() => {
-//   testimonialsSlider.grovingSliderHanler(sliderItems);
-// }, 4000);
+let timerId = setInterval(() => {
+  testimonialsSlider.grovingSliderHanler(sliderItems);
+}, 4000);
 
 nextBtn.addEventListener('click', () => {
   clearInterval(timerId);
