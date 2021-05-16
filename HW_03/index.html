@@ -11,7 +11,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script defer type="module" src="./js/testimonials.js"></script>
+    <script
+      defer
+      type="module"
+      src="./js/testimonials/testimonials.js"
+    ></script>
     <title>Home page</title>
   </head>
   <body>
@@ -399,7 +403,13 @@
             <div
               class="row justify-content-center testimonials__slider-wrapper"
             >
-              <ul class="col-6 flex-md-row testimonials__slider-list">
+              <ul
+                class="
+                  col-6
+                  flex-md-row
+                  testimonials__slider-list testimonials__wrapper
+                "
+              >
                 <li
                   class="
                     testimonials__slider-item
@@ -407,6 +417,8 @@
                     align-items-center
                     d-flex
                     testimonials__slider-start
+                    flex-column flex-md-row
+                    align-items-center
                   "
                 >
                   <div class="testimonials__slogan-container">

@@ -1,4 +1,4 @@
-class Slider {
+export default class Slider {
   constructor() {
     this.sliderPosition = 0;
   }
@@ -7,7 +7,6 @@ class Slider {
     const sliderLength = sliderArr.length;
     const lastSlide = sliderArr.length - 1;
     this.sliderPosition += 1;
-    console.log(this.sliderPosition);
     if (this.sliderPosition === sliderLength) {
       sliderArr[0].style.transform = 'scale(1)';
       sliderArr[lastSlide].style.transform = 'scale(0)';
@@ -21,7 +20,6 @@ class Slider {
     const sliderArr = [...collection];
     const lastSlide = sliderArr.length - 1;
     this.sliderPosition -= 1;
-    console.log(this.sliderPosition);
     if (this.sliderPosition < 0) {
       sliderArr[0].style.transform = 'scale(0)';
       sliderArr[lastSlide].style.transform = 'scale(1)';
@@ -32,4 +30,3 @@ class Slider {
     sliderArr[this.sliderPosition + 1].style.transform = 'scale(0)';
   }
 }
-export default Slider;

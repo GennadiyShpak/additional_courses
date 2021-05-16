@@ -586,6 +586,7 @@ body {
     background-image: url(../img/Bg-testimonial.png);
     color: var(--secondary-collor);
     padding-bottom: 64px;
+    background-size: cover;
   }
   &__pseudo {
     width: 128px;
@@ -967,6 +968,12 @@ body {
     }
   }
   .testimonials {
+    &__left-btn {
+      left: 180px;
+    }
+    &__right-btn {
+      right: 160px;
+    }
     &__quotes {
       font-size: 18px;
       top: 8px;
@@ -976,7 +983,7 @@ body {
       margin-bottom: 20px;
       &-container {
         padding: 25px 12px 8px;
-        height: auto;
+        height: 230px;
       }
     }
   }
@@ -1045,8 +1052,16 @@ body {
     &__img {
       width: 280px;
     }
-    &__slider-btn {
-      top: 233px;
+    &__slider {
+      &-item {
+        left: 60px;
+      }
+      &-list {
+        height: 500px;
+      }
+      &-btn {
+        top: 233px;
+      }
     }
   }
   .footer {

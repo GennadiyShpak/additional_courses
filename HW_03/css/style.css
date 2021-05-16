@@ -476,7 +476,8 @@ body {
     padding-top: 80px;
     background-image: url(../img/Bg-testimonial.png);
     color: var(--secondary-collor);
-    padding-bottom: 64px; }
+    padding-bottom: 64px;
+    background-size: cover; }
   .testimonials__pseudo {
     width: 128px; }
   .testimonials__slider-btn {
@@ -789,6 +790,10 @@ body {
   .posts__item-description {
     font-size: 18px; }
 
+  .testimonials__left-btn {
+    left: 180px; }
+  .testimonials__right-btn {
+    right: 160px; }
   .testimonials__quotes {
     font-size: 18px;
     top: 8px;
@@ -797,7 +802,7 @@ body {
     margin-bottom: 20px; }
     .testimonials__slogan-container {
       padding: 25px 12px 8px;
-      height: auto; }
+      height: 230px; }
 
   .contact__description-wrapper {
     margin-bottom: 30px; }
@@ -849,6 +854,10 @@ body {
 
   .testimonials__img {
     width: 280px; }
+  .testimonials__slider-item {
+    left: 60px; }
+  .testimonials__slider-list {
+    height: 500px; }
   .testimonials__slider-btn {
     top: 233px; }
 
