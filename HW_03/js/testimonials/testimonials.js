@@ -54,17 +54,41 @@ sliderList.addEventListener('touchend', handleTouchEnd);
 
 window.addEventListener('scroll', e => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollTop);
-  if ((scrollTop < 2150 || scrollTop > 3350) && activeSlide) {
-    console.log('aa');
-    clearInterval(timerId);
-    activeSlide = false;
+  const viewportWidth = document.documentElement.clientWidth;
+  if (viewportWidth >= 992) {
+    if ((scrollTop < 1990 || scrollTop > 3350) && activeSlide) {
+      clearInterval(timerId);
+      activeSlide = false;
+    }
+    if (scrollTop >= 1990 && scrollTop <= 3350 && !activeSlide) {
+      timerId = setInterval(() => {
+        testimonialsSlider.grovingSliderHanler(sliderItems);
+      }, 4000);
+      activeSlide = true;
+    }
   }
-  if (scrollTop > 2150 && scrollTop < 3350 && !activeSlide) {
-    console.log('bbb');
-    timerId = setInterval(() => {
-      testimonialsSlider.grovingSliderHanler(sliderItems);
-    }, 4000);
-    activeSlide = true;
+  if (viewportWidth < 992 && viewportWidth >= 768) {
+    if (scrollTop < 1870 && activeSlide) {
+      clearInterval(timerId);
+      activeSlide = false;
+    }
+    if (scrollTop >= 1870 && !activeSlide) {
+      timerId = setInterval(() => {
+        testimonialsSlider.grovingSliderHanler(sliderItems);
+      }, 4000);
+      activeSlide = true;
+    }
+  }
+  if (viewportWidth < 768) {
+    if (scrollTop < 2250 && activeSlide) {
+      clearInterval(timerId);
+      activeSlide = false;
+    }
+    if (scrollTop >= 2250 && !activeSlide) {
+      timerId = setInterval(() => {
+        testimonialsSlider.grovingSliderHanler(sliderItems);
+      }, 4000);
+      activeSlide = true;
+    }
   }
 });

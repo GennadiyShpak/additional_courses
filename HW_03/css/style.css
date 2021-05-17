@@ -721,7 +721,7 @@ body {
   .footer__icon {
     margin-right: 428px; }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   body {
     width: 1200px; }
 
