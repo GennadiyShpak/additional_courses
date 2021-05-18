@@ -1,39 +1,13 @@
 import refs from './refs.js';
 import Slider from './slider.js';
+import throttle from './throttle.js';
 
 const { sliderItems, prevBtn, nextBtn, sliderList } = refs;
 const testimonialsSlider = new Slider();
 
 let startTouchPosition = null;
-
 let timerId = null;
 let activeSlide = null;
-
-nextBtn.addEventListener('click', () => {
-  clearInterval(timerId);
-  testimonialsSlider.grovingSliderHanler(sliderItems);
-  timerId = setInterval(() => {
-    testimonialsSlider.grovingSliderHanler(sliderItems);
-  }, 4000);
-});
-
-prevBtn.addEventListener('click', () => {
-  clearInterval(timerId);
-  testimonialsSlider.decreasingSliderHandler(sliderItems);
-  timerId = setInterval(() => {
-    testimonialsSlider.decreasingSliderHandler(sliderItems);
-  }, 4000);
-});
-
-sliderList.addEventListener('mouseenter', () => {
-  clearInterval(timerId);
-});
-
-sliderList.addEventListener('mouseleave', () => {
-  timerId = setInterval(() => {
-    testimonialsSlider.grovingSliderHanler(sliderItems);
-  }, 4000);
-});
 
 const handleTouchStart = e => {
   startTouchPosition = e.touches[0].clientX;
@@ -48,12 +22,9 @@ const handleTouchEnd = e => {
   }
   testimonialsSlider.decreasingSliderHandler(sliderItems);
 };
-
-sliderList.addEventListener('touchstart', handleTouchStart);
-sliderList.addEventListener('touchend', handleTouchEnd);
-
-window.addEventListener('scroll', e => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+let onScroll = e => {
+  const scrollTop = window.pageYOffset;
+  console.log('scrollTop', scrollTop);
   const viewportWidth = document.documentElement.clientWidth;
   if (viewportWidth >= 992) {
     if ((scrollTop < 1990 || scrollTop > 3350) && activeSlide) {
@@ -91,4 +62,37 @@ window.addEventListener('scroll', e => {
       activeSlide = true;
     }
   }
+};
+
+onScroll = throttle(onScroll, 500);
+
+nextBtn.addEventListener('click', () => {
+  clearInterval(timerId);
+  testimonialsSlider.grovingSliderHanler(sliderItems);
+  timerId = setInterval(() => {
+    testimonialsSlider.grovingSliderHanler(sliderItems);
+  }, 4000);
 });
+
+prevBtn.addEventListener('click', () => {
+  clearInterval(timerId);
+  testimonialsSlider.decreasingSliderHandler(sliderItems);
+  timerId = setInterval(() => {
+    testimonialsSlider.decreasingSliderHandler(sliderItems);
+  }, 4000);
+});
+
+sliderList.addEventListener('mouseenter', () => {
+  clearInterval(timerId);
+});
+
+sliderList.addEventListener('mouseleave', () => {
+  timerId = setInterval(() => {
+    testimonialsSlider.grovingSliderHanler(sliderItems);
+  }, 4000);
+});
+
+sliderList.addEventListener('touchstart', handleTouchStart);
+sliderList.addEventListener('touchend', handleTouchEnd);
+
+window.addEventListener('scroll', onScroll);
