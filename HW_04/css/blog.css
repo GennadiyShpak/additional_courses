@@ -12,8 +12,10 @@
   .blog__list {
     padding-bottom: 10px;
     margin-bottom: 0; }
-  .blog__video-wrapper {
-    height: 379px; }
+  .blog__media-wrapper {
+    width: auto;
+    height: 379px;
+    overflow: hidden; }
   .blog__audio-player {
     width: 202px;
     height: 42px;
@@ -175,7 +177,8 @@
     .blog__name-wrapper {
       position: relative; }
   .blog__photo {
-    margin-right: 14px; }
+    margin-right: 14px;
+    border-radius: 50%; }
     .blog__photo-text {
       margin-right: 12px; }
   .blog__article {

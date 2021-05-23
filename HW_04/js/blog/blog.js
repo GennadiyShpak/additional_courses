@@ -1,4 +1,14 @@
 import movieApi from '../movieDbService/movieDbApi.js';
+import movieInfo from './movieInfo/movieInfo.js';
+
+const {
+  getReview,
+  getAvatar,
+  getDataReview,
+  getReviewUrl,
+  starMarckup,
+  getReadTime,
+} = movieInfo;
 const { getTrends, getInfo } = movieApi;
 
 const postCollection = document.querySelectorAll('.blog__item');
@@ -6,49 +16,39 @@ const postCollection = document.querySelectorAll('.blog__item');
 const getAdditionalInformation = async (id, category) => {
   return await getInfo(id, category);
 };
-getAdditionalInformation(503736, 'videos');
-getAdditionalInformation(503736, 'reviews');
+
 const createPostMarckup = async (el, i) => {
   const getMovieList = await getTrends();
   const movieId = getMovieList[i].id;
-  if (el.classList.contains('video')) {
-    const movieTrailer = await getAdditionalInformation(movieId, 'videos');
-    console.log('movieTrailer', movieTrailer);
-    el.innerHTML = ` 
-    <div class="video-player__wrapper blog__video-wrapper">
-      <video
-        class="video-player"
-        width="560"
-        src=https://www.youtube.com/watch?v=${movieTrailer[0].key}
-        controls
-      ></video>
-      <button class="play-btn">
-        <svg class="video-player__svg">
-          <use href="./img/svg/sprite.svg#icon-a-icon-play"></use>
-        </svg>
-      </button>
+  const posterPath = getMovieList[i].poster_path;
+  const backdropPath = getMovieList[i].backdrop_path;
+  const reviewsList = await getAdditionalInformation(movieId, 'reviews');
+  el.innerHTML = ` 
+    <div class="blog__media-wrapper blog__video-wrapper">
     </div>
-    <div class="blog__content-wrapper blog__content-wrapper-playmini">
+    <div class="blog__content-wrapper">
       <div class="blog__author-wrapper d-flex">
         <img
-          src="./img/blog/Neil.png"
+          src=${getAvatar(reviewsList)}
           alt="photo"
           class="blog__photo"
+          width="52" 
+          height="52"
         />
         <div class="blog__name-wrapper">
-          <p class="blog__name">Neil Richards</p>
+          <p class="blog__name">${getReview(reviewsList, 'author')}</p>
           <div class="blog__item-info">
             <span
               class="
                 blog__info-data blog__info blog__info-data-playmini
               "
-              >11 oct, 2019</span
+              >${getDataReview(reviewsList, getMovieList[i])}</span
             >
             <span
               class="
                 blog__info-time blog__info-time-playmini blog__info
               "
-              >7 min read</span
+              >${getReadTime(reviewsList, 'content')} min read</span
             >
             <span
               class="
@@ -56,56 +56,18 @@ const createPostMarckup = async (el, i) => {
                 blog__info-comment-playmini
                 blog__info
               "
-              >19</span
+              >${reviewsList.length}</span
             >
           </div>
           <ul class="blog__rating-btn-list d-flex">
-            <li class="blog__rating-btn-item">
-              <button class="blog__rating-btn">
-                <svg class="blog__rating-svg">
-                  <use href="./img/svg/sprite.svg#icon-Star-1"></use>
-                </svg>
-              </button>
-            </li>
-            <li class="blog__rating-btn-item">
-              <button class="blog__rating-btn">
-                <svg class="blog__rating-svg">
-                  <use href="./img/svg/sprite.svg#icon-Star-1"></use>
-                </svg>
-              </button>
-            </li>
-            <li class="blog__rating-btn-item">
-              <button class="blog__rating-btn">
-                <svg class="blog__rating-svg">
-                  <use href="./img/svg/sprite.svg#icon-Group"></use>
-                </svg>
-              </button>
-            </li>
-            <li class="blog__rating-btn-item">
-              <button class="blog__rating-btn">
-                <svg class="blog__rating-svg">
-                  <use href="./img/svg/sprite.svg#icon-Star-2"></use>
-                </svg>
-              </button>
-            </li>
-            <li class="blog__rating-btn-item">
-              <button class="blog__rating-btn">
-                <svg class="blog__rating-svg">
-                  <use href="./img/svg/sprite.svg#icon-Star-2"></use>
-                </svg>
-              </button>
-            </li>
           </ul>
         </div>
       </div>
       <h3 class="blog__article-title blog__article-title-playmini">
-        In the Future We Will All Live in Star Wars
+        ${getMovieList[i].original_title}
       </h3>
       <p class="blog__article">
-        The thing you’re doing now, reading prose on a screen, is
-        going out of fashion. The defining narrative of our online
-        moment concerns the decline of text, and the exploding reach
-        and power of audio and video …
+        ${getReview(reviewsList, 'content', getMovieList[i].overview)}
       </p>
       <div
         class="
@@ -114,10 +76,79 @@ const createPostMarckup = async (el, i) => {
           justify-content-center justify-content-lg-start
         "
       >
-        <button class="btn">Read more</button>
+        <a target="_blank" href=${getReviewUrl(
+          reviewsList,
+        )} class="btn">Read more</a>
       </div>
-    </div>>`;
-  } else {
+    </div>`;
+  const ratingList = el.querySelector('.blog__rating-btn-list');
+  starMarckup(getMovieList[i].vote_average, ratingList);
+  if (el.classList.contains('video')) {
+    const movieTrailer = await getAdditionalInformation(movieId, 'videos');
+    const viddeoWrapper = el.querySelector('.blog__media-wrapper');
+    const contentWrapper = el.querySelector('.blog__content-wrapper');
+    contentWrapper.classList.add('blog__content-wrapper-playmini');
+    viddeoWrapper.innerHTML = `<iframe width="560" height="379"
+    src="https://www.youtube.com/embed/${movieTrailer[0].key}"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  }
+  if (el.classList.contains('audio')) {
+    const imageWrapper = el.querySelector('.blog__media-wrapper');
+    const textWrapper = el.querySelector('.blog__article');
+    textWrapper.insertAdjacentHTML(
+      'beforeBegin',
+      `<audio controls src="#" class="blog__audio-player"></audio>`,
+    );
+    const contentWrapper = el.querySelector('.blog__content-wrapper');
+    contentWrapper.classList.add('blog__content-wrapper-melody');
+    imageWrapper.innerHTML = `
+    <img
+      src="./img/blog/Image-post-2.png"
+      alt="audio post"
+      width="560"
+      height="379"
+    />
+    `;
+  }
+  if (el.classList.contains('image')) {
+    const imageWrapper = el.querySelector('.blog__media-wrapper');
+    const contentWrapper = el.querySelector('.blog__content-wrapper');
+    contentWrapper.classList.add('blog__content-wrapper-picture');
+    if (posterPath) {
+      imageWrapper.innerHTML = `
+    <img
+      src=https://image.tmdb.org/t/p/original/${posterPath}
+      alt="poster"
+      width="560"
+      height="379"
+    />
+    `;
+      return;
+    }
+    if (backdropPath) {
+      imageWrapper.innerHTML = `
+        <img
+          src=https://image.tmdb.org/t/p/original/${backdropPath}
+          alt="poster"
+          width="560"
+          height="379"
+        />
+        `;
+      return;
+    }
+    imageWrapper.innerHTML = `
+    <img
+      src='../../img/blog/Image-post-3.png'
+      alt="poster"
+    />
+    `;
+  }
+  if (el.classList.contains('text')) {
+    const imageWrapper = el.querySelector('.blog__media-wrapper');
+    const contentWrapper = el.querySelector('.blog__content-wrapper');
+    contentWrapper.classList.add('blog__content-wrapper-text');
   }
 };
 [...postCollection].forEach((el, i) => createPostMarckup(el, i));

@@ -8,7 +8,6 @@ const getTrends = async () => {
       `${BASE_URL}${trendsMovieByWeek}?api_key=${API_KEY}`,
     );
     const { results } = await response.json();
-    console.log('results', results[0]);
     return results;
   } catch (error) {
     console.log('error', { error });
@@ -21,12 +20,12 @@ const getInfo = async (id, category) => {
       `${BASE_URL}movie/${id}/${category}?api_key=${API_KEY}`,
     );
     const { results } = await response.json();
-    // console.log('results', results);
     return results;
   } catch (error) {
     console.log('error', { error });
   }
 };
+
 const movieApi = {
   getTrends,
   getInfo,

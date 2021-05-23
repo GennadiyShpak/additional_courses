@@ -136,7 +136,6 @@
     .blog__content-wrapper-playmini {
       padding: 24px 38px; }
       .blog__content-wrapper-playmini::before {
-        background-image: url(../img/svg/a-icon-playmini.svg);
         top: -3px;
         right: -2px; }
     .blog__content-wrapper-melody {
