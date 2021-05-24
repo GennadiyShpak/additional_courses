@@ -23,7 +23,7 @@ const getReadTime = (reviewList, atr, overview = 'No info') => {
 
 const getAvatar = reviewList => {
   if (!reviewList[0].author_details.avatar_path) {
-    return '../../img/blog/ava.jpg';
+    return 'https://juststickers.in/wp-content/uploads/2016/12/404-error-not-found.png';
   } else {
     const avatarPath = reviewList[0].author_details.avatar_path.slice(-36);
     return `https://secure.gravatar.com/avatar/${avatarPath}`;

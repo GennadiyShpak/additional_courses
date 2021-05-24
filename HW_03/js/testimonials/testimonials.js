@@ -1,6 +1,6 @@
 import refs from './refs.js';
 import Slider from './slider.js';
-import throttle from './throttle.js';
+import throttle from '../helpers/throttle.js';
 
 const { sliderItems, prevBtn, nextBtn, sliderList } = refs;
 const testimonialsSlider = new Slider();
@@ -22,9 +22,8 @@ const handleTouchEnd = e => {
   }
   testimonialsSlider.decreasingSliderHandler(sliderItems);
 };
-let onScroll = e => {
+let onScroll = () => {
   const scrollTop = window.pageYOffset;
-  console.log('scrollTop', scrollTop);
   const viewportWidth = document.documentElement.clientWidth;
   if (viewportWidth >= 992) {
     if ((scrollTop < 1990 || scrollTop > 3350) && activeSlide) {
