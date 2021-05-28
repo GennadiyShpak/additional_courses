@@ -276,6 +276,7 @@
             portfolio__list
             d-flex
             justify-content-lg-between justify-content-around
+            flex-wrap
           "
         >
           <li class="portfolio__item">
@@ -361,6 +362,89 @@
               </div>
             </div>
           </li>
+          <li class="portfolio__item aaa">
+            <img
+              src="./img/animal-art.jpg"
+              alt="portfolio1"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Animal</h3>
+              <p class="portfolio__item-description">
+                Photography, art, anymal
+              </p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/sport-art.jpg"
+              alt="portfolio2"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Sport</h3>
+              <p class="portfolio__item-description">Photography, sport, art</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item d-none d-lg-block">
+            <img
+              src="./img/space-art.jpg"
+              alt="portfolio3"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Space</h3>
+              <p class="portfolio__item-description">Travel, space</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
         </ul>
         <div class="row justify-content-center slider-btn__row">
           <div
@@ -371,12 +455,12 @@
               justify-content-between
             "
           >
-            <button class="slider-btn">
+            <button class="slider-btn left portfolio__slider-btn-left">
               <svg class="slider-btn__svg slider-btn__left">
                 <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
               </svg>
             </button>
-            <button class="slider-btn">
+            <button class="slider-btn right portfolio__slider-btn-right">
               <svg class="slider-btn__svg slider-btn__right">
                 <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
               </svg>
@@ -746,5 +830,6 @@
       </div>
     </footer>
     <script type="module" src="./js/testimonials/testimonials.js"></script>
+    <script type="module" src="./js/portfolio/portfolio.js"></script>
   </body>
 </html>

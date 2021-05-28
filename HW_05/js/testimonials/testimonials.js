@@ -1,14 +1,13 @@
 import refs from './refs.js';
-import Carousel from '../helpers/slider/slider.js';
+import sliderObj from '../components/slider/slider.js';
 import throttle from '../helpers/throttle.js';
 
+const { Carousel } = sliderObj;
 const { sliderItems, prevBtn, nextBtn, sliderList } = refs;
-const testimonialsSlider = new Carousel(sliderItems);
-
+const testimonialsSlider = new Carousel(sliderItems, sliderList, 4000);
 let startTouchPosition = null;
 let timerId = null;
 let activeSlide = null;
-
 const handleTouchStart = e => {
   startTouchPosition = e.touches[0].clientX;
 };
@@ -27,37 +26,31 @@ let onScroll = () => {
   const viewportWidth = document.documentElement.clientWidth;
   if (viewportWidth >= 992) {
     if ((scrollTop < 1990 || scrollTop > 3350) && activeSlide) {
-      clearInterval(timerId);
+      clearInterval(testimonialsSlider.intervalId);
       activeSlide = false;
     }
     if (scrollTop >= 1990 && scrollTop <= 3350 && !activeSlide) {
-      timerId = setInterval(() => {
-        testimonialsSlider.grovingSlideHanler(sliderItems);
-      }, 4000);
+      testimonialsSlider.infinitySliderRight();
       activeSlide = true;
     }
   }
   if (viewportWidth < 992 && viewportWidth >= 768) {
     if (scrollTop < 1870 && activeSlide) {
-      clearInterval(timerId);
+      clearInterval(testimonialsSlider.intervalId);
       activeSlide = false;
     }
     if (scrollTop >= 1870 && !activeSlide) {
-      timerId = setInterval(() => {
-        testimonialsSlider.grovingSlideHanler(sliderItems);
-      }, 4000);
+      testimonialsSlider.infinitySliderRight();
       activeSlide = true;
     }
   }
   if (viewportWidth < 768) {
     if (scrollTop < 2250 && activeSlide) {
-      clearInterval(timerId);
+      clearInterval(testimonialsSlider.intervalId);
       activeSlide = false;
     }
     if (scrollTop >= 2250 && !activeSlide) {
-      timerId = setInterval(() => {
-        testimonialsSlider.grovingSlideHanler(sliderItems);
-      }, 4000);
+      testimonialsSlider.infinitySliderRight();
       activeSlide = true;
     }
   }
@@ -66,29 +59,23 @@ let onScroll = () => {
 onScroll = throttle(onScroll, 500);
 
 nextBtn.addEventListener('click', () => {
-  clearInterval(timerId);
-  testimonialsSlider.grovingSlideHanler(sliderItems);
-  timerId = setInterval(() => {
-    testimonialsSlider.grovingSlideHanler(sliderItems);
-  }, 4000);
+  clearInterval(testimonialsSlider.intervalId);
+  testimonialsSlider.grovingSlideHanler();
+  testimonialsSlider.infinitySliderRight();
 });
 
 prevBtn.addEventListener('click', () => {
-  clearInterval(timerId);
-  testimonialsSlider.decreasingSliderHandler(sliderItems);
-  timerId = setInterval(() => {
-    testimonialsSlider.decreasingSliderHandler(sliderItems);
-  }, 4000);
+  clearInterval(testimonialsSlider.intervalId);
+  testimonialsSlider.decreasingSliderHandler();
+  testimonialsSlider.infinitySliderLeft();
 });
 
 sliderList.addEventListener('mouseenter', () => {
-  clearInterval(timerId);
+  clearInterval(testimonialsSlider.intervalId);
 });
 
 sliderList.addEventListener('mouseleave', () => {
-  timerId = setInterval(() => {
-    testimonialsSlider.grovingSlideHanler(sliderItems);
-  }, 4000);
+  testimonialsSlider.infinitySliderRight();
 });
 
 sliderList.addEventListener('touchstart', handleTouchStart);
