@@ -8,6 +8,4 @@ const portfolioSlider = new PortfoliSlider(sliderItems);
 leftBtn.addEventListener('click', () => {
   portfolioSlider.decreasingSliderHandler();
 });
-rightBtn.addEventListener('click', () => {
-  console.log('bbb');
-});
+rightBtn.addEventListener('click', portfolioSlider.grovingSlideHanler);

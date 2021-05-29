@@ -79,7 +79,7 @@ function Carousel(collection, el, int) {
   [...presentationCollection].forEach(item =>
     item.addEventListener('click', onPresentationItemCliclHandler),
   );
-  this.decreasingSliderHandler = function () {
+  this.sliderToLeft = function () {
     this.parentToLeft.call(this);
     if (this.sliderPosition === this.lastSlide) {
       this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
@@ -99,7 +99,7 @@ function Carousel(collection, el, int) {
       );
     }
   };
-  this.grovingSlideHanler = function () {
+  this.sliderToRight = function () {
     this.parentToRight.call(this);
     if (this.sliderPosition === 0) {
       this.sliderArr[0].style.transform = 'scale(1)';
@@ -122,31 +122,32 @@ function Carousel(collection, el, int) {
   this.infinitySliderRight = function () {
     direction = 'right';
     this.intervalId = setInterval(() => {
-      this.grovingSlideHanler(collection);
+      this.sliderToRight(collection);
     }, int);
   };
   this.infinitySliderLeft = function () {
     direction = 'left';
     this.intervalId = setInterval(() => {
-      this.decreasingSliderHandler(collection);
+      this.sliderToLeft(collection);
     }, int);
   };
 }
 
 function PortfoliSlider(collection) {
   Slider.apply(this, arguments);
-  console.log(collection);
-  // this.grovingSlideHanler = function () {
-  //   this.sliderToRight();
-  //   if (this.sliderPosition === 0) {
-  //     this.sliderArr[0].style.transform = 'scale(1)';
-  //     this.sliderArr[this.lastSlide].style.transform = 'scale(0)';
-  //   } else {
-  //     this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
-  //     this.sliderArr[this.sliderPosition - 1].style.transform = 'scale(0)';
-  //   }
-  // };
-  // this.decreasingSliderHandler = function () {
+  console.log(document.documentElement.clientWidth);
+  this.parentSliderToRight = this.sliderToRight;
+  this.sliderToRight = function () {
+    this.sliderToRight.call(this);
+    if (this.sliderPosition === 0) {
+      this.sliderArr[0].style.transform = 'scale(1)';
+      this.sliderArr[this.lastSlide].style.transform = 'scale(0)';
+    } else {
+      this.sliderArr[this.sliderPosition].style.left = '0px';
+      this.sliderArr[this.sliderPosition + 1].style.left = '400px';
+    }
+  };
+  // this.sliderToLeft = function () {
   //   this.sliderToLeft();
   //   // if (this.sliderPosition === 3) {
   //   //   this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';

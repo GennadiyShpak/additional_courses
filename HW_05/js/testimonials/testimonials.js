@@ -6,6 +6,7 @@ const { Carousel } = sliderObj;
 const { sliderItems, prevBtn, nextBtn, sliderList } = refs;
 const testimonialsSlider = new Carousel(sliderItems, sliderList, 4000);
 let startTouchPosition = null;
+let timerId = null;
 let activeSlide = null;
 const handleTouchStart = e => {
   startTouchPosition = e.touches[0].clientX;
@@ -15,10 +16,10 @@ const handleTouchEnd = e => {
     return false;
   }
   if (e.changedTouches[0].clientX > startTouchPosition) {
-    testimonialsSlider.grovingSlideHanler(sliderItems);
+    testimonialsSlider.sliderToRight(sliderItems);
     return false;
   }
-  testimonialsSlider.decreasingSliderHandler(sliderItems);
+  testimonialsSlider.sliderToLeft(sliderItems);
 };
 let onScroll = () => {
   const scrollTop = window.pageYOffset;
@@ -59,13 +60,13 @@ onScroll = throttle(onScroll, 500);
 
 nextBtn.addEventListener('click', () => {
   clearInterval(testimonialsSlider.intervalId);
-  testimonialsSlider.grovingSlideHanler();
+  testimonialsSlider.sliderToRight();
   testimonialsSlider.infinitySliderRight();
 });
 
 prevBtn.addEventListener('click', () => {
   clearInterval(testimonialsSlider.intervalId);
-  testimonialsSlider.decreasingSliderHandler();
+  testimonialsSlider.sliderToLeft();
   testimonialsSlider.infinitySliderLeft();
 });
 
