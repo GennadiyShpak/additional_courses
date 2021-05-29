@@ -391,7 +391,9 @@ body {
   .portfolio__item {
     width: 360px;
     position: absolute;
-    background-color: transparent; }
+    background-color: transparent;
+    transition: all ease 2s;
+    left: 1200px; }
     .portfolio__item-img {
       border-radius: 5px; }
     .portfolio__item:hover .hover-menu-wrapper {

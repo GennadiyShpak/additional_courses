@@ -483,6 +483,8 @@ body {
     width: 360px;
     position: absolute;
     background-color: transparent;
+    transition: all ease 2s;
+    left: 1200px;
     &-img {
       border-radius: 5px;
     }

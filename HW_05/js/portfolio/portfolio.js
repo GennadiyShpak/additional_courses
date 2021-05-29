@@ -3,9 +3,11 @@ import sliderObj from '../components/slider/slider.js';
 
 const { PortfoliSlider } = sliderObj;
 const { sliderItems, leftBtn, rightBtn } = refs;
-const portfolioSlider = new PortfoliSlider(sliderItems);
+const portfolioSlider = new PortfoliSlider(sliderItems, leftBtn, rightBtn);
 
 leftBtn.addEventListener('click', () => {
-  portfolioSlider.decreasingSliderHandler();
+  portfolioSlider.sliderToLeft();
 });
-rightBtn.addEventListener('click', portfolioSlider.grovingSlideHanler);
+rightBtn.addEventListener('click', () => {
+  portfolioSlider.sliderToRight();
+});

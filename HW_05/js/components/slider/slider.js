@@ -133,33 +133,43 @@ function Carousel(collection, el, int) {
   };
 }
 
-function PortfoliSlider(collection) {
+function PortfoliSlider(collection, lBtn, rBtn) {
   Slider.apply(this, arguments);
-  console.log(document.documentElement.clientWidth);
-  this.parentSliderToRight = this.sliderToRight;
+  this.sliderArr.forEach((item, i) => {
+    item.style.left = `${i * 400}px`;
+  });
+  this.parentToRight = this.sliderToRight;
+  this.parentToLeft = this.sliderToLeft;
+  if (this.sliderPosition - 1 === -1) {
+    lBtn.disabled = true;
+  }
+  const handleSliderPosition = item => {
+    const positionValueArr = item.style.left.split('');
+    positionValueArr.splice(-2);
+    return Number(positionValueArr.join(''));
+  };
   this.sliderToRight = function () {
-    this.sliderToRight.call(this);
-    if (this.sliderPosition === 0) {
-      this.sliderArr[0].style.transform = 'scale(1)';
-      this.sliderArr[this.lastSlide].style.transform = 'scale(0)';
+    this.parentToRight.call(this);
+    lBtn.disabled = false;
+    if (this.sliderPosition > this.lastSlide - 2) {
+      rBtn.disabled = true;
     } else {
-      this.sliderArr[this.sliderPosition].style.left = '0px';
-      this.sliderArr[this.sliderPosition + 1].style.left = '400px';
+      this.sliderArr.forEach((item, i) => {
+        item.style.left = `${handleSliderPosition(item) - 400}px`;
+      });
     }
   };
-  // this.sliderToLeft = function () {
-  //   this.sliderToLeft();
-  //   // if (this.sliderPosition === 3) {
-  //   //   this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
-  //   //   this.sliderArr[0].style.transform = 'scale(0)';
-  //   // } else {
-  //   // if ()
-  //   console.log(this.sliderPosition + 1);
-  //   this.sliderArr[this.sliderPosition].style.left = '0px';
-  //   // this.sliderArr[this.sliderPosition + 1].style.left = '400px';
-  //   // this.sliderArr[this.sliderPosition + 2].style.right = '0px';
-  //   // }
-  // };
+  this.sliderToLeft = function () {
+    this.parentToLeft.call(this);
+    rBtn.disabled = false;
+    if (this.sliderPosition === 0) {
+      lBtn.disabled = true;
+    } else {
+      this.sliderArr.forEach(item => {
+        item.style.left = `${handleSliderPosition(item) + 400}px`;
+      });
+    }
+  };
 }
 
 const sliderObj = {
@@ -167,19 +177,3 @@ const sliderObj = {
   PortfoliSlider,
 };
 export default sliderObj;
-// const createPresentationMarckup = (parent, img) => {
-//   // parent.insertAdjacentHTML(
-//   //   'beforeend',
-//   //   `
-//   // <li class="presentation__item></li>
-//   // `,
-//   // );
-//   console.log(img.src);
-// };
-// this.createPresentation = function (imageCollection, sibling) {
-//   const presentationWrapper = document.createElement('ul');
-//   sibling.after(presentationWrapper);
-//   [...imageCollection].forEach(img =>
-//     createPresentationMarckup(presentationWrapper, img),
-//   );
-// };
