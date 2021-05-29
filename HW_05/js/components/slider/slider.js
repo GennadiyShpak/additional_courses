@@ -140,7 +140,7 @@ function PortfoliSlider(collection, lBtn, rBtn) {
   });
   this.parentToRight = this.sliderToRight;
   this.parentToLeft = this.sliderToLeft;
-  if (this.sliderPosition - 1 === -1) {
+  if (this.sliderPosition === 0) {
     lBtn.disabled = true;
   }
   const handleSliderPosition = item => {
@@ -149,18 +149,17 @@ function PortfoliSlider(collection, lBtn, rBtn) {
     return Number(positionValueArr.join(''));
   };
   this.sliderToRight = function () {
-    this.parentToRight.call(this);
     lBtn.disabled = false;
-    if (this.sliderPosition > this.lastSlide - 2) {
+    if (this.sliderPosition === this.lastSlide - 2) {
       rBtn.disabled = true;
     } else {
       this.sliderArr.forEach((item, i) => {
         item.style.left = `${handleSliderPosition(item) - 400}px`;
       });
+      this.parentToRight.call(this);
     }
   };
   this.sliderToLeft = function () {
-    this.parentToLeft.call(this);
     rBtn.disabled = false;
     if (this.sliderPosition === 0) {
       lBtn.disabled = true;
@@ -168,6 +167,7 @@ function PortfoliSlider(collection, lBtn, rBtn) {
       this.sliderArr.forEach(item => {
         item.style.left = `${handleSliderPosition(item) + 400}px`;
       });
+      this.parentToLeft.call(this);
     }
   };
 }
