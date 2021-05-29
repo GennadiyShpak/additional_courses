@@ -6,7 +6,6 @@ const { Carousel } = sliderObj;
 const { sliderItems, prevBtn, nextBtn, sliderList } = refs;
 const testimonialsSlider = new Carousel(sliderItems, sliderList, 4000);
 let startTouchPosition = null;
-let timerId = null;
 let activeSlide = null;
 const handleTouchStart = e => {
   startTouchPosition = e.touches[0].clientX;

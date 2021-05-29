@@ -133,50 +133,32 @@ function Carousel(collection, el, int) {
   };
 }
 
-function Pendulum(collection) {
-  Slider.apply(this, arguments);
-  const parentToLeft = this.sliderToLeft;
-  const parentToRight = this.sliderToRight;
-  this.sliderToLeft = function () {
-    parentToLeft.call(this);
-    if (this.sliderPosition < 0) {
-      this.sliderToRight();
-    }
-  };
-  this.sliderToRight = function () {
-    parentToRight.call(this);
-    if (this.sliderPosition === this.sliderLength) {
-      this.sliderToLeft();
-    }
-  };
-}
-
 function PortfoliSlider(collection) {
-  Carousel.apply(this, arguments);
-
-  this.grovingSlideHanler = function () {
-    this.sliderToRight();
-    if (this.sliderPosition === 0) {
-      this.sliderArr[0].style.transform = 'scale(1)';
-      this.sliderArr[this.lastSlide].style.transform = 'scale(0)';
-    } else {
-      this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
-      this.sliderArr[this.sliderPosition - 1].style.transform = 'scale(0)';
-    }
-  };
-  this.decreasingSliderHandler = function () {
-    this.sliderToLeft();
-    // if (this.sliderPosition === 3) {
-    //   this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
-    //   this.sliderArr[0].style.transform = 'scale(0)';
-    // } else {
-    // if ()
-    console.log(this.sliderPosition + 1);
-    this.sliderArr[this.sliderPosition].style.left = '0px';
-    // this.sliderArr[this.sliderPosition + 1].style.left = '400px';
-    // this.sliderArr[this.sliderPosition + 2].style.right = '0px';
-    // }
-  };
+  Slider.apply(this, arguments);
+  console.log(collection);
+  // this.grovingSlideHanler = function () {
+  //   this.sliderToRight();
+  //   if (this.sliderPosition === 0) {
+  //     this.sliderArr[0].style.transform = 'scale(1)';
+  //     this.sliderArr[this.lastSlide].style.transform = 'scale(0)';
+  //   } else {
+  //     this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
+  //     this.sliderArr[this.sliderPosition - 1].style.transform = 'scale(0)';
+  //   }
+  // };
+  // this.decreasingSliderHandler = function () {
+  //   this.sliderToLeft();
+  //   // if (this.sliderPosition === 3) {
+  //   //   this.sliderArr[this.sliderPosition].style.transform = 'scale(1)';
+  //   //   this.sliderArr[0].style.transform = 'scale(0)';
+  //   // } else {
+  //   // if ()
+  //   console.log(this.sliderPosition + 1);
+  //   this.sliderArr[this.sliderPosition].style.left = '0px';
+  //   // this.sliderArr[this.sliderPosition + 1].style.left = '400px';
+  //   // this.sliderArr[this.sliderPosition + 2].style.right = '0px';
+  //   // }
+  // };
 }
 
 const sliderObj = {

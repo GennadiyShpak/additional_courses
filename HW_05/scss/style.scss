@@ -904,6 +904,7 @@ body {
     width: 45px;
     height: 45px;
     cursor: pointer;
+    background-repeat: no-repeat;
     &-unactive {
       background-image: url(../img/svg/common.svg);
     }

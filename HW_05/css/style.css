@@ -732,7 +732,8 @@ body {
 .presentation__item {
   width: 45px;
   height: 45px;
-  cursor: pointer; }
+  cursor: pointer;
+  background-repeat: no-repeat; }
   .presentation__item-unactive {
     background-image: url(../img/svg/common.svg); }
   .presentation__item-active {
