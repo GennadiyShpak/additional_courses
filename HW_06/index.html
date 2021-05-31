@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <header class="header" id="home">
+      <div class="wrapper">
+        <nav class="row nav-menu align-items-baseline justify-content-between">
+          <p class="logo col-2 text-md-left text-center">
+            <a href="#" class="logo__link">BlogWorld</a>
+          </p>
+          <div class="col-5 d-none d-md-block">
+            <ul class="nav-menu__list row d-flex justify-content-around">
+              <li class="nav-menu__item">
+                <a href="#home  " class="nav-menu__link">Home</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#portfolio" class="nav-menu__link">Portfolio</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="./blog.html" class="nav-menu__link">Blog</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#posts" class="nav-menu__link">Pages</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#about" class="nav-menu__link">About</a>
+              </li>
+              <li class="nav-menu__item">
+                <a href="#contact" class="nav-menu__link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn d-md-none">Show menu</button>
+        </nav>
+        <div class="row justify-content-lg-start justify-content-center">
+          <div class="header__title-wrapper col-5 d-flex">
+            <h1 class="header__title text-center text-lg-left">
+              Ideas and perspectives you won’t find anywhere else.
+            </h1>
+          </div>
+        </div>
+        <div
+          class="
+            row
+            justify-content-lg-start justify-content-center
+            d-none d-md-flex
+          "
+        >
+          <div class="col-7 header__description-wrapper">
+            <p class="header__description text-center text-lg-left">
+              BlogWorld taps into the brains of the world’s most insightful
+              writers, thinkers, and storytellers to bring you the smartest
+              takes on topics that matter. So whatever your interest, you can
+              always find fresh thinking and unique perspectives.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-lg-start justify-content-center">
+          <div
+            class="
+              col-md-4 col-12
+              header__btn-wrapper
+              align-items-md-start
+              d-flex
+              justify-content-lg-start justify-content-center
+            "
+          >
+            <button class="btn btn-primary">Explore</button>
+            <button class="btn">Learn more</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+      <section class="wrapper section-about" id="about">
+        <div class="sticky"></div>
+        <div class="row about__title-wrapper justify-content-center">
+          <h2 class="about__title title">About us</h2>
+          <div class="pseudo about__pseudo"></div>
+        </div>
+        <div class="row about__description-wrapper justify-content-center">
+          <p class="about__description">
+            This is who we are - or at least who we strive to be…
+          </p>
+        </div>
+        <div class="row justify-content-center justify-content-md-between">
+          <div class="col-3 d-none d-md-block">
+            <div class="row about__sidebar">
+              <div
+                class="
+                  side-folder side-folder__typography
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-typography"></use>
+                </svg>
+                <p class="side-folder__description typography__description">
+                  Typography
+                </p>
+              </div>
+              <div
+                class="
+                  side-folder side-folder__icon-set
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-iconset"></use>
+                </svg>
+                <p class="side-folder__description icon-set__description">
+                  Icon set
+                </p>
+              </div>
+              <div
+                class="
+                  side-folder side-folder__accurate
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <svg class="side-folder__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-accurate"></use>
+                </svg>
+                <p class="side-folder__description accurate__description">
+                  Accurate
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-9 video-player__wrapper">
+            <video
+              class="video-player"
+              src="#"
+              poster="./img/About-picture.png"
+            ></video>
+            <button class="play-btn">
+              <svg class="video-player__svg">
+                <use href="./img/svg/sprite.svg#icon-a-icon-play"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="posts wrapper" id="posts">
+        <div class="sticky"></div>
+        <div class="row posts__title-wrapper justify-content-center">
+          <h2 class="posts__title title">Latest posts</h2>
+          <div class="pseudo posts__pseudo"></div>
+        </div>
+        <div class="row posts__description-wrapper justify-content-center">
+          <p class="posts__description col-5">
+            Information is a source of learning. But unless it is organized,
+            processed and available to the right people
+          </p>
+        </div>
+        <ul
+          class="
+            posts__list
+            d-flex
+            flex-column flex-md-row
+            justify-content-lg-between
+            justify-content-between
+            justify-content-md-around
+            align-items-center
+          "
+        >
+          <li class="posts__item">
+            <img
+              class="posts__item-image"
+              src="./img/Img-post1.png"
+              alt="post 1"
+              width="360"
+              height="243"
+            />
+            <h3 class="posts__item-title">
+              <a class="posts__item-title-link" href="#"
+                >In the Future We Will All Live in Star Wars</a
+              >
+            </h3>
+            <p class="posts__item-description text-center text-lg-left">
+              The thing you’re doing now, reading prose on a screen, is going
+              out of fashion. The defining narrative of our online moment
+              concerns the decline of text, and the exploding reach and power of
+              audio and video…
+            </p>
+            <div class="posts__item-info">
+              <span class="posts__item-data">20 oct, 2019</span>
+              <span class="posts__item-read-time">10 min read</span>
+              <span class="posts__item-comment">11</span>
+            </div>
+          </li>
+          <li class="posts__item">
+            <img
+              class="posts__item-image"
+              src="./img/Img-post2.png"
+              alt="post 2"
+              width="360"
+              height="243"
+            />
+            <h3 class="posts__item-title">
+              <a class="posts__item-title-link" href="#">
+                Rubik’s Cube? No, Robotics and AI are…</a
+              >
+            </h3>
+            <p class="posts__item-description text-lg-left text-center">
+              In other words, I will try to de-hype the crowd about the recent
+              development in robotics. Concretely, OpenAI has claimed some
+              pretty amazing results with learning to solve the Rubik’s cube
+              with a robotic hand…
+            </p>
+            <div class="posts__item-info">
+              <span class="posts__item-data data-post2">11 oct, 2019</span>
+              <span class="posts__item-read-time time-post2">7 min read</span>
+              <span class="posts__item-comment comment-post2">19</span>
+            </div>
+          </li>
+          <li class="posts__item d-md-none d-lg-block">
+            <img
+              class="posts__item-image"
+              src="./img/Img-post3.png"
+              alt="post 3"
+              width="360"
+              height="243"
+            />
+            <h3 class="posts__item-title">
+              <a class="posts__item-title-link" href="#">
+                How the Internet of Things will Transfo…</a
+              >
+            </h3>
+            <p class="posts__item-description">
+              The Internet of Things (IoT) promises to be the most important
+              technological development for consumers since the advent of the
+              smartphone. Experts believe that this collection of
+              internet-connected technolog…
+            </p>
+            <div class="posts__item-info">
+              <span class="posts__item-data">28 sep, 2019</span>
+              <span class="posts__item-read-time">16 min read</span>
+              <span class="posts__item-comment">41</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="portfolio wrapper" id="portfolio">
+        <div class="sticky"></div>
+        <div class="row portfolio__title-wrapper justify-content-center">
+          <h2 class="portfolio__title title">Latest portfolio</h2>
+          <div class="pseudo portfolio__pseudo"></div>
+        </div>
+        <div class="row portfolio__description-wrapper justify-content-center">
+          <p class="portfolio__description col-5">
+            Put there articles successfully special warrant submit agree what
+            along then
+          </p>
+        </div>
+        <ul class="portfolio__list">
+          <li class="portfolio__item">
+            <img
+              src="./img/bg-img1.png"
+              alt="portfolio1"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Art Ocean</h3>
+              <p class="portfolio__item-description">
+                Photography, art, nature
+              </p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/bg-img2.png"
+              alt="portfolio2"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">City guide</h3>
+              <p class="portfolio__item-description">Photography, city, way</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/bg-img3.png"
+              alt="portfolio3"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Mountains</h3>
+              <p class="portfolio__item-description">Art, hiking</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/animal-art.jpg"
+              alt="portfolio1"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Animal</h3>
+              <p class="portfolio__item-description">
+                Photography, art, anymal
+              </p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/sport-art.jpg"
+              alt="portfolio2"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Sport</h3>
+              <p class="portfolio__item-description">Photography, sport, art</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio__item">
+            <img
+              src="./img/space-art.jpg"
+              alt="portfolio3"
+              class="portfolio__item-img"
+              width="360"
+              height="244"
+            />
+            <div class="portfolio__item-description-wrapper">
+              <h3 class="portfolio__item-title">Space</h3>
+              <p class="portfolio__item-description">Travel, space</p>
+            </div>
+            <div class="hover-menu-wrapper">
+              <div class="portfolio__hover-menu">
+                <button class="portfolio__hover-btn icon-attach">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-attach"></use>
+                  </svg>
+                </button>
+                <button class="portfolio__hover-btn icon-search">
+                  <svg class="slider-btn__svg">
+                    <use href="./img/svg/sprite.svg#icon-a-icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="row justify-content-center slider-btn__row">
+          <div
+            class="
+              portfolio__slider-wrapper
+              d-flex
+              col-4
+              justify-content-between
+            "
+          >
+            <button class="slider-btn left portfolio__slider-btn-left">
+              <svg class="slider-btn__svg slider-btn__left">
+                <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+              </svg>
+            </button>
+            <button class="slider-btn right portfolio__slider-btn-right">
+              <svg class="slider-btn__svg slider-btn__right">
+                <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="portfolio__modal-btn-wrapper row justify-content-center">
+          <button class="portfolio__modal-btn btn">See all works</button>
+        </div>
+      </section>
+      <section class="testimonials">
+        <div class="sticky"></div>
+        <div class="testimonials__container">
+          <div class="wrapper">
+            <div class="row testimonials__title-wrapper justify-content-center">
+              <h2 class="testimonials__title title">Testimonials</h2>
+              <div class="pseudo testimonials__pseudo"></div>
+            </div>
+            <div
+              class="row justify-content-center testimonials__slider-wrapper"
+            >
+              <ul
+                class="
+                  col-6
+                  flex-md-row
+                  testimonials__slider-list testimonials__wrapper
+                "
+              >
+                <li
+                  class="
+                    testimonials__slider-item
+                    flex-row
+                    align-items-center
+                    d-flex
+                    testimonials__slider-start
+                    flex-column flex-md-row
+                    align-items-center
+                  "
+                >
+                  <div class="testimonials__slogan-container">
+                    <p class="testimonials__quotes">“</p>
+                    <p class="testimonials__slogan">
+                      We move at a fast pace. I’m always working on something. I
+                      am excited about it!
+                    </p>
+                    <p class="testimonials__name">Martin Oda</p>
+                    <p class="testimonials__position">Product desgner</p>
+                  </div>
+                  <div class="testimonials__img">
+                    <img
+                      src="./img/User-img.png"
+                      alt="user-photo"
+                      width="280"
+                      height="265"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="
+                    testimonials__slider-item
+                    flex-row
+                    align-items-center
+                    d-flex
+                    flex-column flex-md-row
+                    align-items-center
+                  "
+                >
+                  <div class="testimonials__slogan-container">
+                    <p class="testimonials__quotes">“</p>
+                    <p class="testimonials__slogan">
+                      In our team, everyone works without interruption! Those
+                      who are exhausted, I personally finish off
+                    </p>
+                    <p class="testimonials__name">John Rambo</p>
+                    <p class="testimonials__position">Team leader</p>
+                  </div>
+                  <div class="testimonials__img">
+                    <img
+                      src="./img/rambo.png"
+                      alt="rambo-photo"
+                      width="280"
+                      height="265"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="
+                    testimonials__slider-item
+                    flex-row
+                    align-items-center
+                    d-flex
+                    flex-column flex-md-row
+                    align-items-center
+                  "
+                >
+                  <div class="testimonials__slogan-container">
+                    <p class="testimonials__quotes">“</p>
+                    <p class="testimonials__slogan">
+                      I never feel tired when I wrestle with code, night is my
+                      time
+                    </p>
+                    <p class="testimonials__name">Bruce Wayne</p>
+                    <p class="testimonials__position">Front-end developer</p>
+                  </div>
+                  <div class="testimonials__img">
+                    <img
+                      src="./img/batman.png"
+                      alt="batman-photo"
+                      width="280"
+                      height="265"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="
+                    testimonials__slider-item
+                    flex-row
+                    align-items-center
+                    d-flex
+                    flex-column flex-md-row
+                    align-items-center
+                  "
+                >
+                  <div class="testimonials__slogan-container">
+                    <p class="testimonials__quotes">“</p>
+                    <p class="testimonials__slogan">
+                      When I test the code, I feel like a real spider hunting on
+                      bug.
+                    </p>
+                    <p class="testimonials__name">Peter Parker</p>
+                    <p class="testimonials__position">QA</p>
+                  </div>
+                  <div class="testimonials__img">
+                    <img
+                      src="./img/spiderMan.png"
+                      alt="spider-man-photo"
+                      width="280"
+                      height="265"
+                    />
+                  </div>
+                </li>
+              </ul>
+              <button
+                class="
+                  slider-btn
+                  testimonials__slider-btn testimonials__left-btn
+                "
+              >
+                <svg class="slider-btn__svg slider-btn__left">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+                </svg>
+              </button>
+              <button
+                class="
+                  slider-btn
+                  testimonials__slider-btn testimonials__right-btn
+                "
+              >
+                <svg class="slider-btn__svg slider-btn__right">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="sticky"></div>
+        <div class="wrapper">
+          <div class="row contact__title-wrapper justify-content-center">
+            <h2 class="contact__title title">Contact us</h2>
+            <div class="pseudo contact__pseudo"></div>
+          </div>
+          <div class="row contact__description-wrapper justify-content-center">
+            <p class="contact__description col-5">
+              Put there articles successfully special warrant submit agree what
+              along then
+            </p>
+          </div>
+          <div
+            class="
+              row
+              social-icons__wrapper
+              justify-content-lg-start justify-content-center
+            "
+          >
+            <ul class="social-icons__list d-flex">
+              <li class="social-icons__item">
+                <a
+                  href="https://www.facebook.com/"
+                  class="social-icons__link"
+                  target="_blank"
+                  ><svg class="social-icons__svg">
+                    <use
+                      href="./img/svg/sprite.svg#icon-a-icon-facebook"
+                    ></use></svg
+                ></a>
+              </li>
+              <li class="social-icons__item">
+                <a
+                  href="https://www.instagram.com/"
+                  class="social-icons__link"
+                  target="_blank"
+                  ><svg class="social-icons__svg">
+                    <use
+                      href="./img/svg/sprite.svg#icon-a-icon-instagram"
+                    ></use></svg
+                ></a>
+              </li>
+              <li class="social-icons__item">
+                <a
+                  href="https://www.dribbble.com/"
+                  class="social-icons__link"
+                  target="_blank"
+                  ><svg class="social-icons__svg">
+                    <use
+                      href="./img/svg/sprite.svg#icon-a-icon-dribbble"
+                    ></use></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map__wrapper row">
+            <div class="next-step__wrapper">
+              <h3
+                class="
+                  next-step__title
+                  col-lg-5 col-12
+                  text-center text-lg-left
+                "
+              >
+                What will be next step?
+              </h3>
+              <ul class="next-step__list col-lg-6 d-flex d-lg-block">
+                <li class="next-step__item">
+                  <h4 class="next-step__item-title text-lg-left text-center">
+                    <span class="next-step__item-title-number">1.</span>
+                    We’ll prepare a proposal
+                  </h4>
+                  <p class="next-step__description text-lg-left text-center">
+                    Required scope, timeline and apr. price will be included if
+                    you provide us with detail information about a project.
+                  </p>
+                </li>
+                <li class="next-step__item">
+                  <h4 class="next-step__item-title text-lg-left text-center">
+                    <span class="next-step__item-title-number">2.</span>
+                    Together we discuss it
+                  </h4>
+                  <p class="next-step__description text-lg-left text-center">
+                    Let’s get acquainted and discuss all the possible variant
+                    and options. Google Hangouts or Skype usually wirks great.
+                  </p>
+                </li>
+                <li class="next-step__item">
+                  <h4 class="next-step__item-title text-lg-left text-center">
+                    <span class="next-step__item-title-number">3.</span> Let’s
+                    start building
+                  </h4>
+                  <p class="next-step__description text-lg-left text-center">
+                    When the contract is signed and all goals are set we can
+                    start the first sprint.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="form__wrapper col-8 d-none d-lg-block">
+              <div class="write-us__wrapper">
+                <svg class="write-us__svg">
+                  <use href="./img/svg/sprite.svg#icon-a-icon-mail"></use>
+                </svg>
+                <p class="write-us__description">
+                  Write us a few words about your project and we will prepare
+                  proposal for you within 24 hours
+                </p>
+              </div>
+              <div class="form-map__wrapper">
+                <form class="form">
+                  <div class="form__input-wrapper">
+                    <label for="name" class="form__input-label"
+                      >Your name</label
+                    >
+                    <input type="text" id="name" class="form__input" />
+                  </div>
+                  <div class="form__input-wrapper">
+                    <label for="mail" class="form__input-label">Email</label>
+                    <input type="email" id="mail" class="form__input" />
+                  </div>
+                  <div class="form__input-wrapper form__input-pass">
+                    <button class="form__btn-showpass" type="button">
+                      <svg class="form__btn-svg">
+                        <use
+                          href="./img/svg/sprite.svg#icon-a-icon-showpass"
+                        ></use>
+                      </svg>
+                      <span class="form__btn-span">show</span>
+                    </button>
+                    <label for="pass" class="form__input-label">Password</label>
+                    <input type="password" id="pass" class="form__input" />
+                  </div>
+                  <button class="btn form__btn btn-primary">
+                    Send message
+                  </button>
+                  <p class="form__btn-description">
+                    If you need to have a DNA first, just contact us at
+                    <span
+                      ><a
+                        href="mailto:email@gmail.com"
+                        class="form__btn-description-link"
+                        >email@gmail.com</a
+                      ></span
+                    >
+                  </p>
+                </form>
+                <img src="./img/map.png" alt="map" width="380" height="558" />
+              </div>
+            </div>
+            <button class="btn d-block d-lg-none m-auto">Show form</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrapper footer__content-wrapper">
+        <div class="footer-icons__wrapper d-flex align-items-center">
+          <ul class="footer-icons__list d-flex footer__icon">
+            <li class="footer-icons__item">
+              <a
+                href="https://www.facebook.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-facebook"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.instagram.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-instagram"
+                  ></use></svg
+              ></a>
+            </li>
+            <li class="footer-icons__item">
+              <a
+                href="https://www.dribbble.com/"
+                class="footer-icons__link"
+                target="_blank"
+                ><svg class="footer-icons__svg">
+                  <use
+                    href="./img/svg/sprite.svg#icon-a-icon-dribbble"
+                  ></use></svg
+              ></a>
+            </li>
+          </ul>
+          <p class="footer__link-wrapper">
+            <a href="#" class="footer__link">BlogWorld</a>
+          </p>
+          <p class="footer__copyright">&copy; 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./js/testimonials/testimonials.js"></script>
+    <script type="module" src="./js/portfolio/portfolio.js"></script>
+  </body>
+</html>
