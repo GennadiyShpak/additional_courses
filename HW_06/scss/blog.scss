@@ -19,6 +19,7 @@
       width: auto;
       height: 379px;
       overflow: hidden;
+      position: relative;
     }
   }
   &__audio {
@@ -26,6 +27,18 @@
       width: 202px;
       height: 42px;
       border-radius: 20px;
+    }
+    &-wrapper {
+      position: relative;
+    }
+    &-btn {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      background-color: red;
+      height: 42px;
+      width: 30px;
+      opacity: 0;
     }
   }
   &__info {

@@ -15,11 +15,22 @@
   .blog__media-wrapper {
     width: auto;
     height: 379px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
   .blog__audio-player {
     width: 202px;
     height: 42px;
     border-radius: 20px; }
+  .blog__audio-wrapper {
+    position: relative; }
+  .blog__audio-btn {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    background-color: red;
+    height: 42px;
+    width: 30px;
+    opacity: 0; }
   .blog__info {
     position: relative;
     font-size: 15px;

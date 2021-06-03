@@ -82,6 +82,3 @@ sliderList.addEventListener('touchstart', handleTouchStart);
 sliderList.addEventListener('touchend', handleTouchEnd);
 
 window.addEventListener('scroll', onScroll);
-
-const aaaa = document.querySelector('.ytp-button');
-console.log(aaaa);
