@@ -25,7 +25,9 @@ const videoPostApi = new VideoPostApi();
 const audioPostApi = new AudioPostApi();
 const imagePostApi = new ImagePostApi();
 const textPostApi = new TextPostApi();
-
+function validate(title) {
+  return /^[A-Z]{1}[a-zA-Z\d\s!.,:?-]{5,59}$/.test(title);
+}
 const searchByAuthor = value => {
   if (!resetFilter.classList.contains('d-block')) {
     localStorage.setItem('unFiltredMarkup', blogList.innerHTML);
@@ -52,19 +54,24 @@ const searchByTitle = value => {
   const titlePosts = document.querySelectorAll('.blog__article-title');
   const postsCollection = document.querySelectorAll('.blog__item');
   const searchValueTolowerCase = value.toLowerCase();
-  [...titlePosts].forEach((post, i) => {
-    if (searchValueTolowerCase !== post.innerHTML.toLowerCase().trim()) {
-      postsCollection[i].remove();
-    }
-  });
-  if (blogList.children.length === 0) {
-    blogList.innerHTML = `
+  const isValid = validate(value);
+  if (isValid) {
+    [...titlePosts].forEach((post, i) => {
+      if (searchValueTolowerCase !== post.innerHTML.toLowerCase().trim()) {
+        postsCollection[i].remove();
+      }
+    });
+    if (blogList.children.length === 0) {
+      blogList.innerHTML = `
   <h2 class="blog__list-not-found">
     Sorry incorrect search value
   </h2>`;
+    }
+    resetFilter.classList.add('d-block');
+    searchInput.value = '';
+  } else {
+    alert('Not correct value');
   }
-  resetFilter.classList.add('d-block');
-  searchInput.value = '';
 };
 const onSearchBtnClickHandler = () => {
   if (radioAuthor.checked) {
@@ -114,7 +121,7 @@ const onRadioBtnMenuClickHandler = e => {
     searchInput.placeholder = 'Search by author';
   }
 };
-const aaa = value => {
+const choiseFilterFunction = value => {
   if (radioAuthor.checked) {
     searchByAuthor(value);
   } else {
@@ -141,7 +148,7 @@ const createDropdownMenuElement = (i, content, imageColl = null) => {
   dropMenuItem.append(dropMenuLink);
   dropdownMenu.append(dropMenuItem);
   dropMenuItem.addEventListener('click', () => {
-    aaa(linkContent);
+    choiseFilterFunction(linkContent);
   });
 };
 const createAuthorList = () => {
