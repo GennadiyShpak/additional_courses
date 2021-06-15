@@ -456,8 +456,6 @@ body {
     margin-bottom: 40px; }
   .slider-btn:hover {
     box-shadow: 0 3px 10px 0 #6d6d6d; }
-  .slider-btn__left {
-    transform: rotate(90deg); }
   .slider-btn__right {
     transform: rotate(270deg); }
 

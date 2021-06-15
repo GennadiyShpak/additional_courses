@@ -152,10 +152,25 @@ body {
   z-index: 10;
   margin: 0 auto;
   &__link {
+    display: inline-block;
     color: var(--base-collor);
     font-size: 15px;
     letter-spacing: 0.1px;
     line-height: 25px;
+    &::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+    &:hover {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid black;
+      font-weight: bold;
+    }
   }
 }
 .btn {
@@ -459,6 +474,9 @@ body {
     margin-bottom: 40px;
     overflow: hidden;
     height: 245px;
+    &:hover {
+      cursor: url('../img/svg/white-pointer.svg'), auto;
+    }
   }
   &__slider-wrapper {
     padding: 0 18px;
@@ -550,6 +568,7 @@ body {
 .slider-btn {
   width: 45px;
   height: 45px;
+  cursor: url('../img/svg/dark-grey-pointer.svg'), auto !important;
   &__row {
     margin-bottom: 40px;
   }
@@ -567,6 +586,10 @@ body {
 .testimonials {
   position: relative;
   &__slider {
+    &-btn {
+      position: absolute;
+      top: 108px;
+    }
     &-item {
       position: absolute;
       top: 0;
@@ -595,10 +618,6 @@ body {
   }
   &__pseudo {
     width: 128px;
-  }
-  &__slider-btn {
-    position: absolute;
-    top: 108px;
   }
   &__title {
     color: var(--base-collor);

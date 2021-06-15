@@ -125,6 +125,7 @@ class MovieDBApi {
         }`,
       );
       const { results } = await response.json();
+      console.log('results', results);
       return results;
     } catch (error) {
       console.log('error', { error });
@@ -206,7 +207,7 @@ class MovieDBApi {
         >
           <a target="_blank" href=${this.#getReviewUrl(
             reviewsList,
-          )} class="btn">Read more</a>
+          )} class="btn blog__read-more-btn">Read more</a>
         </div>
       </div>`;
     const ratingList = el.querySelector('.blog__rating-btn-list');

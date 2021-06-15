@@ -9,6 +9,9 @@ label {
   position: relative;
   padding-top: 39px;
   padding-bottom: 156px;
+  &__read-more-btn {
+    cursor: url('../img/svg/light-grey-pointer.svg'), auto !important;
+  }
   &__active-link {
     font-weight: bold;
     border-bottom: 1px solid black;
@@ -97,15 +100,15 @@ label {
       }
     }
     &-time-playmini {
-      margin-right: 39px;
+      margin-right: 44px;
       &::after {
         left: 77px;
       }
     }
     &-data-playmini {
-      margin-right: 20px;
+      margin-right: 30px;
       &::after {
-        left: 79px;
+        left: 95px;
       }
     }
     &-data-picture {
@@ -138,6 +141,7 @@ label {
     margin-bottom: 50px;
     &:hover {
       box-shadow: 0 75px 30px -80px gray;
+      cursor: url('../img/svg/post-cursor.svg'), auto;
     }
   }
   &-header {
@@ -256,7 +260,7 @@ label {
         height: 72px;
         background-repeat: no-repeat;
         border: 4px solid var(--secondary-collor);
-        border-radius: 5px;
+        border-radius: 10px;
         background-position: 19px 12px;
       }
     }
