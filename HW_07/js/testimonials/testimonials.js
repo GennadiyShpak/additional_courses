@@ -57,18 +57,21 @@ let onScroll = () => {
 };
 
 onScroll = throttle(onScroll, 500);
-
-nextBtn.addEventListener('click', () => {
+let onSliderRightBtnClick = () => {
   clearInterval(testimonialsSlider.intervalId);
   testimonialsSlider.sliderToRight();
   testimonialsSlider.infinitySliderRight();
-});
-
-prevBtn.addEventListener('click', () => {
+};
+let onSliderLeftBtnClick = () => {
   clearInterval(testimonialsSlider.intervalId);
   testimonialsSlider.sliderToLeft();
   testimonialsSlider.infinitySliderLeft();
-});
+};
+onSliderRightBtnClick = throttle(onSliderRightBtnClick, 500);
+onSliderLeftBtnClick = throttle(onSliderRightBtnClick, 500);
+
+nextBtn.addEventListener('click', onSliderRightBtnClick);
+prevBtn.addEventListener('click', onSliderLeftBtnClick);
 
 sliderList.addEventListener('mouseenter', () => {
   clearInterval(testimonialsSlider.intervalId);
