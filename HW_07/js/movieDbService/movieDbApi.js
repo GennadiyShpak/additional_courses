@@ -227,18 +227,41 @@ class VideoPostApi extends MovieDBApi {
     const viddeoWrapper = el.querySelector('.blog__media-wrapper');
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-playmini');
-    viddeoWrapper.innerHTML = `
+    if (this.posterPath) {
+      viddeoWrapper.innerHTML = `
       <video
       class="video-player"
       width="560"
       src="#"
-      poster="./img/blog/Image-post-1.png"
+      poster=https://image.tmdb.org/t/p/original/${this.posterPath}
       ></video>
       <button class="play-btn">
         <svg class="video-player__svg">
           <use href="./img/svg/sprite.svg#icon-a-icon-play"></use>
         </svg>
       </button>`;
+    }
+    if (this.backdropPath) {
+      viddeoWrapper.innerHTML = `
+      <video
+      class="video-player"
+      width="560"
+      src="#"
+      poster=https://image.tmdb.org/t/p/original/${this.backdropPath}
+      ></video>
+      <button class="play-btn">
+        <svg class="video-player__svg">
+          <use href="./img/svg/sprite.svg#icon-a-icon-play"></use>
+        </svg>
+      </button>`;
+    } else {
+      imageWrapper.innerHTML = `
+      <img
+        src='../../img/blog/Image-post-3.png'
+        alt="poster"
+      />
+      `;
+    }
     const btnPlay = document.querySelector('.video-player__svg');
     btnPlay.addEventListener('click', e => {
       if (!e.target.classList.contains('play')) {
@@ -278,13 +301,14 @@ class ImagePostApi extends MovieDBApi {
     />
     `;
       return;
-    }
-    imageWrapper.innerHTML = `
+    } else {
+      imageWrapper.innerHTML = `
     <img
       src='../../img/blog/Image-post-3.png'
       alt="poster"
     />
     `;
+    }
   }
 }
 class AudioPostApi extends MovieDBApi {
@@ -312,20 +336,42 @@ class AudioPostApi extends MovieDBApi {
     });
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-melody');
-    imageWrapper.innerHTML = `
+    if (this.backdropPath) {
+      imageWrapper.innerHTML = `
+        <img
+          src=https://image.tmdb.org/t/p/original/${this.backdropPath}
+          alt="poster"
+          width="560"
+          height="379"
+        />
+        `;
+      return;
+    }
+    if (this.posterPath) {
+      imageWrapper.innerHTML = `
     <img
-      src="./img/blog/Image-post-2.png"
-      alt="audio post"
+      src=https://image.tmdb.org/t/p/original/${this.posterPath}
+      alt="poster"
       width="560"
       height="379"
     />
     `;
+      return;
+    } else {
+      imageWrapper.innerHTML = `
+    <img
+      src='../../img/blog/Image-post-3.png'
+      alt="poster"
+    />
+    `;
+    }
   }
 }
 class TextPostApi extends MovieDBApi {
   async createPostMarckup(el, i) {
     await super.createPostMarckup(el, i);
     const imageWrapper = el.querySelector('.blog__media-wrapper');
+    imageWrapper.classList.add('text-wrapper');
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-text');
   }
