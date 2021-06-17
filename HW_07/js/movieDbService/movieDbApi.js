@@ -142,13 +142,7 @@ class MovieDBApi {
       console.log('error', { error });
     }
   }
-  async createPostMarckup(el, i) {
-    let movieList;
-    if (!JSON.parse(sessionStorage.getItem('movieList'))) {
-      movieList = await this.getTrends();
-    } else {
-      movieList = JSON.parse(sessionStorage.getItem('movieList'));
-    }
+  async createPostMarckup(el, i, movieList) {
     const movieId = movieList[i].id;
     this.posterPath = movieList[i].poster_path;
     this.backdropPath = movieList[i].backdrop_path;
@@ -222,8 +216,8 @@ class MovieDBApi {
 }
 
 class VideoPostApi extends MovieDBApi {
-  async createPostMarckup(el, i) {
-    await super.createPostMarckup(el, i);
+  async createPostMarckup(el, i, movieList) {
+    await super.createPostMarckup(el, i, movieList);
     const viddeoWrapper = el.querySelector('.blog__media-wrapper');
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-playmini');
@@ -275,8 +269,8 @@ class VideoPostApi extends MovieDBApi {
   }
 }
 class ImagePostApi extends MovieDBApi {
-  async createPostMarckup(el, i) {
-    await super.createPostMarckup(el, i);
+  async createPostMarckup(el, i, movieList) {
+    await super.createPostMarckup(el, i, movieList);
     const imageWrapper = el.querySelector('.blog__media-wrapper');
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-picture');
@@ -312,8 +306,8 @@ class ImagePostApi extends MovieDBApi {
   }
 }
 class AudioPostApi extends MovieDBApi {
-  async createPostMarckup(el, i) {
-    await super.createPostMarckup(el, i);
+  async createPostMarckup(el, i, movieList) {
+    await super.createPostMarckup(el, i, movieList);
     const imageWrapper = el.querySelector('.blog__media-wrapper');
     const textWrapper = el.querySelector('.blog__article');
     textWrapper.insertAdjacentHTML(
@@ -368,14 +362,20 @@ class AudioPostApi extends MovieDBApi {
   }
 }
 class TextPostApi extends MovieDBApi {
-  async createPostMarckup(el, i) {
-    await super.createPostMarckup(el, i);
+  async createPostMarckup(el, i, movieList) {
+    await super.createPostMarckup(el, i, movieList);
     const imageWrapper = el.querySelector('.blog__media-wrapper');
     imageWrapper.classList.add('text-wrapper');
     const contentWrapper = el.querySelector('.blog__content-wrapper');
     contentWrapper.classList.add('blog__content-wrapper-text');
   }
 }
-const movieDb = { VideoPostApi, AudioPostApi, ImagePostApi, TextPostApi };
+const movieDb = {
+  VideoPostApi,
+  AudioPostApi,
+  ImagePostApi,
+  MovieDBApi,
+  TextPostApi,
+};
 
 export default movieDb;

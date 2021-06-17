@@ -1,6 +1,7 @@
 import movieDb from '../../movieDbService/movieDbApi.js';
 import refs from './refs.js';
-const { VideoPostApi, AudioPostApi, ImagePostApi, TextPostApi } = movieDb;
+const { VideoPostApi, AudioPostApi, MovieDBApi, ImagePostApi, TextPostApi } =
+  movieDb;
 const {
   videoPost,
   audioPost,
@@ -16,12 +17,12 @@ const {
   radioTitle,
   dropdownMenu,
 } = refs;
-
+const movieApi = new MovieDBApi();
+await movieApi.getTrends();
 let hiddenBtnAngle = 0,
   hiddenMenu = true;
 const filtredMarkupByAuthor = localStorage.getItem('filtredMarkupByAuthor');
 const movieList = JSON.parse(sessionStorage.getItem('movieList'));
-console.log('movieList', movieList);
 const videoPostApi = new VideoPostApi();
 const audioPostApi = new AudioPostApi();
 const imagePostApi = new ImagePostApi();
@@ -81,11 +82,11 @@ const onSearchBtnClickHandler = () => {
   }
   searchByTitle(searchInput.value);
 };
-const createMarkup = () => {
-  videoPostApi.createPostMarckup(videoPost, 0);
-  audioPostApi.createPostMarckup(audioPost, 1);
-  imagePostApi.createPostMarckup(imagePost, 2);
-  textPostApi.createPostMarckup(textPost, 3);
+const createMarkup = async () => {
+  await videoPostApi.createPostMarckup(videoPost, 0, movieList);
+  await audioPostApi.createPostMarckup(audioPost, 1, movieList);
+  await imagePostApi.createPostMarckup(imagePost, 2, movieList);
+  await textPostApi.createPostMarckup(textPost, 3, movieList);
   resetFilter.classList.remove('d-block');
 };
 const onResetFilterBtnClickHandler = () => {
