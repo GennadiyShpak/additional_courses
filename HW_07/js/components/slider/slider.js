@@ -153,7 +153,7 @@ function PortfoliSlider(collection, int) {
     return Number(positionValueArr.join(''));
   };
   this.sliderToRight = function () {
-    this.sliderArr.forEach((item, i) => {
+    this.sliderArr.forEach(item => {
       item.style.left = `${handleSliderPosition(item) - 400}px`;
       if (item.style.left === '1200px') {
         item.style.display = 'block';
@@ -170,9 +170,8 @@ function PortfoliSlider(collection, int) {
     this.parentToRight.call(this);
   };
   this.sliderToLeft = function () {
-    this.sliderArr.forEach((item, i) => {
+    this.sliderArr.forEach(item => {
       item.style.left = `${handleSliderPosition(item) + 400}px`;
-      console.log(item.style.left, item.style.display, i);
       if (item.style.left === '-400px') {
         item.style.display = 'block';
       }

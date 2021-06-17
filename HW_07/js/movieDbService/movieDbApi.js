@@ -125,7 +125,7 @@ class MovieDBApi {
         }`,
       );
       const { results } = await response.json();
-      console.log('results', results);
+      sessionStorage.setItem('movieList', JSON.stringify(results));
       return results;
     } catch (error) {
       console.log('error', { error });
@@ -143,10 +143,15 @@ class MovieDBApi {
     }
   }
   async createPostMarckup(el, i) {
-    const getMovieList = await this.getTrends();
-    const movieId = getMovieList[i].id;
-    this.posterPath = getMovieList[i].poster_path;
-    this.backdropPath = getMovieList[i].backdrop_path;
+    let movieList;
+    if (!JSON.parse(sessionStorage.getItem('movieList'))) {
+      movieList = await this.getTrends();
+    } else {
+      movieList = JSON.parse(sessionStorage.getItem('movieList'));
+    }
+    const movieId = movieList[i].id;
+    this.posterPath = movieList[i].poster_path;
+    this.backdropPath = movieList[i].backdrop_path;
     const reviewsList = await this.getInfo(movieId, 'reviews');
     this.className = this.#getClassName(el);
     el.innerHTML = `
@@ -171,7 +176,7 @@ class MovieDBApi {
                 class="
                   blog__info-data blog__info blog__info-data-playmini
                 "
-                >${this.#getDataReview(reviewsList, getMovieList[i])}</span
+                >${this.#getDataReview(reviewsList, movieList[i])}</span
               >
               <span
                 class="
@@ -193,10 +198,10 @@ class MovieDBApi {
           </div>
         </div>
         <h3 class="blog__article-title blog__article-title-playmini">
-          ${getMovieList[i].original_title}
+          ${movieList[i].original_title}
         </h3>
         <p class="blog__article">
-          ${this.#getReview(reviewsList, 'content', getMovieList[i].overview)}
+          ${this.#getReview(reviewsList, 'content', movieList[i].overview)}
         </p>
         <div
           class="
@@ -211,7 +216,7 @@ class MovieDBApi {
         </div>
       </div>`;
     const ratingList = el.querySelector('.blog__rating-btn-list');
-    this.#starMarckup(getMovieList[i].vote_average, ratingList);
+    this.#starMarckup(movieList[i].vote_average, ratingList);
     el.dataset.index = `${i}`;
   }
 }

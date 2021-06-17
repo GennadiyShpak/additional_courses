@@ -20,7 +20,8 @@ const {
 let hiddenBtnAngle = 0,
   hiddenMenu = true;
 const filtredMarkupByAuthor = localStorage.getItem('filtredMarkupByAuthor');
-
+const movieList = JSON.parse(sessionStorage.getItem('movieList'));
+console.log('movieList', movieList);
 const videoPostApi = new VideoPostApi();
 const audioPostApi = new AudioPostApi();
 const imagePostApi = new ImagePostApi();
