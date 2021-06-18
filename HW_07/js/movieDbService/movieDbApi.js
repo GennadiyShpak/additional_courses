@@ -125,7 +125,6 @@ class MovieDBApi {
         }`,
       );
       const { results } = await response.json();
-      sessionStorage.setItem('movieList', JSON.stringify(results));
       return results;
     } catch (error) {
       console.log('error', { error });

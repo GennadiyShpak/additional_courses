@@ -18,11 +18,11 @@ const {
   dropdownMenu,
 } = refs;
 const movieApi = new MovieDBApi();
-await movieApi.getTrends();
+const movieList = await movieApi.getTrends();
+console.log('movieList', movieList);
 let hiddenBtnAngle = 0,
   hiddenMenu = true;
 const filtredMarkupByAuthor = localStorage.getItem('filtredMarkupByAuthor');
-const movieList = JSON.parse(sessionStorage.getItem('movieList'));
 const videoPostApi = new VideoPostApi();
 const audioPostApi = new AudioPostApi();
 const imagePostApi = new ImagePostApi();
