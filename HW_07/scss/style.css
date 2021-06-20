@@ -487,7 +487,7 @@ body {
     top: 0;
     left: 15px;
     transform: scale(0);
-    transition: all ease 1s; }
+    transition: all ease 2s; }
   .testimonials__slider-start {
     transform: scale(1); }
   .testimonials__slider-list {
