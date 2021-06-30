@@ -1,0 +1,31 @@
+p {
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  flex-direction: row;
+  padding-top: 70px;
+  justify-content: space-between; }
+
+.post {
+  border: 1px solid black;
+  padding: 20px; }
+  .post__author-list {
+    display: flex; }
+  .post__author-item {
+    padding: 10px 20px;
+    border: 1px solid black; }
+    .post__author-item:not(:last-child) {
+      margin-right: 20px; }
+  .post__description {
+    border: 1px solid black; }
+
+.aside__wrapper {
+  padding: 20px;
+  border: 1px solid black; }
+.aside__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+/*# sourceMappingURL=filter.css.map */

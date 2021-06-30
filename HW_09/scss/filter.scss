@@ -1,0 +1,39 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  flex-direction: row;
+  padding-top: 70px;
+  justify-content: space-between;
+}
+.post {
+  border: 1px solid black;
+  padding: 20px;
+  &__author {
+    &-list {
+      display: flex;
+    }
+    &-item {
+      padding: 10px 20px;
+      border: 1px solid black;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__description {
+    border: 1px solid black;
+  }
+}
+.aside {
+  &__wrapper {
+    padding: 20px;
+    border: 1px solid black;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
