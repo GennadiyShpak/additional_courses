@@ -33,7 +33,7 @@ class MovieDBApi {
       return `https://secure.gravatar.com/avatar/${avatarPath}`;
     }
   }
-  #saveAuthorDate(reviewList) {
+  saveAuthorDate(reviewList) {
     const { author, content } = reviewList;
     let storage = JSON.parse(sessionStorage.getItem('authorList'));
     storage ||= {};
@@ -47,7 +47,7 @@ class MovieDBApi {
   }
   #getReviewUrl(reviewList) {
     reviewList.forEach(review => {
-      this.#saveAuthorDate(review);
+      this.saveAuthorDate(review);
     });
     if (reviewList.length === 0) {
       return '../../img/not-found.png';

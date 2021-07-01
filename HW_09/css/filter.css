@@ -17,7 +17,7 @@ p {
     border: 1px solid black; }
     .post__author-item:not(:last-child) {
       margin-right: 20px; }
-  .post__description {
+  .post__wrapper {
     border: 1px solid black; }
 
 .aside__wrapper {
