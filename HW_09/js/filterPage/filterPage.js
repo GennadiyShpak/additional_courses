@@ -4,7 +4,6 @@ import HorizontalPostList from '../components/PostList/PostList.js';
 const aaa = document.querySelector('.author__list-js');
 const bbb = document.querySelector('.post__list-js');
 let authorList = JSON.parse(sessionStorage.getItem('authorList'));
-const horizontalPostList = new HorizontalPostList(aaa, authorList, bbb);
 const reviewList = [];
 if (!authorList) {
   const { MovieDBApi } = movieDb;
@@ -23,6 +22,7 @@ if (!authorList) {
   });
 }
 authorList = JSON.parse(sessionStorage.getItem('authorList'));
+const horizontalPostList = new HorizontalPostList(aaa, authorList, bbb);
 horizontalPostList.createAuthorListMarckup();
 aaa.addEventListener('click', e => {
   if (e.target.nodeName !== 'LI') {
