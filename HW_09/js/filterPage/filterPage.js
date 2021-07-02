@@ -1,8 +1,9 @@
 import movieDb from '../movieDbService/movieDbApi.js';
-import HorizontalPostList from '../components/PostList/PostList.js';
+import authorMarkup from '../components/PostList/PostList.js';
+import refs from './refs.js';
+const { HorizontalAuthorList, AsideAuthorList } = authorMarkup;
+const { horizontalMenu, horizontalSubMenu, asideMenu } = refs;
 
-const aaa = document.querySelector('.author__list-js');
-const bbb = document.querySelector('.post__list-js');
 let authorList = JSON.parse(sessionStorage.getItem('authorList'));
 const reviewList = [];
 if (!authorList) {
@@ -17,18 +18,31 @@ if (!authorList) {
     });
   }
   reviewList.forEach(review => {
-    console.log(review);
     movieApi.saveAuthorDate(review);
   });
 }
 authorList = JSON.parse(sessionStorage.getItem('authorList'));
-const horizontalPostList = new HorizontalPostList(aaa, authorList, bbb);
+const horizontalPostList = new HorizontalAuthorList(
+  horizontalMenu,
+  authorList,
+  horizontalSubMenu,
+);
+const asideAuthorList = new AsideAuthorList(asideMenu, authorList);
 horizontalPostList.createAuthorListMarckup();
-aaa.addEventListener('click', e => {
+asideAuthorList.createAuthorListMarckup();
+horizontalMenu.addEventListener('click', e => {
   if (e.target.nodeName !== 'LI') {
     return;
   }
-  const b = e.target.textContent;
-  horizontalPostList.createPostListMarckup(b);
+  const authorName = e.target.textContent;
+  horizontalPostList.createPostListMarckup(authorName);
+});
+asideMenu.addEventListener('click', e => {
+  if (e.target.nodeName !== 'LI') {
+    return;
+  }
+  const authorName = e.target.textContent;
+  const authorNumber = e.target.dataset.itemnumber;
+  asideAuthorList.createPostListMarckup(authorName, authorNumber);
 });
 // console.log('authorList', authorList);
