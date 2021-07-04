@@ -7,13 +7,16 @@ p {
   .post__description {
     text-align: justify; }
   .post__author-list {
-    display: flex; }
+    display: flex;
+    position: relative; }
   .post__wrapper {
     width: 80%;
     padding: 20px; }
 
 .aside {
   padding: 20px; }
+  .aside__item {
+    position: relative; }
   .aside__list {
     display: flex;
     flex-direction: column;
@@ -23,21 +26,38 @@ p {
 
 .content__wrapper {
   display: flex;
-  padding: 20px;
-  justify-content: space-between; }
-
-.hidden {
-  height: 0;
-  overflow: hidden; }
+  padding: 20px; }
 
 .post__author-item,
 .aside__item {
   padding: 10px 20px;
-  cursor: pointer;
-  text-decoration: underline;
-  transition: all ease 2s; }
+  cursor: pointer; }
 
 .post__author-subMenu {
-  transition: all ease 2s; }
+  position: absolute;
+  left: 19px;
+  bottom: -15px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden; }
+
+.hidden {
+  display: none; }
+
+.sub-post__author-item,
+.sub-aside__item {
+  color: blue; }
+
+.sub-post__author-item {
+  margin-right: 20px; }
+
+.aside__subMenu-item {
+  position: absolute;
+  top: 10px;
+  right: -35px; }
+
+.sub-aside__item:hover,
+.sub-post__author-item:hover {
+  background-color: #ddd8d8; }
 
 /*# sourceMappingURL=filter.css.map */

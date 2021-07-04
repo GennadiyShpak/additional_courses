@@ -1,23 +1,30 @@
 export default class PostMediator {
-  onMenuClick(e, forClassCheck, el) {
-    const { target } = e;
-    const { dataset, classList } = target;
-    if (target.classList.contains(forClassCheck)) {
-      const hiddenMenu = document.querySelectorAll(
-        `[data-author=${dataset.name}]`,
-      );
-      const subMenu = document.querySelectorAll(
-        '.aside__subMenu-item, .post__author-subMenu',
-      );
-      [...subMenu].forEach(el => {
-        el.classList.add('hidden');
-      });
-      [...hiddenMenu].forEach(el => {
-        el.classList.remove('hidden');
-      });
+  constructor() {
+    this.subscribers = {};
+  }
+
+  subscribe(event, callback) {
+    this.subscribers[event] = this.subscribers[event] || [];
+    this.subscribers[event].push(callback);
+  }
+  unsubscribe(event, callback) {
+    var subscribrIndex;
+    if (!event) {
+      this.subscribers = {};
+    } else if (event && !callback) {
+      this.subscribers[event] = [];
+    } else {
+      subscribrIndex = this.subscribers[event].indexOf(callback);
+      if (subscribrIndex > -1) {
+        this.subscribers[event].splice(subscribrIndex, 1);
+      }
     }
-    if (classList.contains(`sub-${forClassCheck}`)) {
-      el.createPostContent(dataset.name, dataset.number);
+  }
+  publish(event, ...data) {
+    if (this.subscribers[event]) {
+      this.subscribers[event].forEach(function (callback) {
+        callback(...data);
+      });
     }
   }
 }

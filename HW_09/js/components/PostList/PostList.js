@@ -4,6 +4,7 @@ class PostList {
     this.authorList = authorList;
     this.authorName = Object.keys(this.authorList);
   }
+
   createAuthorListMarckup(itemClass, subItemClass) {
     this.authorName.forEach((name, i) => {
       this.parent.insertAdjacentHTML(
@@ -13,7 +14,9 @@ class PostList {
           <ul class="${subItemClass} hidden" data-author=${name}></ul>
         </li>`,
       );
+
       const subMenu = document.querySelectorAll(`.${subItemClass}`);
+
       this.authorList[name].forEach((_, index) => {
         const postNumber = index + 1;
         subMenu[i].insertAdjacentHTML(
@@ -31,9 +34,11 @@ class PostContent extends PostList {
   constructor(parent, authorList) {
     super(parent, authorList);
   }
+
   createPostContent(name, index) {
     const postNumber = Number(index) + 1;
     this.parent.innerHTML = '';
+
     this.parent.insertAdjacentHTML(
       'beforeend',
       `<h3 class="post__title">Post ${postNumber}</h3>
