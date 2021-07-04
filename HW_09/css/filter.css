@@ -2,30 +2,42 @@ p {
   margin: 0;
   padding: 0; }
 
-.wrapper {
-  flex-direction: row;
-  padding-top: 70px;
-  justify-content: space-between; }
-
 .post {
-  border: 1px solid black;
-  padding: 20px; }
+  padding: 50px 20px 75px 20px; }
+  .post__description {
+    text-align: justify; }
   .post__author-list {
     display: flex; }
-  .post__author-item {
-    padding: 10px 20px;
-    border: 1px solid black; }
-    .post__author-item:not(:last-child) {
-      margin-right: 20px; }
   .post__wrapper {
-    border: 1px solid black; }
+    width: 80%;
+    padding: 20px; }
 
-.aside__wrapper {
-  padding: 20px;
-  border: 1px solid black; }
-.aside__list {
+.aside {
+  padding: 20px; }
+  .aside__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .aside__subMenu {
+    overflow: hidden; }
+
+.content__wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  padding: 20px;
+  justify-content: space-between; }
+
+.hidden {
+  height: 0;
+  overflow: hidden; }
+
+.post__author-item,
+.aside__item {
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all ease 2s; }
+
+.post__author-subMenu {
+  transition: all ease 2s; }
 
 /*# sourceMappingURL=filter.css.map */

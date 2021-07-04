@@ -4,69 +4,46 @@ class PostList {
     this.authorList = authorList;
     this.authorName = Object.keys(this.authorList);
   }
-}
-
-class HorizontalAuthorList extends PostList {
-  constructor(parent, authorList, child) {
-    super(parent, authorList);
-    this.child = child;
-  }
-  createAuthorListMarckup() {
-    this.authorName.forEach(name =>
+  createAuthorListMarckup(itemClass, subItemClass) {
+    this.authorName.forEach((name, i) => {
       this.parent.insertAdjacentHTML(
         'beforeend',
-        `<li class="post__author-item author-js">${name}</li>`,
-      ),
-    );
-  }
-  createPostListMarckup(authorName) {
-    const authorPosts = this.authorList[authorName];
-    this.child.innerHTML = '';
-    authorPosts.forEach((_, i) => {
-      const postNumber = i + 1;
-      this.child.insertAdjacentHTML(
-        'beforeend',
-        `<li class="post__author-item post-js" data-number=${postNumber}>Post ${postNumber}</li>`,
+        `<li class=${itemClass} data-name=${name}>
+          ${name}
+          <ul class="${subItemClass} hidden" data-author=${name}></ul>
+        </li>`,
       );
+      const subMenu = document.querySelectorAll(`.${subItemClass}`);
+      this.authorList[name].forEach((_, index) => {
+        const postNumber = index + 1;
+        subMenu[i].insertAdjacentHTML(
+          'beforeend',
+          `<li class=sub-${itemClass} data-number=${index} data-name=${name}>
+            Post ${postNumber}
+          </li>`,
+        );
+      });
     });
   }
 }
 
-class AsideAuthorList extends PostList {
+class PostContent extends PostList {
   constructor(parent, authorList) {
     super(parent, authorList);
   }
-  createAuthorListMarckup() {
-    this.authorName.forEach((name, i) =>
-      this.parent.insertAdjacentHTML(
-        'beforeend',
-        `<li class="post__author-item author-js" data-itemNumber=${i}>${name}
-          <ul class="aside__subMenu hidden" data-index=${i}></ul>
-        </li>`,
-      ),
+  createPostContent(name, index) {
+    const postNumber = Number(index) + 1;
+    this.parent.innerHTML = '';
+    this.parent.insertAdjacentHTML(
+      'beforeend',
+      `<h3 class="post__title">Post ${postNumber}</h3>
+    <p class="post__description">
+      ${this.authorList[name][index]}
+    </p>`,
     );
-  }
-  createPostListMarckup(authorName, authorNumber) {
-    authorNumber = Number(authorNumber);
-    console.log('authorNumber', typeof authorNumber);
-    const trimmedName = authorName.trim();
-    const subMenu = document.querySelectorAll('.aside__subMenu');
-    const authorPosts = this.authorList[trimmedName];
-    [...subMenu].forEach(el => {
-      el.innerHTML = '';
-    });
-    authorPosts.forEach((_, i) => {
-      const postNumber = i + 1;
-      [...subMenu][authorNumber].insertAdjacentHTML(
-        'beforeend',
-        `<li class="post__author-item post-js" data-number=${postNumber}>
-          Post ${postNumber}
-         </li>`,
-      );
-    });
   }
 }
 
-const authorMarkup = { HorizontalAuthorList, AsideAuthorList };
+const authorMarkup = { PostList, PostContent };
 
 export default authorMarkup;

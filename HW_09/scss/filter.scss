@@ -2,38 +2,50 @@ p {
   margin: 0;
   padding: 0;
 }
-.wrapper {
-  flex-direction: row;
-  padding-top: 70px;
-  justify-content: space-between;
-}
 .post {
-  border: 1px solid black;
-  padding: 20px;
+  padding: 50px 20px 75px 20px;
+  &__description {
+    text-align: justify;
+  }
   &__author {
     &-list {
       display: flex;
     }
-    &-item {
-      padding: 10px 20px;
-      border: 1px solid black;
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
   }
   &__wrapper {
-    border: 1px solid black;
+    width: 80%;
+    padding: 20px;
   }
 }
 .aside {
-  &__wrapper {
-    padding: 20px;
-    border: 1px solid black;
-  }
+  padding: 20px;
+
   &__list {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  &__subMenu {
+    overflow: hidden;
+  }
+}
+.content__wrapper {
+  display: flex;
+
+  padding: 20px;
+  justify-content: space-between;
+}
+.hidden {
+  height: 0;
+  overflow: hidden;
+}
+.post__author-item,
+.aside__item {
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all ease 2s;
+}
+.post__author-subMenu {
+  transition: all ease 2s;
 }
