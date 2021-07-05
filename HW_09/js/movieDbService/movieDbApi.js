@@ -1,5 +1,5 @@
 import reverseData from '../helpers/reverseData.js';
-import modalWindow from '../../modal/modal.js';
+import modalWindow from '../modal/modal.js';
 const { openModal } = modalWindow;
 class MovieDBApi {
   #API_KEY = 'bb3f2a9bd6a374d8a5257ae7f0ad6ee7';

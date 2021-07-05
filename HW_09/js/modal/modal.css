@@ -31,12 +31,13 @@
   height: 150px;
   width: 500px;
   background-size: 50px 100%;
-  padding: 20px;
+  padding: 20px 40px 50px 20px;
   justify-items: baseline;
 }
 .modal__content-text {
   font-size: 20px;
   font-weight: bold;
+  overflow: hidden;
 }
 .modal__content-icon {
   margin-right: 10px;
@@ -65,7 +66,6 @@
   );
 }
 .modal__confirm {
-  background: linear-gradient(to right, #caffd3 50%, #90dda7 0);
   background: linear-gradient(
     to top,
     #caffd3 0,

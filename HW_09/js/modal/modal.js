@@ -1,7 +1,9 @@
+const body = $('body');
+const MODAL_TYPES = { alertType: 'alert-type', confirm: 'confirm' };
+
 function modalWindowMarckupHandler() {
   createCssLink();
-  const firstScript = $('script:eq(0)');
-  createModalWindowMarkup(firstScript);
+  createModalWindowMarkup(body);
   createCloseModalBtn();
   $(`<h3 class=modal__content-text>Modal window</h3>`).appendTo(
     '.modal__content',
@@ -9,6 +11,7 @@ function modalWindowMarckupHandler() {
   createBtnMarkup();
   createInfoIcon();
 }
+
 function createModalWindowMarkup(sibling) {
   $(
     `<div class="modal__overlay">
@@ -18,13 +21,21 @@ function createModalWindowMarkup(sibling) {
       </div>
      </div>
     `,
-  ).insertBefore(sibling);
+  ).insertAfter(sibling);
 }
-function openModal(messageType, messageText, modalType = 'alert-type') {
+
+function openModal(
+  messageType,
+  messageText,
+  modalType = MODAL_TYPES.alertType,
+) {
+  const modalOverlay = $('.modal__overlay');
+
   handleInfoIcon(messageType);
   handleMessageType(messageType);
-  $('.modal__overlay').addClass(`is-open ${messageType}`);
-  $('.modal__overlay').one('click', function (e) {
+
+  modalOverlay.addClass('is-open');
+  modalOverlay.one('click', function (e) {
     const { target } = e;
     if ($(target).hasClass('modal__overlay')) {
       removeModal();
@@ -34,32 +45,30 @@ function openModal(messageType, messageText, modalType = 'alert-type') {
   $(document).one('keydown', onEscPressHandler);
   $('.modal__content-text').text(messageText);
   handleModalType(modalType);
-  $('body').css('overflow', 'hidden');
+  body.css('overflow', 'hidden');
 }
+
 function removeModal() {
   $('.modal__overlay').removeClass('is-open');
-  $('.modal__content').removeClass('modal__alert');
-  $('.modal__content').removeClass('modal__confirm');
-  $('.modal__content').removeClass('modal__info');
-  $('.modal__overlay').removeClass('alert');
-  $('.modal__overlay').removeClass('confirm');
-  $('.modal__overlay').removeClass('info');
-  $('body').css('overflow', 'auto');
+  body.css('overflow', 'auto');
 }
-function handleModalType(modalType = 'alert-type') {
-  if (modalType === 'alert-type') {
+
+function handleModalType(modalType = MODAL_TYPES.alertType) {
+  if (modalType === MODAL_TYPES.alertType) {
     $('.cancel-btn').hide();
   }
-  if (modalType === 'confirm') {
+  if (modalType === MODAL_TYPES.confirm) {
     $('.cancel-btn').show();
   }
 }
+
 function onEscPressHandler(e) {
   const { code } = e;
   if (code === 'Escape') {
     removeModal();
   }
 }
+
 function createInfoIcon() {
   $('<img/>', {
     width: '23',
@@ -68,39 +77,31 @@ function createInfoIcon() {
     .addClass('modal__content-icon')
     .prependTo($('.modal__content'));
 }
+
 function handleInfoIcon(messageType) {
   if (messageType === 'alert') {
     $('.modal__content-icon').attr({
-      src: './modal/image/modal-icon/attention.png',
+      src: './js/modal/image/modal-icon/attention.png',
     });
   }
   if (messageType === 'confirm') {
     $('.modal__content-icon').attr({
-      src: './modal/image/modal-icon/ok.png',
+      src: './js/modal/image/modal-icon/ok.png',
     });
   }
   if (messageType === 'info') {
     $('.modal__content-icon').attr({
-      src: './modal/image/modal-icon/info.png',
+      src: './js/modal/image/modal-icon/info.png',
     });
   }
 }
+
 function createCssLink() {
-  $('<link/>', { href: './modal/modal.css', rel: 'stylesheet' }).appendTo(
+  $('<link/>', { href: './js/modal/modal.css', rel: 'stylesheet' }).appendTo(
     'head',
   );
 }
-function removeMessageType() {
-  if ($('.modal__content').hasClass('alert')) {
-    $('.modal__content').removeClass('modal__alert');
-  }
-  if ($('.modal__content').hasClass('confirm')) {
-    $('.modal__content').removeClass('modal__confirm');
-  }
-  if ($('.modal__content').hasClass('info')) {
-    $('.modal__content').removeClass('modal__info');
-  }
-}
+
 function handleMessageType(messageType) {
   if (messageType === 'alert') {
     $('.modal__content').addClass('modal__alert');
@@ -112,6 +113,7 @@ function handleMessageType(messageType) {
     $('.modal__content').addClass('modal__info');
   }
 }
+
 function createBtnMarkup() {
   $(`<button class='modal__btn ok-btn'>Ok</button>`).appendTo(
     $('.modal__btn-wrapper'),
@@ -120,6 +122,7 @@ function createBtnMarkup() {
     $('.modal__btn-wrapper'),
   );
 }
+
 function createCloseModalBtn() {
   $(`<button class="modal__close-btn"></button>`).appendTo(
     $('.modal__content'),

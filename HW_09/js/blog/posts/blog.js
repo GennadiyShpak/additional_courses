@@ -1,6 +1,7 @@
 import movieDb from '../../movieDbService/movieDbApi.js';
 import refs from './refs.js';
-import modalWindow from '../../../modal/modal.js';
+import modalWindow from '../../modal/modal.js';
+
 const { modalWindowMarckupHandler, openModal, removeModal } = modalWindow;
 modalWindowMarckupHandler();
 const { VideoPostApi, AudioPostApi, MovieDBApi, ImagePostApi, TextPostApi } =
@@ -24,14 +25,17 @@ const movieApi = new MovieDBApi();
 const movieList = await movieApi.getTrends();
 let hiddenBtnAngle = 0,
   hiddenMenu = true;
+
 const filtredMarkupByAuthor = localStorage.getItem('filtredMarkupByAuthor');
 const videoPostApi = new VideoPostApi();
 const audioPostApi = new AudioPostApi();
 const imagePostApi = new ImagePostApi();
 const textPostApi = new TextPostApi();
+
 function validate(title) {
   return /^[A-Z]{1}[a-zA-Z\d\s!.,:?-]{5,59}$/.test(title);
 }
+
 const searchByAuthor = value => {
   if (!resetFilter.classList.contains('d-block')) {
     localStorage.setItem('unFiltredMarkup', blogList.innerHTML);
@@ -54,6 +58,7 @@ const searchByAuthor = value => {
   resetFilter.classList.add('d-block');
   searchInput.value = '';
 };
+
 const searchByTitle = value => {
   const titlePosts = document.querySelectorAll('.blog__article-title');
   const postsCollection = document.querySelectorAll('.blog__item');
@@ -77,6 +82,7 @@ const searchByTitle = value => {
     alert('Not correct value');
   }
 };
+
 const onSearchBtnClickHandler = () => {
   if (radioAuthor.checked) {
     searchByAuthor(searchInput.value);
@@ -84,6 +90,7 @@ const onSearchBtnClickHandler = () => {
   }
   searchByTitle(searchInput.value);
 };
+
 const createMarkup = async () => {
   await videoPostApi.createPostMarckup(videoPost, 0, movieList);
   await audioPostApi.createPostMarckup(audioPost, 1, movieList);
@@ -91,6 +98,7 @@ const createMarkup = async () => {
   await textPostApi.createPostMarckup(textPost, 3, movieList);
   resetFilter.classList.remove('d-block');
 };
+
 const onResetFilterBtnClickHandler = () => {
   if (radioAuthor.checked) {
     localStorage.removeItem('filtredMarkupByAuthor');
@@ -98,6 +106,7 @@ const onResetFilterBtnClickHandler = () => {
   resetFilter.classList.remove('d-block');
   blogList.innerHTML = localStorage.getItem('unFiltredMarkup');
 };
+
 const onLoadBlogPage = () => {
   if (!filtredMarkupByAuthor) {
     createMarkup();
@@ -106,6 +115,7 @@ const onLoadBlogPage = () => {
     resetFilter.classList.remove('d-none');
   }
 };
+
 const onHiddenMenuBtnClickHandler = () => {
   hiddenMenuBtn.style.transform = `rotate(${(hiddenBtnAngle += 180)}deg)`;
   if (hiddenMenu) {
@@ -116,6 +126,7 @@ const onHiddenMenuBtnClickHandler = () => {
     hiddenMenu = true;
   }
 };
+
 const onRadioBtnMenuClickHandler = e => {
   const { target } = e;
   if (target.nodeName === 'INPUT' && target.id === 'title') {
@@ -125,6 +136,7 @@ const onRadioBtnMenuClickHandler = e => {
     searchInput.placeholder = 'Search by author';
   }
 };
+
 const choiseFilterFunction = value => {
   if (radioAuthor.checked) {
     searchByAuthor(value);
@@ -132,6 +144,7 @@ const choiseFilterFunction = value => {
     searchByTitle(value.trim());
   }
 };
+
 const createDropdownMenuElement = (i, content, imageColl = null) => {
   const linkContent = content.innerHTML;
   const dropMenuItem = document.createElement('li');
@@ -155,6 +168,7 @@ const createDropdownMenuElement = (i, content, imageColl = null) => {
     choiseFilterFunction(linkContent);
   });
 };
+
 const createAuthorList = () => {
   const postsAuthor = document.querySelectorAll('.blog__name');
   const avatarCollection = document.querySelectorAll('.blog__photo');
@@ -170,6 +184,7 @@ const createAuthorList = () => {
     });
   }
 };
+
 const createTitleList = () => {
   const titlePosts = document.querySelectorAll('.blog__article-title');
   const isUniqueArr = [];
@@ -184,6 +199,7 @@ const createTitleList = () => {
     });
   }
 };
+
 const onFocusHandler = () => {
   if (radioAuthor.checked) {
     createAuthorList();
@@ -191,7 +207,9 @@ const onFocusHandler = () => {
     createTitleList();
   }
 };
+
 onLoadBlogPage();
+
 searchBtn.addEventListener('click', onSearchBtnClickHandler);
 resetFilter.addEventListener('click', onResetFilterBtnClickHandler);
 hiddenMenuBtn.addEventListener('click', onHiddenMenuBtnClickHandler);
@@ -202,9 +220,14 @@ searchInput.addEventListener('blur', () => {
     dropdownMenu.innerHTML = '';
   }, 200);
 });
-setTimeout(() => {
-  openModal('info', 'Subscribe to this blog and get new updates first');
+
+let timoutID = setTimeout(() => {
+  const modalWrapper = document.querySelector('.modal__overlay');
+  modalWrapper.classList.length > 1
+    ? clearTimeout(timoutID)
+    : openModal('info', 'Subscribe to this blog and get new updates first');
 }, 10000);
+
 const onModalBtnClickHandler = e => {
   const { currentTarget, target } = e;
   if (
@@ -230,5 +253,6 @@ const onModalBtnClickHandler = e => {
     console.log('Action was canceled');
   }
 };
+
 const modalOverlay = document.querySelector('.modal__overlay');
 modalOverlay.addEventListener('click', onModalBtnClickHandler);
